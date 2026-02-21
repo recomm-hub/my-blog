@@ -1,37 +1,56 @@
-{{- /* サイドバー イベント通知ウィジェット
-       ビルド日の日付でポイントアップを自動判定。
-       マラソン等は data/events.yaml で手動 ON/OFF。
-       コンパクトな横長バーとして表示。 */ -}}
+{{- /* サイドバー キャンペーンウィジェット
+       ① イベント通知バー（5/0日、18日、マラソン → 自動判定）
+       ② 楽天バナー（banner.yaml → 細長く縦1列で表示） */ -}}
 
+{{- /* ── イベント判定 ── */ -}}
 {{- $events := slice -}}
 {{- $now := now -}}
 {{- $day := int $now.Day -}}
 
-{{- /* ── 5と0のつく日 ── */ -}}
 {{- $is50 := false -}}
 {{- range (slice 5 10 15 20 25 30) -}}
-  {{- if eq (int .) $day -}}
-    {{- $is50 = true -}}
-  {{- end -}}
+  {{- if eq (int .) $day -}}{{- $is50 = true -}}{{- end -}}
 {{- end -}}
 {{- if $is50 -}}
   {{- $events = $events | append "🔥 5と0のつく日 ポイント+2倍" -}}
 {{- end -}}
 
-{{- /* ── 毎月18日 ── */ -}}
 {{- if eq $day 18 -}}
   {{- $events = $events | append "🎁 ご愛顧感謝デー ポイント最大4倍" -}}
 {{- end -}}
 
-{{- /* ── お買い物マラソン等（手動トグル） ── */ -}}
 {{- with site.Data.events.marathon -}}
   {{- if .active -}}
     {{- $events = $events | append (printf "🏃 %s" .label) -}}
   {{- end -}}
 {{- end -}}
 
-{{- if $events -}}
+{{- /* ── 楽天バナー判定 ── */ -}}
+{{- $banners := slice -}}
+{{- with site.Data.banner -}}
+  {{- if .enabled -}}
+    {{- $enabledBanners := where .banners "enabled" true -}}
+    {{- $today := int $now.Day -}}
+    {{- range $enabledBanners -}}
+      {{- $show := false -}}
+      {{- $type := default "always" .type -}}
+      {{- if eq $type "always" -}}{{- $show = true -}}
+      {{- else if eq $type "recurring" -}}
+        {{- with .days -}}{{- range . -}}
+          {{- if eq (int .) $today -}}{{- $show = true -}}{{- end -}}
+        {{- end -}}{{- end -}}
+      {{- end -}}
+      {{- if $show -}}{{- $banners = $banners | append . -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── 表示（イベントまたはバナーがあれば） ── */ -}}
+{{- if or $events $banners -}}
 <section class="widget event-banner">
+
+  {{- /* イベント通知バー */ -}}
+  {{- if $events }}
   <div style="
     background: linear-gradient(135deg, #bf0000 0%, #e60012 100%);
     color: #fff;
@@ -39,16 +58,26 @@
     border-radius: 8px;
     font-size: 0.85rem;
     line-height: 1.5;
+    margin-bottom: 12px;
   ">
-    <div style="font-weight: bold; font-size: 0.9rem; margin-bottom: 2px;">
-      🎯 ポイントアップ中！
-    </div>
+    <div style="font-weight: bold; font-size: 0.9rem; margin-bottom: 2px;">🎯 ポイントアップ中！</div>
     {{- range $events }}
     <div style="padding-left: 0.2em;">{{ . }}</div>
     {{- end }}
-    <div style="font-size: 0.7rem; opacity: 0.8; margin-top: 4px;">
-      ※ エントリーが必要な場合があります
-    </div>
+    <div style="font-size: 0.7rem; opacity: 0.8; margin-top: 4px;">※ エントリーが必要な場合があります</div>
   </div>
+  {{- end }}
+
+  {{- /* 楽天バナー（細長く縦1列） */ -}}
+  {{- if $banners }}
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    {{- range $banners }}
+    <div style="text-align: center;">
+      {{ .html | safeHTML }}
+    </div>
+    {{- end }}
+  </div>
+  {{- end }}
+
 </section>
 {{- end -}}

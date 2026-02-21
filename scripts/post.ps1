@@ -631,7 +631,9 @@ $comparisonHeader = @"
 $comparisonRows = ""
 foreach ($p in $products) {
     $emoji = $rankEmoji[$p.Rank - 1]
-    $comparisonRows += "| $emoji | $($p.CleanName) | ¥$($p.Price) | $($p.ReviewCount)件 | ★$($p.ReviewAvg) |`n"
+    # 商品名にアフィリエイトリンクを付与（比較表からも楽天に遷移できるようにする）
+    $linkedName = "[$($p.CleanName)]($($p.Url))"
+    $comparisonRows += "| $emoji | $linkedName | ¥$($p.Price) | $($p.ReviewCount)件 | ★$($p.ReviewAvg) |`n"
 }
 
 # スタイル別のタイトル・構成を生成

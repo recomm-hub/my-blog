@@ -79,7 +79,7 @@ TocOpen: true
 
 ## 比較表
 
-| 項目 | GraceVally X1 | GraceVally C7 | SLUB |
+| 項目 | [GraceVally X1](https://hb.afl.rakuten.co.jp/hgc/g00u9318.fluake4b.g00u9318.flual6ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgracevally%2Fi%2F10000003%2F&rafcid=wsc_i_is_1013356076665194500&scid=gadget) | [GraceVally C7](https://hb.afl.rakuten.co.jp/hgc/g00u9318.fluake4b.g00u9318.flual6ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-c7%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgracevally%2Fi%2F10000035%2F&rafcid=wsc_i_is_1013356076665194500&scid=gadget) | [SLUB](https://hb.afl.rakuten.co.jp/hgc/g00skps8.fluak6af.g00skps8.flualb3f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faidort%2Fslub-725a2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faidort%2Fi%2F10001503%2F&rafcid=wsc_i_is_1013356076665194500&scid=gadget) |
 |:---|:---:|:---:|:---:|
 | 価格 | ¥2,780 | ¥2,499 | ¥1,780 |
 | レビュー件数 | 42,653件 | 24,655件 | 15,952件 |
