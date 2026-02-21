@@ -4,6 +4,7 @@ draft = false
 title = 'ルンバがついに小さくなった！Roomba Miniのメリット・デメリットまとめ'
 description = 'iRobotの新製品「Roomba Mini（ルンバ ミニ）」を徹底解説。体積半分・吸引力70倍・4万円切りの実力は？メリット・デメリット・向いている人を整理します。'
 slug = 'roomba-mini'
+image = 'cover.jpg'
 categories = ['レビュー']
 tags = ['ロボット掃除機', 'ルンバ', 'ルンバ ミニ', '新製品', 'iRobot', 'おすすめ']
 keywords = ['ルンバ ミニ', 'Roomba Mini', 'ルンバ 小さい', 'ルンバ ミニ 買い', 'ルンバ ミニ スペック', 'ロボット掃除機 コンパクト']
