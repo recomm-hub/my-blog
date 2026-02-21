@@ -409,17 +409,23 @@ $dateISO = Get-Date -Format "yyyy-MM-ddTHH:mm:ss+09:00"
 
 # キーワードをファイル名用にスラッグ化（日本語はそのまま使用）
 $slug = $Keyword -replace '\s+', '-' -replace '[\\/:*?"<>|]', ''
-$fileName = "$date-$slug.md"
-$filePath = Join-Path $PSScriptRoot "..\content\posts\$fileName"
-$filePath = [System.IO.Path]::GetFullPath($filePath)
+$bundleName = "$date-$slug"
+$bundleDir = Join-Path $PSScriptRoot "..\content\posts\$bundleName"
+$bundleDir = [System.IO.Path]::GetFullPath($bundleDir)
+$filePath = Join-Path $bundleDir "index.md"
 
 if (Test-Path $filePath) {
-    Write-Host "⚠️ ファイルが既に存在します: $fileName" -ForegroundColor Yellow
+    Write-Host "⚠️ ファイルが既に存在します: $bundleName/index.md" -ForegroundColor Yellow
     $overwrite = Read-Host "上書きしますか？ (y/N)"
     if ($overwrite -ne "y") {
         Write-Host "中止しました。"
         exit 0
     }
+}
+
+# ページバンドル用ディレクトリ作成
+if (-not (Test-Path $bundleDir)) {
+    New-Item -ItemType Directory -Path $bundleDir -Force | Out-Null
 }
 
 # ──────────────────────────────────────────────
@@ -584,10 +590,7 @@ categories: ["レビュー"]
 tags: ["$Keyword", "おすすめ", "ランキング", "比較"]
 description: "${Keyword}のおすすめ商品を徹底比較！人気${Hits}選をランキング形式でご紹介します。"
 style: "A"
-cover:
-  image: ""
-  alt: "${Keyword}おすすめ"
-  hidden: false
+image: cover.jpg
 ShowToc: true
 TocOpen: true
 ---
@@ -643,10 +646,7 @@ categories: ["レビュー"]
 tags: ["$Keyword", "悩み解決", "対策", "おすすめ"]
 description: "${Keyword}で悩んでいる方へ。実際に試したおすすめアイテムと対策法を紹介します。"
 style: "B"
-cover:
-  image: ""
-  alt: "${Keyword}対策"
-  hidden: false
+image: cover.jpg
 ShowToc: true
 TocOpen: true
 ---
@@ -708,10 +708,7 @@ categories: ["レビュー"]
 tags: ["$Keyword", "比較", "レビュー", "どっちがいい"]
 description: "${Keyword}の人気${Hits}モデルをガチ比較。結局どれがいいのか、使った感想とともに解説。"
 style: "C"
-cover:
-  image: ""
-  alt: "${Keyword}比較"
-  hidden: false
+image: cover.jpg
 ShowToc: true
 TocOpen: true
 ---
@@ -755,10 +752,7 @@ categories: ["レビュー"]
 tags: ["$Keyword", "目的別", "初心者", "おすすめ"]
 description: "${Keyword}を目的・シーン別に選ぶガイド。初心者からヘビーユーザーまで。"
 style: "D"
-cover:
-  image: ""
-  alt: "${Keyword}ガイド"
-  hidden: false
+image: cover.jpg
 ShowToc: true
 TocOpen: true
 ---
@@ -815,10 +809,7 @@ categories: ["レビュー"]
 tags: ["$Keyword", "買ってみた", "レビュー", "正直"]
 description: "${Keyword}を${Hits}つ買って使い比べてみた正直な感想。良かった点・微妙だった点を包み隠さず。"
 style: "E"
-cover:
-  image: ""
-  alt: "${Keyword}レビュー"
-  hidden: false
+image: cover.jpg
 ShowToc: true
 TocOpen: true
 ---
@@ -867,6 +858,19 @@ Write-Host ""
 Write-Host "📝 記事ファイルを生成しました！" -ForegroundColor Green
 Write-Host "   $filePath" -ForegroundColor White
 Write-Host "   スタイル: $Style ($styleName)" -ForegroundColor Magenta
+Write-Host ""
+
+# カバー画像を自動生成
+Write-Host "🖼️ カバー画像を生成中..." -ForegroundColor Cyan
+$coverScript = Join-Path $PSScriptRoot "generate-covers.ps1"
+if (Test-Path $coverScript) {
+    $bundleRelPath = "content\posts\$bundleName"
+    & $coverScript -PostPath $bundleRelPath -Force
+}
+else {
+    Write-Host "   ⚠️ generate-covers.ps1 が見つかりません。手動で実行してください。" -ForegroundColor Yellow
+}
+
 Write-Host ""
 Write-Host "📋 次のステップ：" -ForegroundColor Yellow
 Write-Host "   1. VS Code でファイルが開きます"
