@@ -165,6 +165,14 @@ body {
 }
 
 /* ── 目次（TOC）のスタイル強化 ── */
+/* テーマは lg 以上で .article-toc を非表示にする（右サイドバー TOC ウィジェット前提）が、
+   ウィジェットを外して記事内に TOC を残すためオーバーライドする */
+@media (min-width: 1024px) {
+  .article-toc {
+    display: block !important;
+  }
+}
+
 #TableOfContents {
   border-left: 3px solid var(--jin-accent);
   padding-left: 12px;
