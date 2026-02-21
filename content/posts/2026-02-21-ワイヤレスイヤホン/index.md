@@ -1,5 +1,6 @@
 ﻿---
 title: "【徹底比較】ワイヤレスイヤホンおすすめ3選、結局どれがいい？"
+slug: "wireless-earbuds-2026"
 date: 2026-02-21T14:53:03+09:00
 draft: false
 categories: ["レビュー"]
@@ -38,7 +39,7 @@ TocOpen: true
 
 **使用シーン：** 朝の通勤電車で毎日使ってます。駅のホームでも音が途切れないのが地味にストレスフリー。ランニング中も使ってみたけど、汗をかいてもズレないのは好印象。
 
-{{< rakuten title="GraceVally X1 ワイヤレスイヤホン" url="https://hb.afl.rakuten.co.jp/hgc/g00u9318.fluake4b.g00u9318.flual6ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgracevally%2Fi%2F10000003%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/gracevally/cabinet/09355687/09355695/12855263/x1front-2026old.jpg?_ex=128x128" price="2,780" keyword="ワイヤレスイヤホン" >}}
+{{< rakuten title="GraceVally X1 ワイヤレスイヤホン" url="https://hb.afl.rakuten.co.jp/hgc/g00u9318.fluake4b.g00u9318.flual6ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgracevally%2Fi%2F10000003%2F&rafcid=wsc_i_is_1013356076665194500&m=gadget" img="https://thumbnail.image.rakuten.co.jp/@0_mall/gracevally/cabinet/09355687/09355695/12855263/x1front-2026old.jpg?_ex=128x128" price="2,780" keyword="ワイヤレスイヤホン" >}}
 
 ---
 ### GraceVally C7（イヤーカフ型）
@@ -54,7 +55,7 @@ TocOpen: true
 
 **使用シーン：** 在宅ワーク中のBGM用に最適。宅配が来てもチャイムが聞こえるし、家族に話しかけられてもすぐ対応できる。休日に部屋で料理しながらポッドキャスト聴くのにも重宝してます。
 
-{{< rakuten title="GraceVally C7 イヤーカフイヤホン" url="https://hb.afl.rakuten.co.jp/hgc/g00u9318.fluake4b.g00u9318.flual6ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-c7%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgracevally%2Fi%2F10000035%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/gracevally/cabinet/09355683/10976009/imgrc0122499911.jpg?_ex=128x128" price="2,499" keyword="ワイヤレスイヤホン" >}}
+{{< rakuten title="GraceVally C7 イヤーカフイヤホン" url="https://hb.afl.rakuten.co.jp/hgc/g00u9318.fluake4b.g00u9318.flual6ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-c7%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgracevally%2Fi%2F10000035%2F&rafcid=wsc_i_is_1013356076665194500&m=gadget" img="https://thumbnail.image.rakuten.co.jp/@0_mall/gracevally/cabinet/09355683/10976009/imgrc0122499911.jpg?_ex=128x128" price="2,499" keyword="ワイヤレスイヤホン" >}}
 
 ---
 ### SLUB ワイヤレスヘッドセット
@@ -70,7 +71,7 @@ TocOpen: true
 
 **使用シーン：** ジムのトレーニング用に割り切って使ってます。汗で壊れても1,780円なら精神的ダメージゼロ。寝落ち用にもう一つ買い足そうか本気で悩んでるレベル。
 
-{{< rakuten title="SLUB ワイヤレスヘッドセット" url="https://hb.afl.rakuten.co.jp/hgc/g00skps8.fluak6af.g00skps8.flualb3f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faidort%2Fslub-725a2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faidort%2Fi%2F10001503%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/aidort/cabinet/06829638/725a1-zhu.jpg?_ex=128x128" price="1,780" keyword="ワイヤレスイヤホン" >}}
+{{< rakuten title="SLUB ワイヤレスヘッドセット" url="https://hb.afl.rakuten.co.jp/hgc/g00skps8.fluak6af.g00skps8.flualb3f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faidort%2Fslub-725a2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faidort%2Fi%2F10001503%2F&rafcid=wsc_i_is_1013356076665194500&m=gadget" img="https://thumbnail.image.rakuten.co.jp/@0_mall/aidort/cabinet/06829638/725a1-zhu.jpg?_ex=128x128" price="1,780" keyword="ワイヤレスイヤホン" >}}
 
 ---
 

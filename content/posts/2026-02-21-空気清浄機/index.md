@@ -1,5 +1,6 @@
 ﻿---
 title: "空気清浄機で悩んでない？｜実際に試したおすすめ3選"
+slug: "air-purifier-2026"
 date: 2026-02-21T14:49:49+09:00
 draft: false
 categories: ["レビュー"]
@@ -53,7 +54,7 @@ TocOpen: true
 
 ただし、これ単体で花粉やPM2.5は除去できないので、あくまで消臭・除菌のサポート役として。
 
-{{< rakuten title="HCLO ナノバブル次亜塩素酸水" url="https://hb.afl.rakuten.co.jp/hgc/g00rt838.fluak35f.g00rt838.flual025/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsukoyakakomachi%2Faqarfa%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsukoyakakomachi%2Fi%2F10000004%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_gold/sukoyakakomachi/banner/r_syohin_af800set.jpg?_ex=128x128" price="2,970" keyword="空気清浄機" >}}
+{{< rakuten title="HCLO ナノバブル次亜塩素酸水" url="https://hb.afl.rakuten.co.jp/hgc/g00rt838.fluak35f.g00rt838.flual025/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsukoyakakomachi%2Faqarfa%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsukoyakakomachi%2Fi%2F10000004%2F&rafcid=wsc_i_is_1013356076665194500&m=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_gold/sukoyakakomachi/banner/r_syohin_af800set.jpg?_ex=128x128" price="2,970" keyword="空気清浄機" >}}
 
 ※あくまで個人の感想です。合う合わないは人によります。
 
@@ -64,7 +65,7 @@ TocOpen: true
 
 使い始めて最初に感じたのは、部屋の空気が「軽くなった」こと。うまく表現できないけど、なんとなく澄んでる感じ。花粉の季節でも窓を閉めてこれを回しておけば、くしゃみの回数が明らかに減りました。フィルター交換の目安が約2年なのもランニングコスト的に助かる。
 
-{{< rakuten title="シャープ KC-35T7 加湿空気清浄機" url="https://hb.afl.rakuten.co.jp/hgc/g00qst18.fluakb5e.g00qst18.flual4d8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftokado-tv%2F4689_4690%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftokado-tv%2Fi%2F10009534%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/tokado-tv/cabinet/syouhin/99/07078739/imgrc0080490504.jpg?_ex=128x128" price="20,980" keyword="空気清浄機" >}}
+{{< rakuten title="シャープ KC-35T7 加湿空気清浄機" url="https://hb.afl.rakuten.co.jp/hgc/g00qst18.fluakb5e.g00qst18.flual4d8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftokado-tv%2F4689_4690%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftokado-tv%2Fi%2F10009534%2F&rafcid=wsc_i_is_1013356076665194500&m=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/tokado-tv/cabinet/syouhin/99/07078739/imgrc0080490504.jpg?_ex=128x128" price="20,980" keyword="空気清浄機" >}}
 
 ※あくまで個人の感想です。合う合わないは人によります。
 
@@ -75,7 +76,7 @@ TocOpen: true
 
 正直、メインの清浄機としてはパワー不足ですが、サブとしては十分。たった1,000円でこの満足度は驚き。デスクワーク中に顔の近くに置いておくと、鼻周りの空気が明らかに違います。
 
-{{< rakuten title="和宅良品 HOM-2825 ミニ空気清浄機" url="https://hb.afl.rakuten.co.jp/hgc/g00tnpp8.fluak60e.g00tnpp8.flualc89/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftetuya%2Fgro-9261-rt%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftetuya%2Fi%2F10000770%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/tetuya/cabinet/09419486/11171131/9261.jpg?_ex=128x128" price="1,000" keyword="空気清浄機" >}}
+{{< rakuten title="和宅良品 HOM-2825 ミニ空気清浄機" url="https://hb.afl.rakuten.co.jp/hgc/g00tnpp8.fluak60e.g00tnpp8.flualc89/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftetuya%2Fgro-9261-rt%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftetuya%2Fi%2F10000770%2F&rafcid=wsc_i_is_1013356076665194500&m=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/tetuya/cabinet/09419486/11171131/9261.jpg?_ex=128x128" price="1,000" keyword="空気清浄機" >}}
 
 ※あくまで個人の感想です。合う合わないは人によります。
 

@@ -54,6 +54,59 @@ param(
 )
 
 # ──────────────────────────────────────────────
+# 0. 計測ID定義ファイル読み込み
+# ──────────────────────────────────────────────
+$trackingIdFile = Join-Path $PSScriptRoot "..\data\tracking_ids.yaml"
+$trackingIdFile = [System.IO.Path]::GetFullPath($trackingIdFile)
+$trackingIds = @()
+
+if (Test-Path $trackingIdFile) {
+    $lines = Get-Content $trackingIdFile -Encoding UTF8
+    $currentId = $null
+    $currentKeywords = @()
+    foreach ($line in $lines) {
+        if ($line -match '^\s+- id:\s*(.+)$') {
+            if ($currentId) {
+                $trackingIds += [PSCustomObject]@{ Id = $currentId; Keywords = $currentKeywords }
+            }
+            $currentId = $Matches[1].Trim()
+            $currentKeywords = @()
+        }
+        elseif ($currentId -and $line -match '^\s+- "(.+)"$') {
+            $currentKeywords += $Matches[1]
+        }
+        elseif ($currentId -and $line -match '^\s+- id:') {
+            # next entry ─ handled above
+        }
+    }
+    if ($currentId) {
+        $trackingIds += [PSCustomObject]@{ Id = $currentId; Keywords = $currentKeywords }
+    }
+}
+
+function Get-TrackingId {
+    param([string]$Keyword)
+    foreach ($entry in $trackingIds) {
+        foreach ($kw in $entry.Keywords) {
+            if ($Keyword -match [regex]::Escape($kw)) {
+                return $entry.Id
+            }
+        }
+    }
+    # マッチしない場合は警告を出して null を返す
+    Write-Host "⚠️ 計測IDが見つかりませんでした。キーワード: $Keyword" -ForegroundColor Yellow
+    Write-Host "  → data/tracking_ids.yaml に新しいIDを追加し、楽天管理画面でも登録してください" -ForegroundColor Yellow
+    Write-Host "    https://affiliate.rakuten.co.jp/user/sites" -ForegroundColor Cyan
+    return $null
+}
+
+# キーワードから計測IDを判定
+$trackingId = Get-TrackingId -Keyword $Keyword
+if ($trackingId) {
+    Write-Host "🎯 計測ID: $trackingId" -ForegroundColor Green
+}
+
+# ──────────────────────────────────────────────
 # 1. 環境変数チェック
 # ──────────────────────────────────────────────
 $appId       = $env:RAKUTEN_APP_ID
@@ -369,6 +422,11 @@ foreach ($item in $items) {
     $affiliateUrl = $item.affiliateUrl
     if (-not $affiliateUrl) {
         $affiliateUrl = $item.itemUrl
+    }
+    # 計測IDをアフィリエイトURLに付与
+    if ($trackingId -and $affiliateUrl) {
+        $separator = if ($affiliateUrl -match '\?') { '&' } else { '?' }
+        $affiliateUrl = "${affiliateUrl}${separator}m=${trackingId}"
     }
 
     # 価格をフォーマット（カンマ区切り）

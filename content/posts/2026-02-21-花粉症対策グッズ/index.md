@@ -1,5 +1,6 @@
 ﻿---
 title: "花粉症対策グッズを買ってみた｜3つ使い比べた正直レビュー"
+slug: "hay-fever-goods-2026"
 date: 2026-02-21T15:16:14+09:00
 draft: false
 categories: ["レビュー"]
@@ -29,7 +30,7 @@ TocOpen: true
 
 ただ、これは「花粉を防ぐ」ものではなくて「花粉の不快感を和らげる」もの。対策というよりケアに近い。でもそのケア効果が絶大。1本持っておくと花粉シーズンのQOLが変わります。
 
-{{< rakuten title="北見ハッカ油セット" url="https://hb.afl.rakuten.co.jp/hgc/g00qwiq8.fluakbab.g00qwiq8.flualf3c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhokkaido-gourmation%2Fhakkaoil-set%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhokkaido-gourmation%2Fi%2F10064840%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/hokkaido-gourmation/cabinet/syouhin/hakka/2509hakka_s1b1.jpg?_ex=128x128" price="2,560" keyword="花粉症対策グッズ" >}}
+{{< rakuten title="北見ハッカ油セット" url="https://hb.afl.rakuten.co.jp/hgc/g00qwiq8.fluakbab.g00qwiq8.flualf3c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhokkaido-gourmation%2Fhakkaoil-set%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhokkaido-gourmation%2Fi%2F10064840%2F&rafcid=wsc_i_is_1013356076665194500&m=health" img="https://thumbnail.image.rakuten.co.jp/@0_mall/hokkaido-gourmation/cabinet/syouhin/hakka/2509hakka_s1b1.jpg?_ex=128x128" price="2,560" keyword="花粉症対策グッズ" >}}
 
 ---
 ### 次に手を出したのがこれ：フェイスカバー
@@ -40,7 +41,7 @@ TocOpen: true
 
 花粉以外にも、農作業やゴルフなど屋外作業でガッツリ使いたい人にはドンピシャ。
 
-{{< rakuten title="フェイスカバー" url="https://hb.afl.rakuten.co.jp/hgc/g00to7y8.fluak09e.g00to7y8.fluala5b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhakobune2020%2Fmmdgsportsmz%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhakobune2020%2Fi%2F10000027%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/hakobune2020/cabinet/07833866/mmdgsportsmz.jpg?_ex=128x128" price="980" keyword="花粉症対策グッズ" >}}
+{{< rakuten title="フェイスカバー" url="https://hb.afl.rakuten.co.jp/hgc/g00to7y8.fluak09e.g00to7y8.fluala5b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhakobune2020%2Fmmdgsportsmz%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhakobune2020%2Fi%2F10000027%2F&rafcid=wsc_i_is_1013356076665194500&m=health" img="https://thumbnail.image.rakuten.co.jp/@0_mall/hakobune2020/cabinet/07833866/mmdgsportsmz.jpg?_ex=128x128" price="980" keyword="花粉症対策グッズ" >}}
 
 ---
 ### 最後に見つけたのがこれ：ニトムズ 網戸用花粉フィルター E1800
@@ -51,7 +52,7 @@ TocOpen: true
 
 使い始めてから、部屋の中でくしゃみする回数が体感で半分くらいに減りました。1,298円でこの効果はコスパ最強クラス。花粉症持ちの家には全窓に貼りたいレベル。
 
-{{< rakuten title="ニトムズ 網戸用花粉フィルター E1800" url="https://hb.afl.rakuten.co.jp/hgc/g00q28u8.fluake97.g00q28u8.fluala4b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsmile-hg%2F248000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsmile-hg%2Fi%2F10001288%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/smile-hg/cabinet/00349633/img55402091.jpg?_ex=128x128" price="1,298" keyword="花粉症対策グッズ" >}}
+{{< rakuten title="ニトムズ 網戸用花粉フィルター E1800" url="https://hb.afl.rakuten.co.jp/hgc/g00q28u8.fluake97.g00q28u8.fluala4b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsmile-hg%2F248000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsmile-hg%2Fi%2F10001288%2F&rafcid=wsc_i_is_1013356076665194500&m=health" img="https://thumbnail.image.rakuten.co.jp/@0_mall/smile-hg/cabinet/00349633/img55402091.jpg?_ex=128x128" price="1,298" keyword="花粉症対策グッズ" >}}
 
 ---
 
