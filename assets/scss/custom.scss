@@ -1,0 +1,198 @@
+/* ============================================================
+   JIN風カスタムCSS for Hugo Stack Theme
+   - 暖色系カラーパレット
+   - 角丸カードデザイン
+   - 装飾見出し
+   - ふんわりシャドウ
+   ============================================================ */
+
+/* ── カラー変数のオーバーライド ── */
+:root {
+  --card-border-radius: 12px;
+  --tag-border-radius: 20px;
+  --accent-color: #ff8e71;
+  --accent-color-darker: #ff7856;
+  --accent-color-text: #fff;
+  --body-background: #f9f5f2;
+  --body-text-color: #444;
+  /* JIN風の追加カラー */
+  --jin-accent: #ff8e71;
+  --jin-accent-light: #fff0eb;
+  --jin-accent-hover: #ff7856;
+  --jin-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --jin-card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ── ダークモード ── */
+[data-scheme="dark"] {
+  --jin-accent: #ff9a85;
+  --jin-accent-light: #2a2220;
+  --jin-accent-hover: #ffb5a3;
+  --jin-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --jin-card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --body-background: #1a1a1a;
+}
+
+/* ── フォント設定 ── */
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP',
+    'Yu Gothic', 'Meiryo', sans-serif;
+}
+
+/* ── サイドバーのアクセントカラー ── */
+.sidebar header .site-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--jin-accent);
+}
+
+.sidebar header .site-description {
+  font-size: 0.9rem;
+  color: var(--body-text-color);
+  opacity: 0.8;
+}
+
+/* ── 記事カードの強化 ── */
+.article-list article {
+  box-shadow: var(--jin-card-shadow);
+  transition: all 0.25s ease;
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+
+.article-list article:hover {
+  box-shadow: var(--jin-card-shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* カード内タイトル */
+.article-list article .article-title {
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* ── 記事本文の見出しデザイン（JIN風） ── */
+
+/* h2: 左ボーダー + 背景色 */
+.article-content h2 {
+  position: relative;
+  padding: 14px 16px 14px 20px;
+  margin: 2em 0 1em;
+  background: var(--jin-accent-light);
+  border-left: 5px solid var(--jin-accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.35em;
+  font-weight: 800;
+}
+
+/* h3: 下線ボーダー */
+.article-content h3 {
+  position: relative;
+  padding-bottom: 10px;
+  margin: 1.6em 0 0.8em;
+  border-bottom: 3px solid var(--jin-accent);
+  font-size: 1.15em;
+  font-weight: 700;
+}
+
+.article-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40%;
+  border-bottom: 3px solid var(--jin-accent-light);
+}
+
+/* h4: ドット付き */
+.article-content h4 {
+  padding-left: 16px;
+  margin: 1.4em 0 0.6em;
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--jin-accent);
+  border-left: 3px dotted var(--jin-accent);
+}
+
+/* ── 引用（blockquote）JIN風 ── */
+.article-content blockquote {
+  background: var(--jin-accent-light);
+  border-left: 4px solid var(--jin-accent);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  font-style: normal;
+}
+
+/* ── リンクカラー ── */
+.article-content a {
+  color: var(--jin-accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--jin-accent);
+  transition: all 0.2s ease;
+}
+
+.article-content a:hover {
+  color: var(--jin-accent-hover);
+  border-bottom-style: solid;
+}
+
+/* ── タグバッジ ── */
+.article-tags a,
+.tag-cloud a {
+  transition: all 0.2s ease;
+}
+
+.article-tags a:hover,
+.tag-cloud a:hover {
+  transform: translateY(-1px);
+}
+
+/* ── 楽天カードの角丸・シャドウ強化 ── */
+.rakuten-card {
+  border-radius: var(--card-border-radius) !important;
+  box-shadow: var(--jin-card-shadow) !important;
+  border: none !important;
+  background: var(--card-background) !important;
+  transition: all 0.25s ease;
+}
+
+.rakuten-card:hover {
+  box-shadow: var(--jin-card-shadow-hover) !important;
+  transform: translateY(-2px);
+}
+
+/* ── 目次（TOC）のスタイル強化 ── */
+#TableOfContents {
+  border-left: 3px solid var(--jin-accent);
+  padding-left: 12px;
+}
+
+#TableOfContents a {
+  color: var(--body-text-color);
+  text-decoration: none;
+}
+
+#TableOfContents a:hover {
+  color: var(--jin-accent);
+}
+
+/* ── ウィジェットのスタイル ── */
+.widget {
+  box-shadow: var(--jin-card-shadow);
+  border-radius: var(--card-border-radius);
+}
+
+/* ── AdSense 広告用余白 ── */
+.adsense-container {
+  margin: 24px 0;
+  text-align: center;
+}
+
+/* ── レスポンシブ調整 ── */
+@media (max-width: 768px) {
+  .article-content h2 {
+    font-size: 1.2em;
+    padding: 12px 14px 12px 16px;
+  }
+}

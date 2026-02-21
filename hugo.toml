@@ -1,8 +1,7 @@
 baseURL = 'https://recomm-hub.github.io/my-blog/'
 languageCode = 'ja'
 title = 'おすすめレビュー研究所'
-theme = 'PaperMod'
-paginate = 10
+theme = 'hugo-theme-stack'
 
 # 日本語環境の設定
 hasCJKLanguage = true
@@ -14,91 +13,131 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
+# ページネーション
+[pagination]
+  pagerSize = 10
+
+# パーマリンク
+[permalinks]
+  posts = '/posts/:slug/'
+  page = '/:slug/'
+
 # SEO用：サイトマップ自動生成
 [sitemap]
   changefreq = 'weekly'
   priority = 0.5
 
-# PaperMod テーマの設定
+# ── Stack テーマの設定 ──
 [params]
-  env = 'production'
-  title = 'おすすめレビュー研究所'
+  mainSections = ['posts']
+  featuredImageField = 'image'
+  rssFullContent = true
   description = '暮らしに役立つ商品を徹底比較！おすすめアイテムをランキング形式でご紹介します。'
-  keywords = ['レビュー', 'おすすめ', '比較', 'ランキング', '家電']
-  author = 'レビュー研究所'
-  DateFormat = '2006年1月2日'
-  defaultTheme = 'auto'  # ダーク/ライトモード自動切替
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = false
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = false
-  disableScrollToTop = false
-  comments = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = true
 
-  # ホームページの設定（ホームインフォモード＋記事一覧表示）
-  [params.homeInfoParams]
-    Title = '📝 おすすめレビュー研究所'
-    Content = '暮らしに役立つ商品を徹底比較！おすすめアイテムをランキング形式でご紹介します。'
+  [params.footer]
+    since = 2026
+    customText = '© おすすめレビュー研究所'
 
-  # SNSリンク（必要に応じて変更）
-  [[params.socialIcons]]
-    name = 'rss'
-    url = 'index.xml'
+  [params.dateFormat]
+    published = '2006年1月2日'
+    lastUpdated = '2006年1月2日 15:04'
 
-  # 検索機能
-  [params.fuseOpts]
-    isCaseSensitive = false
-    shouldSort = true
-    location = 0
-    distance = 1000
-    threshold = 0.4
-    minMatchCharLength = 0
-    keys = ['title', 'permalink', 'summary', 'content']
+  # サイドバー設定
+  [params.sidebar]
+    emoji = '📝'
+    subtitle = '暮らしに役立つ商品を徹底比較！おすすめアイテムをランキング形式でご紹介します。'
+    avatar = ''
+    compact = false
 
-# メニュー
-[menu]
-  [[menu.main]]
-    identifier = 'home'
-    name = 'ホーム'
-    url = '/'
-    weight = 10
-  [[menu.main]]
-    identifier = 'categories'
-    name = '📂 カテゴリ'
-    url = '/categories/'
-    weight = 20
-  [[menu.main]]
-    identifier = 'tags'
-    name = '🏷️ タグ'
-    url = '/tags/'
-    weight = 25
-  [[menu.main]]
-    identifier = 'about'
-    name = '👤 運営者情報'
-    url = '/about/'
-    weight = 30
-  [[menu.main]]
-    identifier = 'search'
-    name = '🔍 検索'
-    url = '/search/'
-    weight = 40
+  # 記事設定
+  [params.article]
+    headingAnchor = true
+    math = false
+    toc = true
+    readingTime = true
 
-# 出力フォーマット（検索用JSON）
+    [params.article.list]
+      showTags = true
+
+    [params.article.license]
+      enabled = false
+
+  # サイドバーウィジェット（ホームページ）
+  [[params.widgets.homepage]]
+    type = 'search'
+
+  [[params.widgets.homepage]]
+    type = 'categories'
+    [params.widgets.homepage.params]
+      limit = 10
+
+  [[params.widgets.homepage]]
+    type = 'tag-cloud'
+    [params.widgets.homepage.params]
+      limit = 20
+
+  [[params.widgets.homepage]]
+    type = 'archives'
+    [params.widgets.homepage.params]
+      limit = 5
+
+  # サイドバーウィジェット（記事ページ）
+  [[params.widgets.page]]
+    type = 'toc'
+
+  # カラースキーム
+  [params.colorScheme]
+    toggle = true
+    default = 'auto'
+
+  # OGP設定
+  [params.opengraph.twitter]
+    site = ''
+    card = 'summary_large_image'
+
+  # 画像処理
+  [params.imageProcessing.cover]
+    enabled = true
+
+  [params.imageProcessing.content]
+    enabled = true
+
+  # コメント無効
+  [params.comments]
+    enabled = false
+
+# メニュー（サイドバー）
+[[menu.main]]
+  identifier = 'home'
+  name = 'ホーム'
+  url = '/'
+  weight = -100
+  [menu.main.params]
+    icon = 'home'
+
+[[menu.social]]
+  identifier = 'rss'
+  name = 'RSS'
+  url = '/my-blog/index.xml'
+  [menu.social.params]
+    icon = 'rss'
+
+# 出力フォーマット
 [outputs]
-  home = ['HTML', 'RSS', 'JSON']
+  home = ['HTML', 'RSS']
 
 # マークアップ設定
 [markup]
   [markup.highlight]
     noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = true
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true  # HTMLショートコードを許可
+      unsafe = true
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2
