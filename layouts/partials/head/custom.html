@@ -1,6 +1,15 @@
 <!-- Stack テーマ用 custom head: AdSense -->
 {{- partial "adsense.html" . }}
 
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCHW65ZDXF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JCHW65ZDXF');
+</script>
+
 <!-- Google Fonts: Yomogi (手書き風) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
