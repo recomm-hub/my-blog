@@ -68,3 +68,65 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'push'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect new articles and notify LINE
+        env:
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: |
+          # draft: false の新規記事を検出
+          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/*/index.md' || true)
+          CHANGED_FILES=$(git diff --name-only --diff-filter=M HEAD~1 HEAD -- 'content/posts/*/index.md' || true)
+          ALL_FILES="$NEW_FILES $CHANGED_FILES"
+
+          for FILE in $ALL_FILES; do
+            [ -z "$FILE" ] && continue
+            [ ! -f "$FILE" ] && continue
+
+            # draft: true の記事はスキップ
+            if grep -q 'draft: true' "$FILE"; then
+              echo "⏭️ Skip (draft): $FILE"
+              continue
+            fi
+
+            # slug を取得
+            SLUG=$(grep -oP 'slug:\s*"\K[^"]+' "$FILE" || echo "")
+            if [ -z "$SLUG" ]; then
+              # slug がない場合はディレクトリ名から生成
+              SLUG=$(basename $(dirname "$FILE"))
+            fi
+
+            # タイトルを取得
+            TITLE=$(grep -oP 'title:\s*"\K[^"]+' "$FILE" || echo "新しい記事")
+
+            URL="https://mononikki.com/posts/${SLUG}/"
+
+            echo "📤 Sending LINE notification: $TITLE"
+
+            # LINE Messaging API で push message
+            curl -s -X POST https://api.line.me/v2/bot/message/push \
+              -H "Content-Type: application/json" \
+              -H "Authorization: Bearer ${LINE_CHANNEL_ACCESS_TOKEN}" \
+              -d "{
+                \"to\": \"${LINE_USER_ID}\",
+                \"messages\": [
+                  {
+                    \"type\": \"text\",
+                    \"text\": \"📝 記事を公開しました！\n\n${TITLE}\n${URL}\"
+                  }
+                ]
+              }"
+
+            echo ""
+            echo "✅ LINE notification sent for: $TITLE"
+          done

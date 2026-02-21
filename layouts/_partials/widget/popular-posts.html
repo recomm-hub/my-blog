@@ -1,0 +1,24 @@
+{{- $limit := default 5 .Params.limit -}}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $posts = ($posts.ByWeight) -}}
+{{- $posts = first $limit $posts -}}
+
+<section class="widget archives">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "hash" }}
+    </div>
+    <h2 class="widget-title section-title">よく読まれている記事</h2>
+    <div class="widget-archive--list popular-posts-list">
+        {{- range $posts }}
+        <a href="{{ .Permalink }}" class="popular-post-item">
+            {{- $img := .Resources.GetMatch "cover.*" -}}
+            {{- if $img -}}
+            <img class="popular-post-thumb" src="{{ $img.RelPermalink }}" alt="{{ .Title }}" loading="lazy" width="60" height="60" />
+            {{- else -}}
+            <div class="popular-post-thumb popular-post-thumb--empty"></div>
+            {{- end -}}
+            <span class="popular-post-title">{{ .Title }}</span>
+        </a>
+        {{- end }}
+    </div>
+</section>

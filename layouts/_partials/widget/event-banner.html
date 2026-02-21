@@ -40,7 +40,10 @@
           {{- if eq (int .) $today -}}{{- $show = true -}}{{- end -}}
         {{- end -}}{{- end -}}
       {{- end -}}
-      {{- if $show -}}{{- $banners = $banners | append . -}}{{- end -}}
+      {{- if $show -}}
+        {{- $inSidebar := default true .sidebar -}}
+        {{- if $inSidebar -}}{{- $banners = $banners | append . -}}{{- end -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

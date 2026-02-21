@@ -1,0 +1,7 @@
+{{- $page := .Page | default . -}}
+{{- $index := .Index | default 0 -}}
+{{- $image := partial "helper/image" (dict "Image" $page.Params.image "Resources" $page.Resources) -}}
+{{- $altClass := cond (eq (mod $index 2) 1) "image-right" "" -}}
+<article class="{{ if $image }}has-image{{ end }} {{ $altClass }}">
+    {{ partial "article/components/header" (dict "Page" $page "IsList" true) }}
+</article>

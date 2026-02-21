@@ -87,7 +87,25 @@ ignoreFiles = ['hay-fever-season-guide']
 
   # サイドバーウィジェット（記事ページ）
   [[params.widgets.page]]
+    type = 'search'
+
+  [[params.widgets.page]]
     type = 'event-banner'
+
+  [[params.widgets.page]]
+    type = 'popular-posts'
+    [params.widgets.page.params]
+      limit = 5
+
+  [[params.widgets.page]]
+    type = 'categories'
+    [params.widgets.page.params]
+      limit = 10
+
+  [[params.widgets.page]]
+    type = 'tag-cloud'
+    [params.widgets.page.params]
+      limit = 20
 
   # カラースキーム
   [params.colorScheme]
