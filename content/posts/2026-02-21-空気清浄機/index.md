@@ -1,6 +1,6 @@
-﻿---
+---
 title: "空気清浄機で悩んでない？｜実際に試したおすすめ3選"
-slug: "air-purifier-2026"
+slug: "air-purifier"
 date: 2026-02-21T14:49:49+09:00
 draft: false
 categories: ["レビュー"]

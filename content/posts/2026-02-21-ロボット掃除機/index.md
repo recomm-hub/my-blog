@@ -1,6 +1,6 @@
-﻿---
+---
 title: "【2026年版】おすすめのロボット掃除機ランキング｜人気3選を徹底比較"
-slug: "robot-vacuum-2026"
+slug: "robot-vacuum"
 date: 2026-02-21T14:49:10+09:00
 draft: false
 categories: ["レビュー"]

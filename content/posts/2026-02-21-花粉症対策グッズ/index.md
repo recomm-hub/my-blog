@@ -1,6 +1,6 @@
-﻿---
+---
 title: "花粉症対策グッズを買ってみた｜3つ使い比べた正直レビュー"
-slug: "hay-fever-goods-2026"
+slug: "hay-fever-goods"
 date: 2026-02-21T15:16:14+09:00
 draft: false
 categories: ["レビュー"]

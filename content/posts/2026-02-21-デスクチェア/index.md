@@ -1,6 +1,6 @@
-﻿---
+---
 title: "【目的別に選ぶ】デスクチェアのおすすめ3選ガイド"
-slug: "desk-chair-2026"
+slug: "desk-chair"
 date: 2026-02-21T15:00:39+09:00
 draft: false
 categories: ["レビュー"]

@@ -29,12 +29,16 @@
     D: シーン別提案型（趣味・ライフスタイル向け）
     E: 体験レポート型（日用品・食品向け）
 
+.PARAMETER Slug
+    URL用の英語スラッグ（例: "robot-vacuum", "air-purifier"）
+    年号は含めない。半角英数字とハイフンのみ。
+
 .EXAMPLE
-    .\scripts\post.ps1 "空気清浄機"
-    .\scripts\post.ps1 "ロボット掃除機" -Hits 5
-    .\scripts\post.ps1 "ワイヤレスイヤホン" -Sort "-reviewAverage"
-    .\scripts\post.ps1 "花粉症対策グッズ" -Style B
-    .\scripts\post.ps1 "ゲーミングチェア" -Style C
+    .\scripts\post.ps1 "空気清浄機" -Slug "air-purifier"
+    .\scripts\post.ps1 "ロボット掃除機" -Hits 5 -Slug "robot-vacuum"
+    .\scripts\post.ps1 "ワイヤレスイヤホン" -Sort "-reviewAverage" -Slug "wireless-earbuds"
+    .\scripts\post.ps1 "花粉症対策グッズ" -Style B -Slug "hay-fever-goods"
+    .\scripts\post.ps1 "ゲーミングチェア" -Style C -Slug "gaming-chair"
 #>
 
 param(
@@ -50,7 +54,11 @@ param(
 
     [Parameter()]
     [ValidateSet("A", "B", "C", "D", "E")]
-    [string]$Style = "A"
+    [string]$Style = "A",
+
+    [Parameter(Mandatory=$true)]
+    [ValidatePattern('^[a-z0-9]+(-[a-z0-9]+)*$')]
+    [string]$Slug
 )
 
 # ──────────────────────────────────────────────
@@ -642,6 +650,7 @@ switch ($Style) {
 $markdown = @"
 ---
 title: "$articleTitle"
+slug: "$Slug"
 date: $dateISO
 draft: true
 categories: ["レビュー"]
@@ -698,6 +707,7 @@ $comparisonRows
 $markdown = @"
 ---
 title: "$articleTitle"
+slug: "$Slug"
 date: $dateISO
 draft: true
 categories: ["レビュー"]
@@ -760,6 +770,7 @@ $comparisonRows
 $markdown = @"
 ---
 title: "$articleTitle"
+slug: "$Slug"
 date: $dateISO
 draft: true
 categories: ["レビュー"]
@@ -804,6 +815,7 @@ $comparisonRows
 $markdown = @"
 ---
 title: "$articleTitle"
+slug: "$Slug"
 date: $dateISO
 draft: true
 categories: ["レビュー"]
@@ -861,6 +873,7 @@ $comparisonRows
 $markdown = @"
 ---
 title: "$articleTitle"
+slug: "$Slug"
 date: $dateISO
 draft: true
 categories: ["レビュー"]

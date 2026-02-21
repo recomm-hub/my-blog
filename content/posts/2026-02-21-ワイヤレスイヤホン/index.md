@@ -1,6 +1,6 @@
-﻿---
+---
 title: "【徹底比較】ワイヤレスイヤホンおすすめ3選、結局どれがいい？"
-slug: "wireless-earbuds-2026"
+slug: "wireless-earbuds"
 date: 2026-02-21T14:53:03+09:00
 draft: false
 categories: ["レビュー"]
