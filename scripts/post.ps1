@@ -120,6 +120,67 @@ Write-Host "✅ $($items.Count)件の商品情報を取得しました。" -Fore
 # ──────────────────────────────────────────────
 # 3. 商品情報を整理
 # ──────────────────────────────────────────────
+
+# 商品名クリーニング関数（楽天APIのSEOスパム・販促文を除去）
+function Clean-ProductName {
+    param([string]$RawName)
+    $n = $RawName
+
+    # ── 括弧で囲まれた販促テキストを除去 ──
+    $n = $n -replace '【[^】]*】', ''          # 【クーポンで割引...】
+    $n = $n -replace '\[[^\]]*\]', ''          # [お買い物マラソン! ...]
+    $n = $n -replace '《[^》]*》', ''          # 《4年連続 最も売れた...》
+    $n = $n -replace '＼[^／]*／', ''          # ＼81%OFF＆P2倍で...／
+    $n = $n -replace '｛[^｝]*｝', ''          # ｛...｝
+
+    # ── よくある販促フレーズを除去 ──
+    $n = $n -replace '送料無料', ''
+    $n = $n -replace '楽天ランキング\d*位', ''
+    $n = $n -replace '楽天\d*位[受賞!！]*', ''
+    $n = $n -replace '\d+年間?MVP', ''
+    $n = $n -replace '\d+%OFF', ''
+    $n = $n -replace '\d+,?\d*円OFF\S*', ''
+    $n = $n -replace 'P\d+倍', ''
+    $n = $n -replace 'ポイント\d*倍\S*', ''
+    $n = $n -replace 'クーポン\S*', ''
+    $n = $n -replace '特価セット', ''
+    $n = $n -replace '新色追加[!！]*', ''
+    $n = $n -replace 'お買い物マラソン\S*', ''
+    $n = $n -replace 'スーパーSALE\S*', ''
+    $n = $n -replace 'メール便', ''
+    $n = $n -replace '＋おまけ', ''
+    $n = $n -replace '母の日', ''
+    $n = $n -replace '父の日', ''
+    $n = $n -replace '引っ越し祝い', ''
+    $n = $n -replace 'メーカー\d+年保証', ''
+    $n = $n -replace 'PSE認証済み', ''
+    $n = $n -replace 'PL保険[^\s]*', ''
+    $n = $n -replace 'ポスト投函', ''
+    $n = $n -replace '選べる特典', ''
+    $n = $n -replace '\d+/\d+[〜\-~]+\d+/\d+', ''  # 日付範囲 2/14〜2/23
+    $n = $n -replace '\d+:\d+[-~]\d+:\d+', ''       # 時間範囲
+
+    # ── 整形 ──
+    $n = $n -replace '[＆&]+', ' '
+    $n = $n -replace '[\\／]+', ' '
+    $n = $n -replace '\s+', ' '
+    $n = $n.Trim(' 　・＋+!！/・※')
+
+    # ── 長すぎる場合はスペース区切りで50文字以内に切り詰め ──
+    if ($n.Length -gt 50) {
+        $parts = $n -split '\s+'
+        $result = ""
+        foreach ($part in $parts) {
+            $candidate = if ($result) { "$result $part" } else { $part }
+            if ($candidate.Length -gt 50) { break }
+            $result = $candidate
+        }
+        if ($result) { $n = $result }
+    }
+
+    return $n
+}
+
 $products = @()
 $rank = 0
 foreach ($item in $items) {
@@ -146,6 +207,7 @@ foreach ($item in $items) {
     $products += [PSCustomObject]@{
         Rank         = $rank
         Name         = $item.itemName
+        CleanName    = (Clean-ProductName $item.itemName)
         Price        = $priceFormatted
         Url          = $affiliateUrl
         ImageUrl     = $imageUrl
@@ -154,7 +216,7 @@ foreach ($item in $items) {
         ReviewAvg    = $item.reviewAverage
     }
 
-    Write-Host ("  #{0} {1} - ¥{2}" -f $rank, $item.itemName.Substring(0, [Math]::Min(40, $item.itemName.Length)), $priceFormatted) -ForegroundColor White
+    Write-Host ("  #{0} {1} - ¥{2}" -f $rank, (Clean-ProductName $item.itemName), $priceFormatted) -ForegroundColor White
 }
 
 # ──────────────────────────────────────────────
@@ -200,13 +262,13 @@ $productSections = ""
 foreach ($p in $products) {
     $emoji = $rankEmoji[$p.Rank - 1]
     # 商品名の中の " を全角に変換（Hugo ショートコードのパース対策）
-    $safeName = $p.Name -replace '"', '＂' -replace '"', '＂' -replace '"', '＂'
+    $safeName = $p.CleanName -replace '"', '＂' -replace '"', '＂' -replace '"', '＂'
 
     switch ($Style) {
         "A" {
             $productSections += @"
 
-### $emoji 第$($p.Rank)位：$($p.Name)
+### $emoji 第$($p.Rank)位：$($p.CleanName)
 
 <!-- TODO: prompts/style-A-ranking.md の指示に従って執筆 -->
 **おすすめポイント：**
@@ -226,7 +288,7 @@ foreach ($p in $products) {
         "B" {
             $productSections += @"
 
-### おすすめ$($p.Rank)：$($p.Name)
+### おすすめ$($p.Rank)：$($p.CleanName)
 
 <!-- TODO: prompts/style-B-solution.md の指示に従って執筆 -->
 （この商品を使っているシーンや体験を文章で書く。箇条書きだけにしない。
@@ -242,7 +304,7 @@ foreach ($p in $products) {
         "C" {
             $productSections += @"
 
-### $($p.Name)
+### $($p.CleanName)
 
 <!-- TODO: prompts/style-C-comparison.md の指示に従って執筆 -->
 **良い点：**
@@ -268,7 +330,7 @@ foreach ($p in $products) {
             }
             $productSections += @"
 
-### 📌 $sceneName には → $($p.Name)
+### 📌 $sceneName には → $($p.CleanName)
 
 <!-- TODO: prompts/style-D-scene.md の指示に従って執筆 -->
 （「これは〜な人向け」から始めて、文章メインで紹介。
@@ -289,7 +351,7 @@ foreach ($p in $products) {
             }
             $productSections += @"
 
-### $timingLabel：$($p.Name)
+### $timingLabel：$($p.CleanName)
 
 <!-- TODO: prompts/style-E-experience.md の指示に従って執筆 -->
 （時系列で書く: 開封→第一印象→使ってみて→今どう思ってるか。
@@ -315,11 +377,7 @@ $comparisonHeader = @"
 $comparisonRows = ""
 foreach ($p in $products) {
     $emoji = $rankEmoji[$p.Rank - 1]
-    $nameShort = $p.Name
-    if ($nameShort.Length -gt 30) {
-        $nameShort = $nameShort.Substring(0, 30) + "…"
-    }
-    $comparisonRows += "| $emoji | $nameShort | ¥$($p.Price) | $($p.ReviewCount)件 | ★$($p.ReviewAvg) |`n"
+    $comparisonRows += "| $emoji | $($p.CleanName) | ¥$($p.Price) | $($p.ReviewCount)件 | ★$($p.ReviewAvg) |`n"
 }
 
 # スタイル別のタイトル・構成を生成
