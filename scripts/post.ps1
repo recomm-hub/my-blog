@@ -181,6 +181,177 @@ function Clean-ProductName {
     return $n
 }
 
+# 商品ページを解析してブランド名・型番を取得する関数
+function Get-ProductBrandModel {
+    param(
+        [string]$ItemUrl,
+        [string]$ShopName
+    )
+
+    $brand = ""
+    $model = ""
+
+    try {
+        $html = (Invoke-WebRequest -Uri $ItemUrl -UseBasicParsing -TimeoutSec 20).Content
+
+        # ── Strategy 1: 楽天ページ内の itemNumber (最も信頼できる型番) ──
+        if ($html -match '"itemNumber"\s*:\s*"([^"]+)"') {
+            $model = $matches[1].Trim()
+        }
+
+        # ── Strategy 2: 画像 alt テキストからブランド+型番パターンを抽出 ──
+        # 楽天の画像altには「BRANDMODELカラー」の形式が多い
+        if (-not $brand) {
+            $altMatches = [regex]::Matches($html, '"alt"\s*:\s*"[^"]*?([A-Z][A-Za-z]{2,15})[\s]?(' + [regex]::Escape($model) + ')[^"]*"')
+            if ($altMatches.Count -gt 0) {
+                $brand = $altMatches[0].Groups[1].Value
+            }
+        }
+
+        # ── Strategy 3: title タグ末尾のショップ名からブランドを推定 ──
+        if (-not $brand -and $html -match '<title>[^<]+[：:]([^<]+)</title>') {
+            $shopDisplayName = $matches[1].Trim()
+            # 「○○楽天市場店」「○○公式 ストア」等からブランド部分を抽出
+            $brandCandidate = $shopDisplayName -replace '楽天市場店$', '' -replace '楽天店$', '' -replace '公式\s*ストア$', '' -replace '公式店$', '' -replace 'ストア$', '' -replace '直営店$', '' -replace 'ショップ$', '' -replace 'SHOP$', '' -replace 'shop$', ''
+            $brandCandidate = $brandCandidate.Trim()
+            if ($brandCandidate.Length -ge 2 -and $brandCandidate.Length -le 25) {
+                $brand = $brandCandidate
+            }
+        }
+
+        # ── Strategy 4: URL ショップコードからブランドを推定（最後の手段）──
+        if (-not $brand -and $ItemUrl -match 'item\.rakuten\.co\.jp/([^/]+)/') {
+            $shopCode = $matches[1]
+            # store- プレフィックスを除去、ハイフンをスペースに
+            $brandCandidate = $shopCode -replace '^store-', '' -replace '-japan$', '' -replace '-official$', ''
+            # 英字ブランド名っぽければ採用（全小文字→先頭大文字に）
+            if ($brandCandidate -match '^[a-z]{2,15}$') {
+                $brand = (Get-Culture).TextInfo.ToTitleCase($brandCandidate)
+            }
+        }
+
+    } catch {
+        Write-Host "    ⚠️ 商品ページ解析スキップ: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+
+    return @{ Brand = $brand; Model = $model }
+}
+
+# ブランド・型番をクリーニング済み名前に統合する関数
+function Build-DisplayName {
+    param(
+        [string]$CleanName,
+        [string]$Brand,
+        [string]$Model,
+        [string]$RawName
+    )
+
+    $display = $CleanName
+
+    # ── CleanName 内に既にブランド名が含まれているかチェック ──
+    # （例: "ECOVACS DEEBOT N20 PRO PLUS ロボット掃除機" → ECOVACS 含む → スキップ）
+    $hasBrand = $false
+    if ($Brand) {
+        # ブランド名の英字部分で比較（「エコバックスジャパン」と「ECOVACS」両方チェック）
+        $brandAlpha = $Brand -replace '[^A-Za-z]', ''
+        if ($brandAlpha.Length -ge 3 -and $display -match "(?i)$([regex]::Escape($brandAlpha))") {
+            $hasBrand = $true
+        } elseif ($display -match [regex]::Escape($Brand)) {
+            $hasBrand = $true
+        }
+        # カタカナ部分でも照合（「エコバックスジャパン」→「エコバックス」が本文にあればOK）
+        if (-not $hasBrand) {
+            $brandKatakana = [regex]::Match($Brand, '[\u30A0-\u30FF]{2,}').Value
+            if ($brandKatakana -and $display -match [regex]::Escape($brandKatakana)) {
+                $hasBrand = $true
+            }
+        }
+        # RawName 内の英字ブランド名が CleanName に含まれているかもチェック
+        if (-not $hasBrand) {
+            $rawBrands = [regex]::Matches($RawName, '\b([A-Z][a-z]*[A-Z]+[a-z]*|[A-Z]{2,15})\b')
+            foreach ($rb in $rawBrands) {
+                if ($rb.Value -notmatch '^(WiFi|LED|USB|Type|OFF|PRO|PLUS|MAX|MINI|TWS|AAC|ENC|HiFi|IPX\d|UV|PU|PC)$' -and $rb.Value.Length -ge 3) {
+                    if ($display -match "(?i)$([regex]::Escape($rb.Value))") {
+                        $hasBrand = $true
+                        break
+                    }
+                }
+            }
+        }
+    }
+
+    # ── CleanName 内に型番（マーケティング名）が含まれているかチェック ──
+    # APIの itemName に型番が入っている場合はそちらを優先
+    $hasModel = $false
+    if ($Model) {
+        if ($display -match [regex]::Escape($Model)) {
+            $hasModel = $true
+        }
+    }
+
+    # ── RawName からマーケティング型番を抽出（itemNumber と異なる場合がある）──
+    # 例: RawName に "DEEBOT N20 PRO PLUS" が含まれるが、itemNumber は "DKX55-12EE"
+    $marketingModel = ""
+    if ($RawName -match '([A-Z][A-Za-z]*[\s\-]?[A-Z]?\d{1,4}(?:[\s\-]?(?:PRO|PLUS|MAX|MINI|LITE|SE|AIR|NEO|ULTRA|EX|S|X|i)+)*)') {
+        $candidate = $matches[1].Trim()
+        if ($candidate.Length -ge 3 -and $candidate -ne $Model) {
+            $marketingModel = $candidate
+        }
+    }
+
+    # ── ブランドが含まれていなければ先頭に追加 ──
+    if (-not $hasBrand -and $Brand) {
+        # ブランド名が長すぎる場合（「エコバックスジャパン」等）は英字版を探す
+        $brandToUse = $Brand
+        if ($Brand.Length -gt 12 -and $RawName -match '([A-Z][A-Za-z]{2,15})') {
+            # RawName から英字ブランド候補を探す
+            $candidates = [regex]::Matches($RawName, '\b([A-Z][a-z]*[A-Z]+[a-z]*|[A-Z]{2,15})\b')
+            foreach ($c in $candidates) {
+                $cv = $c.Value
+                # 一般的な英単語は除外
+                if ($cv -notmatch '^(WiFi|LED|USB|Type|OFF|PRO|PLUS|MAX|MINI|TWS|AAC|ENC|HiFi|IPX\d|UV|PU|PC)$' -and $cv.Length -ge 3) {
+                    $brandToUse = $cv
+                    break
+                }
+            }
+        }
+        $display = "$brandToUse $display"
+    }
+
+    # ── 型番が含まれていなければ追加（マーケティング名優先、なければ itemNumber）──
+    if (-not $hasModel) {
+        $modelToAdd = if ($marketingModel) { $marketingModel } else { $Model }
+        if ($modelToAdd -and $display -notmatch [regex]::Escape($modelToAdd)) {
+            # ブランド名の直後に型番を挿入
+            if ($Brand -and $display -match [regex]::Escape($Brand)) {
+                # 内部管理番号っぽい型番（数字だらけ）はスキップ
+                if ($modelToAdd -notmatch '^\d{4,}') {
+                    $display = $display -replace ([regex]::Escape($Brand)), "$Brand $modelToAdd"
+                }
+            } else {
+                if ($modelToAdd -notmatch '^\d{4,}') {
+                    $display = "$modelToAdd $display"
+                }
+            }
+        }
+    }
+
+    # 最終整形（重複スペース除去、60文字制限）
+    $display = ($display -replace '\s+', ' ').Trim()
+    if ($display.Length -gt 60) {
+        $parts = $display -split '\s+'
+        $result = ""
+        foreach ($part in $parts) {
+            $candidate = if ($result) { "$result $part" } else { $part }
+            if ($candidate.Length -gt 60) { break }
+            $result = $candidate
+        }
+        if ($result) { $display = $result }
+    }
+
+    return $display
+}
+
 $products = @()
 $rank = 0
 foreach ($item in $items) {
@@ -204,19 +375,30 @@ foreach ($item in $items) {
     $price = $item.itemPrice
     $priceFormatted = "{0:N0}" -f [int]$price
 
+    # 商品ページを解析してブランド名・型番を取得
+    Write-Host ("  #{0} 商品ページを解析中..." -f $rank) -ForegroundColor DarkGray
+    $brandModel = Get-ProductBrandModel -ItemUrl $item.itemUrl -ShopName $item.shopName
+    $cleanName = Clean-ProductName $item.itemName
+    $displayName = Build-DisplayName -CleanName $cleanName -Brand $brandModel.Brand -Model $brandModel.Model -RawName $item.itemName
+
     $products += [PSCustomObject]@{
         Rank         = $rank
         Name         = $item.itemName
-        CleanName    = (Clean-ProductName $item.itemName)
+        CleanName    = $displayName
         Price        = $priceFormatted
         Url          = $affiliateUrl
         ImageUrl     = $imageUrl
         ShopName     = $item.shopName
+        Brand        = $brandModel.Brand
+        Model        = $brandModel.Model
         ReviewCount  = $item.reviewCount
         ReviewAvg    = $item.reviewAverage
     }
 
-    Write-Host ("  #{0} {1} - ¥{2}" -f $rank, (Clean-ProductName $item.itemName), $priceFormatted) -ForegroundColor White
+    $brandInfo = ""
+    if ($brandModel.Brand) { $brandInfo += " [Brand: $($brandModel.Brand)]" }
+    if ($brandModel.Model) { $brandInfo += " [Model: $($brandModel.Model)]" }
+    Write-Host ("  #{0} {1} - ¥{2}{3}" -f $rank, $displayName, $priceFormatted, $brandInfo) -ForegroundColor White
 }
 
 # ──────────────────────────────────────────────
