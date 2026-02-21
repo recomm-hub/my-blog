@@ -42,8 +42,8 @@ body {
 /* ── サイドバーのアクセントカラー ── */
 .sidebar header .site-name {
   font-family: 'Yomogi', cursive;
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--jin-accent);
   letter-spacing: 0.05em;
 }
@@ -191,6 +191,52 @@ body {
 .widget {
   box-shadow: var(--jin-card-shadow);
   border-radius: var(--card-border-radius);
+}
+
+/* ウィジェットの # アイコンを非表示 */
+.widget-icon {
+  display: none !important;
+}
+
+/* ── 右サイドバー：ページと一緒にスクロールさせる ── */
+.right-sidebar.sticky {
+  position: relative !important;
+  top: auto !important;
+}
+
+/* ── よく読まれている記事：画像を左寄せ統一 ── */
+.popular-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popular-post-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--card-text-color-main);
+}
+
+.popular-post-thumb {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.popular-post-thumb--empty {
+  width: 60px;
+  height: 60px;
+  background: var(--card-separator-color, #e0e0e0);
+  border-radius: 6px;
+}
+
+.popular-post-title {
+  font-size: 1.3rem;
+  line-height: 1.4;
 }
 
 /* ── AdSense 広告用余白 ── */

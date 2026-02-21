@@ -4,9 +4,6 @@
 {{- $posts = first $limit $posts -}}
 
 <section class="widget archives">
-    <div class="widget-icon">
-        {{ partial "helper/icon" "hash" }}
-    </div>
     <h2 class="widget-title section-title">よく読まれている記事</h2>
     <div class="widget-archive--list popular-posts-list">
         {{- range $posts }}
