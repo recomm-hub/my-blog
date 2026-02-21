@@ -87,10 +87,10 @@ ignoreFiles = ['hay-fever-season-guide']
 
   # サイドバーウィジェット（記事ページ）
   [[params.widgets.page]]
-    type = 'event-banner'
+    type = 'toc'
 
   [[params.widgets.page]]
-    type = 'toc'
+    type = 'event-banner'
 
   # カラースキーム
   [params.colorScheme]
@@ -137,30 +137,6 @@ ignoreFiles = ['hay-fever-season-guide']
   weight = -80
   [menu.main.params]
     icon = 'hash'
-
-[[menu.main]]
-  identifier = 'about'
-  name = '運営者情報'
-  url = '/about/'
-  weight = -70
-  [menu.main.params]
-    icon = 'user'
-
-[[menu.main]]
-  identifier = 'archives'
-  name = 'アーカイブ'
-  url = '/archives/'
-  weight = -60
-  [menu.main.params]
-    icon = 'archives'
-
-[[menu.main]]
-  identifier = 'search'
-  name = '検索'
-  url = '/search/'
-  weight = -50
-  [menu.main.params]
-    icon = 'search'
 
 [[menu.main]]
   identifier = 'contact'
