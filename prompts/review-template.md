@@ -7,6 +7,8 @@
 
 ## スタイル別テンプレート一覧
 
+### 商品レビュー記事（post.ps1）
+
 | スタイル | ファイル | 向いているジャンル | コマンド例 |
 |:---:|:---|:---|:---|
 | A | `prompts/style-A-ranking.md` | 家電・ガジェット | `post.ps1 "空気清浄機" -Style A` |
@@ -14,6 +16,15 @@
 | C | `prompts/style-C-comparison.md` | ガチ比較レビュー | `post.ps1 "イヤホン" -Style C` |
 | D | `prompts/style-D-scene.md` | 趣味・ライフスタイル | `post.ps1 "ヨガマット" -Style D` |
 | E | `prompts/style-E-experience.md` | 日用品・食品・季節物 | `post.ps1 "日焼け止め" -Style E` |
+
+### お役立ち知識記事（knowledge.ps1）— アフィリエイトなし
+
+| スタイル | ファイル | 向いているジャンル | コマンド例 |
+|:---:|:---|:---|:---|
+| F | `prompts/style-F-knowledge.md` | 知識・ハウツー・季節情報 | `knowledge.ps1 "花粉症の時期と原因" -Slug "hay-fever-season-guide"` |
+
+> 💡 知識記事はレビュー記事への内部リンクで誘導できます:
+> `knowledge.ps1 "花粉症の時期と原因" -Slug "hay-fever-season" -RelatedPost "hay-fever-goods-2026"`
 
 ---
 

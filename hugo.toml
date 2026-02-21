@@ -88,7 +88,7 @@ buildExpired = false
   # カラースキーム
   [params.colorScheme]
     toggle = true
-    default = 'auto'
+    default = 'light'
 
   # OGP設定
   [params.opengraph.twitter]
@@ -114,6 +114,62 @@ buildExpired = false
   weight = -100
   [menu.main.params]
     icon = 'home'
+
+[[menu.main]]
+  identifier = 'categories'
+  name = 'カテゴリ'
+  url = '/categories/'
+  weight = -90
+  [menu.main.params]
+    icon = 'categories'
+
+[[menu.main]]
+  identifier = 'tags'
+  name = 'タグ'
+  url = '/tags/'
+  weight = -80
+  [menu.main.params]
+    icon = 'hash'
+
+[[menu.main]]
+  identifier = 'about'
+  name = '運営者情報'
+  url = '/about/'
+  weight = -70
+  [menu.main.params]
+    icon = 'user'
+
+[[menu.main]]
+  identifier = 'archives'
+  name = 'アーカイブ'
+  url = '/archives/'
+  weight = -60
+  [menu.main.params]
+    icon = 'archives'
+
+[[menu.main]]
+  identifier = 'search'
+  name = '検索'
+  url = '/search/'
+  weight = -50
+  [menu.main.params]
+    icon = 'search'
+
+[[menu.main]]
+  identifier = 'contact'
+  name = 'お問い合わせ'
+  url = '/contact/'
+  weight = -40
+  [menu.main.params]
+    icon = 'messages'
+
+[[menu.main]]
+  identifier = 'privacy'
+  name = 'プライバシー'
+  url = '/privacy/'
+  weight = -30
+  [menu.main.params]
+    icon = 'link'
 
 [[menu.social]]
   identifier = 'rss'
