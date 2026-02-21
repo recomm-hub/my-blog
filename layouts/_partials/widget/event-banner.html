@@ -68,11 +68,11 @@
   </div>
   {{- end }}
 
-  {{- /* 楽天バナー（細長く縦1列） */ -}}
+  {{- /* 楽天バナー（横長縦1列、イチオシは大きめ） */ -}}
   {{- if $banners }}
   <div style="display: flex; flex-direction: column; gap: 8px;">
     {{- range $banners }}
-    <div style="text-align: center;">
+    <div style="text-align: center;{{ if eq (default "" .size) "large" }} padding: 6px; background: #fef8f0; border-radius: 8px;{{ end }}">
       {{ .html | safeHTML }}
     </div>
     {{- end }}

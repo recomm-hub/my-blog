@@ -25,6 +25,7 @@ banners:
   - id: ichioshi
     enabled: true
     type: "always"
+    size: "large"
     title: "イチオシ大型企画"
     html: |
       <a href="https://hb.afl.rakuten.co.jp/hsc/51337d7a.85acbeda.27d9e84c.aa1d6d29/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiI0NCIsImJhbiI6Mjc5NDg1OCwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/51337d7a.85acbeda.27d9e84c.aa1d6d29/?me_id=1&me_adv_id=2794858&t=pict" border="0" style="width:100%;height:auto;" alt="楽天イチオシ企画" title=""></a>
