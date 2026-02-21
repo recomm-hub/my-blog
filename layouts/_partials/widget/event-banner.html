@@ -1,8 +1,6 @@
 {{- /* サイドバーバナーウィジェット
-       ── 3つのタイプをサポート ──
        ① always   → 常時表示（楽天イチオシ大型企画など）
-       ② recurring → 毎月の固定日に自動表示
-       ③ range    → 指定期間だけ表示 */ -}}
+       ② recurring → 毎月の固定日に自動表示 */ -}}
 
 {{- with site.Data.banner -}}
   {{- if .enabled -}}
@@ -30,25 +28,6 @@
             {{- if eq (int .) $today -}}
               {{- $show = true -}}
             {{- end -}}
-          {{- end -}}
-        {{- end -}}
-
-      {{- else -}}
-        {{- /* ── range: start〜end の期間内なら表示 ── */ -}}
-        {{- $show = true -}}
-
-        {{- with .start -}}
-          {{- $startDate := time . -}}
-          {{- if lt $now $startDate -}}
-            {{- $show = false -}}
-          {{- end -}}
-        {{- end -}}
-
-        {{- with .end -}}
-          {{- /* end 日の 23:59:59 まで表示するため翌日と比較 */ -}}
-          {{- $endDate := (time .).AddDate 0 0 1 -}}
-          {{- if ge $now $endDate -}}
-            {{- $show = false -}}
           {{- end -}}
         {{- end -}}
 

@@ -33,7 +33,7 @@ ignoreFiles = ['hay-fever-season-guide']
   mainSections = ['posts']
   featuredImageField = 'image'
   rssFullContent = true
-  description = '買ってよかったモノをゆるく記録する個人ブログ'
+  description = '気になるモノを調べて比べる個人ブログ'
 
   [params.footer]
     since = 2026
@@ -46,7 +46,7 @@ ignoreFiles = ['hay-fever-season-guide']
   # サイドバー設定
   [params.sidebar]
     emoji = '📝'
-    subtitle = '買ってよかったモノをゆるく記録するブログ'
+    subtitle = '気になるモノを調べて比べる個人ブログ'
     avatar = ''
     compact = false
 
