@@ -1,0 +1,115 @@
+baseURL = 'https://nh1r0k1.github.io/my-blog/'
+languageCode = 'ja'
+title = 'おすすめレビュー研究所'
+theme = 'PaperMod'
+paginate = 10
+
+# 日本語環境の設定
+hasCJKLanguage = true
+defaultContentLanguage = 'ja'
+
+# ビルド設定
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# SEO用：サイトマップ自動生成
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.5
+
+# PaperMod テーマの設定
+[params]
+  env = 'production'
+  title = 'おすすめレビュー研究所'
+  description = '暮らしに役立つ商品を徹底比較！おすすめアイテムをランキング形式でご紹介します。'
+  keywords = ['レビュー', 'おすすめ', '比較', 'ランキング', '家電']
+  author = 'レビュー研究所'
+  DateFormat = '2006年1月2日'
+  defaultTheme = 'auto'  # ダーク/ライトモード自動切替
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+
+  # ホームページの設定（プロフィールモード）
+  [params.profileMode]
+    enabled = true
+    title = '📝 おすすめレビュー研究所'
+    subtitle = '暮らしに役立つ商品を徹底比較！\nおすすめアイテムをランキング形式でご紹介します。'
+    imageUrl = ''
+    imageTitle = ''
+    imageWidth = 120
+    imageHeight = 120
+    [[params.profileMode.buttons]]
+      name = '📂 カテゴリ一覧'
+      url = '/categories/'
+    [[params.profileMode.buttons]]
+      name = '🔍 記事を検索'
+      url = '/search/'
+
+  # SNSリンク（必要に応じて変更）
+  [[params.socialIcons]]
+    name = 'rss'
+    url = 'index.xml'
+
+  # 検索機能
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ['title', 'permalink', 'summary', 'content']
+
+# メニュー
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = 'ホーム'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'categories'
+    name = '📂 カテゴリ'
+    url = '/categories/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'tags'
+    name = '🏷️ タグ'
+    url = '/tags/'
+    weight = 25
+  [[menu.main]]
+    identifier = 'about'
+    name = '👤 運営者情報'
+    url = '/about/'
+    weight = 30
+  [[menu.main]]
+    identifier = 'search'
+    name = '🔍 検索'
+    url = '/search/'
+    weight = 40
+
+# 出力フォーマット（検索用JSON）
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+# マークアップ設定
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # HTMLショートコードを許可

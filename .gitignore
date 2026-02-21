@@ -1,0 +1,20 @@
+# Hugo ビルド成果物
+public/
+resources/_gen/
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# エディタ
+*.swp
+*.swo
+*~
+
+# 環境変数ファイル（APIキー等）
+.env
+.env.local
+
+# Node（テーマがnpmを使う場合）
+node_modules/

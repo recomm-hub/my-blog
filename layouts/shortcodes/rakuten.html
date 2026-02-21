@@ -1,0 +1,40 @@
+{{/* 楽天アフィリエイト商品カード ショートコード */}}
+{{/* 使い方: rakuten title="商品名" url="アフィリエイトURL" img="画像URL" price="1,980" keyword="検索キーワード" */}}
+
+{{ $title   := .Get "title" }}
+{{ $url     := .Get "url" }}
+{{ $img     := .Get "img" }}
+{{ $price   := .Get "price" }}
+{{ $keyword := .Get "keyword" | default $title }}
+
+<div class="rakuten-card" style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:24px 0; display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; background:#fafafa;">
+  <div class="rakuten-card__img" style="flex-shrink:0;">
+    <a href="{{ $url }}" rel="nofollow noopener" target="_blank">
+      <img src="{{ $img }}" alt="{{ $title }}" loading="lazy"
+           style="max-width:160px; height:auto; border-radius:4px;">
+    </a>
+  </div>
+  <div class="rakuten-card__info" style="flex:1; min-width:200px;">
+    <p style="font-weight:bold; font-size:1.05em; margin:0 0 8px;">
+      <a href="{{ $url }}" rel="nofollow noopener" target="_blank"
+         style="color:#333; text-decoration:none;">{{ $title }}</a>
+    </p>
+    {{ with $price }}
+    <p style="color:#e00; font-size:1.1em; font-weight:bold; margin:0 0 12px;">
+      ¥{{ . }}（税込）
+    </p>
+    {{ end }}
+    <a href="{{ $url }}" rel="nofollow noopener" target="_blank"
+       style="display:inline-block; background:#bf0000; color:#fff; padding:8px 24px;
+              border-radius:4px; text-decoration:none; font-weight:bold; font-size:0.95em;">
+      楽天市場で見る
+    </a>
+    <p style="margin:8px 0 0; font-size:0.8em; color:#888;">
+      <a href="https://search.rakuten.co.jp/search/mall/{{ $keyword }}/"
+         rel="nofollow noopener" target="_blank"
+         style="color:#888; text-decoration:underline;">
+        楽天市場で「{{ $keyword }}」を検索
+      </a>
+    </p>
+  </div>
+</div>

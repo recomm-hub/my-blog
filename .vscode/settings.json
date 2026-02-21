@@ -1,0 +1,10 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "content/posts/.*\\.md$",
+        "cmd": "cd \"${workspaceFolder}\" && git add . && git commit -m \"auto: publish ${fileBasename}\" && git push"
+      }
+    ]
+  }
+}

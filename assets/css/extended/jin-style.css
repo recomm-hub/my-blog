@@ -1,0 +1,396 @@
+/* ============================================================
+   JIN風カスタムCSS for PaperMod
+   - 暖色系カラーパレット
+   - 角丸カードデザイン
+   - 装飾見出し
+   - ふんわりシャドウ
+   ============================================================ */
+
+/* ── カラー変数のオーバーライド（ライトモード） ── */
+:root {
+  --theme: #ff8e71;                /* JIN風のメインカラー（サーモンオレンジ） */
+  --entry: #ffffff;
+  --primary: #333333;
+  --secondary: #666666;
+  --tertiary: #f0f0f0;
+  --content: #444444;
+  --code-bg: #f5f5f5;
+  --border: #e8e8e8;
+  --gap: 24px;
+  /* JIN風の追加カラー */
+  --jin-accent: #ff8e71;           /* アクセントカラー */
+  --jin-accent-light: #fff0eb;     /* アクセント薄い背景 */
+  --jin-accent-hover: #ff7856;     /* ホバー時 */
+  --jin-bg: #f9f5f2;               /* ページ背景（温かみのあるベージュ） */
+  --jin-card-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --jin-card-shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+  --jin-heading-border: #ff8e71;
+  --jin-radius: 12px;
+}
+
+/* ── ダークモードカラー ── */
+.dark {
+  --jin-accent: #ff9a85;
+  --jin-accent-light: #2a2220;
+  --jin-accent-hover: #ffb5a3;
+  --jin-bg: #1a1a1a;
+  --jin-card-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  --jin-card-shadow-hover: 0 6px 20px rgba(0,0,0,0.4);
+  --jin-heading-border: #ff9a85;
+}
+
+/* ── ページ背景 ── */
+body {
+  background: var(--jin-bg) !important;
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
+}
+
+/* ── ヘッダー（ナビゲーション） ── */
+.nav {
+  background: #ffffff;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.dark .nav {
+  background: #1e1e1e;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+
+/* サイトロゴ・タイトル */
+.nav .logo a {
+  font-weight: 800;
+  font-size: 1.3em;
+  color: var(--jin-accent) !important;
+}
+
+/* ナビリンク */
+#menu a {
+  border-radius: 20px;
+  padding: 6px 14px !important;
+  transition: all 0.2s ease;
+}
+
+#menu a:hover,
+#menu .active {
+  background: var(--jin-accent) !important;
+  color: #fff !important;
+}
+
+/* ── メインコンテンツ ── */
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── ホーム情報セクション（JIN風ヒーロー） ── */
+.first-entry {
+  border-radius: var(--jin-radius);
+  box-shadow: var(--jin-card-shadow);
+  overflow: hidden;
+  border: none !important;
+  background: linear-gradient(135deg, var(--jin-accent), #ffb199) !important;
+  min-height: 180px;
+}
+
+.first-entry .entry-header h1,
+.first-entry .entry-content {
+  color: #fff !important;
+}
+
+.home-info {
+  padding: 40px 32px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--jin-accent), #ffb199);
+  border-radius: var(--jin-radius);
+  box-shadow: var(--jin-card-shadow);
+  margin-bottom: 24px;
+}
+
+.home-info .entry-content {
+  color: rgba(255,255,255,0.92) !important;
+  font-size: 1.05em;
+}
+
+/* ── 記事カード（JINのカード型一覧風） ── */
+.post-entry {
+  background: var(--entry);
+  border-radius: var(--jin-radius) !important;
+  box-shadow: var(--jin-card-shadow);
+  border: none !important;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.post-entry:hover {
+  box-shadow: var(--jin-card-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.post-entry .entry-header h2 {
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--primary);
+}
+
+.post-entry .entry-content {
+  color: var(--secondary);
+  font-size: 0.92em;
+  line-height: 1.7;
+}
+
+/* カバー画像の角丸 */
+.post-entry .entry-cover {
+  border-radius: var(--jin-radius) var(--jin-radius) 0 0;
+}
+
+/* ── 記事本文ページ ── */
+.post-single {
+  background: var(--entry);
+  border-radius: var(--jin-radius);
+  box-shadow: var(--jin-card-shadow);
+  padding: 40px 36px;
+  margin-bottom: 24px;
+}
+
+.dark .post-single {
+  background: var(--entry);
+}
+
+/* ── 見出しデザイン（JIN風の装飾見出し） ── */
+
+/* h2: 左ボーダー付き + 背景色 */
+.post-content h2 {
+  position: relative;
+  padding: 14px 16px 14px 20px;
+  margin: 2em 0 1em;
+  background: var(--jin-accent-light);
+  border-left: 5px solid var(--jin-accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.35em;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* h3: 下線ボーダー付き */
+.post-content h3 {
+  position: relative;
+  padding-bottom: 10px;
+  margin: 1.6em 0 0.8em;
+  border-bottom: 3px solid var(--jin-accent);
+  font-size: 1.15em;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.post-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40%;
+  border-bottom: 3px solid var(--jin-accent-light);
+}
+
+/* h4: ドット付き */
+.post-content h4 {
+  padding-left: 16px;
+  margin: 1.4em 0 0.6em;
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--jin-accent);
+  border-left: 3px dotted var(--jin-accent);
+}
+
+/* ── 目次（TOC）のJIN風スタイル ── */
+.toc {
+  background: var(--jin-accent-light);
+  border: 2px solid var(--jin-accent);
+  border-radius: var(--jin-radius);
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.toc .inner {
+  margin: 0;
+}
+
+details.toc summary {
+  font-weight: 700;
+  font-size: 1.05em;
+  cursor: pointer;
+  color: var(--jin-accent);
+}
+
+/* ── カテゴリ・タグバッジ ── */
+.post-tags a,
+.terms-tags a {
+  background: var(--jin-accent) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 4px 14px !important;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.post-tags a:hover,
+.terms-tags a:hover {
+  background: var(--jin-accent-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* ── パンくずリスト ── */
+.breadcrumbs {
+  font-size: 0.85em;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.breadcrumbs a {
+  color: var(--jin-accent);
+}
+
+/* ── ボタン風リンク ── */
+.post-content a {
+  color: var(--jin-accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--jin-accent);
+  transition: all 0.2s ease;
+}
+
+.post-content a:hover {
+  color: var(--jin-accent-hover);
+  border-bottom-style: solid;
+}
+
+/* ── 引用（blockquote）JIN風 ── */
+.post-content blockquote {
+  background: var(--jin-accent-light);
+  border-left: 4px solid var(--jin-accent);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  font-style: normal;
+}
+
+.post-content blockquote p {
+  margin: 0;
+  color: var(--secondary);
+}
+
+/* ── コードブロック ── */
+.post-content pre {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ── フッター ── */
+.footer {
+  background: #333;
+  color: #ccc;
+  border-radius: var(--jin-radius) var(--jin-radius) 0 0;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: var(--jin-accent) !important;
+}
+
+/* ── スクロールトップボタン ── */
+#top-link {
+  background: var(--jin-accent) !important;
+  color: #fff !important;
+  border-radius: 50% !important;
+  box-shadow: var(--jin-card-shadow);
+  width: 48px;
+  height: 48px;
+}
+
+#top-link:hover {
+  background: var(--jin-accent-hover) !important;
+}
+
+/* ── 楽天カードの角丸・シャドウ強化 ── */
+.rakuten-card {
+  border-radius: var(--jin-radius) !important;
+  box-shadow: var(--jin-card-shadow) !important;
+  border: none !important;
+  background: #fff !important;
+  transition: all 0.25s ease;
+}
+
+.rakuten-card:hover {
+  box-shadow: var(--jin-card-shadow-hover) !important;
+  transform: translateY(-2px);
+}
+
+.dark .rakuten-card {
+  background: var(--entry) !important;
+}
+
+/* ── 記事メタ情報 ── */
+.post-meta {
+  font-size: 0.88em;
+  color: var(--secondary);
+}
+
+/* ── シェアボタン ── */
+.share-buttons a {
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+}
+
+.share-buttons a:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+/* ── 記事ナビゲーション（前の記事・次の記事） ── */
+.paginav {
+  border-radius: var(--jin-radius);
+  overflow: hidden;
+  box-shadow: var(--jin-card-shadow);
+  border: none !important;
+}
+
+.paginav a {
+  transition: all 0.2s ease;
+}
+
+.paginav a:hover {
+  background: var(--jin-accent-light);
+}
+
+/* ── 検索ページ ── */
+#searchbox input {
+  border-radius: 24px !important;
+  border: 2px solid var(--jin-accent) !important;
+  padding: 10px 20px !important;
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+#searchbox input:focus {
+  box-shadow: 0 0 0 3px rgba(255,142,113,0.2) !important;
+  outline: none;
+}
+
+/* ── レスポンシブ調整 ── */
+@media (max-width: 768px) {
+  .post-single {
+    padding: 24px 18px;
+    border-radius: 8px;
+  }
+
+  .post-content h2 {
+    font-size: 1.2em;
+    padding: 12px 14px 12px 16px;
+  }
+
+  .home-info {
+    padding: 28px 20px;
+  }
+}
