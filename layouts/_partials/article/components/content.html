@@ -1,8 +1,8 @@
 <section class="article-content">
-    {{- /* ポイントアップ通知（ビルド日に応じて自動表示/非表示） */ -}}
-    {{ partial "point-up-notice" . }}
-
     <!-- Refer to https://discourse.gohugo.io/t/responsive-tables-in-markdown/10639/5 -->
     {{ $wrappedTable := printf "<div class=\"table-wrapper\">${1}</div>" }}
     {{ .Content | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable | safeHTML }}
+
+    {{- /* 記事末尾に楽天バナーを表示 */ -}}
+    {{ partial "article-banners" . }}
 </section>

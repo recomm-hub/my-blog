@@ -1,58 +1,54 @@
-{{- /* サイドバーバナーウィジェット
-       ① always   → 常時表示（楽天イチオシ大型企画など）
-       ② recurring → 毎月の固定日に自動表示 */ -}}
+{{- /* サイドバー イベント通知ウィジェット
+       ビルド日の日付でポイントアップを自動判定。
+       マラソン等は data/events.yaml で手動 ON/OFF。
+       コンパクトな横長バーとして表示。 */ -}}
 
-{{- with site.Data.banner -}}
-  {{- if .enabled -}}
+{{- $events := slice -}}
+{{- $now := now -}}
+{{- $day := int $now.Day -}}
 
-    {{- $now := now -}}
-    {{- $today := int $now.Day -}}
-
-    {{- /* enabled: true のバナーだけ抽出 */ -}}
-    {{- $enabledBanners := where .banners "enabled" true -}}
-
-    {{- /* 表示判定 */ -}}
-    {{- $active := slice -}}
-    {{- range $enabledBanners -}}
-      {{- $show := false -}}
-      {{- $type := default "range" .type -}}
-
-      {{- if eq $type "always" -}}
-        {{- /* ── always: 常時表示 ── */ -}}
-        {{- $show = true -}}
-
-      {{- else if eq $type "recurring" -}}
-        {{- /* ── recurring: 今日の日が days 配列に含まれていれば表示 ── */ -}}
-        {{- with .days -}}
-          {{- range . -}}
-            {{- if eq (int .) $today -}}
-              {{- $show = true -}}
-            {{- end -}}
-          {{- end -}}
-        {{- end -}}
-
-      {{- end -}}
-
-      {{- if $show -}}
-        {{- $active = $active | append . -}}
-      {{- end -}}
-    {{- end -}}
-
-    {{- if $active -}}
-      <section class="widget event-banner">
-        <div class="widget-icon">
-          {{ partial "helper/icon" "link" }}
-        </div>
-        <h2 class="widget-title section-title">おすすめキャンペーン</h2>
-        <div class="event-banner--list">
-          {{- range $active -}}
-            <div class="event-banner--item" style="margin-bottom: 0.8rem; text-align: center;">
-              {{ .html | safeHTML }}
-            </div>
-          {{- end -}}
-        </div>
-      </section>
-    {{- end -}}
-
+{{- /* ── 5と0のつく日 ── */ -}}
+{{- $is50 := false -}}
+{{- range (slice 5 10 15 20 25 30) -}}
+  {{- if eq (int .) $day -}}
+    {{- $is50 = true -}}
   {{- end -}}
+{{- end -}}
+{{- if $is50 -}}
+  {{- $events = $events | append "🔥 5と0のつく日 ポイント+2倍" -}}
+{{- end -}}
+
+{{- /* ── 毎月18日 ── */ -}}
+{{- if eq $day 18 -}}
+  {{- $events = $events | append "🎁 ご愛顧感謝デー ポイント最大4倍" -}}
+{{- end -}}
+
+{{- /* ── お買い物マラソン等（手動トグル） ── */ -}}
+{{- with site.Data.events.marathon -}}
+  {{- if .active -}}
+    {{- $events = $events | append (printf "🏃 %s" .label) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $events -}}
+<section class="widget event-banner">
+  <div style="
+    background: linear-gradient(135deg, #bf0000 0%, #e60012 100%);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  ">
+    <div style="font-weight: bold; font-size: 0.9rem; margin-bottom: 2px;">
+      🎯 ポイントアップ中！
+    </div>
+    {{- range $events }}
+    <div style="padding-left: 0.2em;">{{ . }}</div>
+    {{- end }}
+    <div style="font-size: 0.7rem; opacity: 0.8; margin-top: 4px;">
+      ※ エントリーが必要な場合があります
+    </div>
+  </div>
+</section>
 {{- end -}}

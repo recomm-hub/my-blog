@@ -87,10 +87,10 @@ ignoreFiles = ['hay-fever-season-guide']
 
   # サイドバーウィジェット（記事ページ）
   [[params.widgets.page]]
-    type = 'toc'
+    type = 'event-banner'
 
   [[params.widgets.page]]
-    type = 'event-banner'
+    type = 'toc'
 
   # カラースキーム
   [params.colorScheme]

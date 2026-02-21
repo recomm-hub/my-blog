@@ -1,0 +1,63 @@
+{{- /* 記事末尾バナー
+       banner.yaml のバナーを記事本文の末尾に大きく表示。
+       サイドバーではなく記事内に配置することで視認性UP。 */ -}}
+
+{{- with site.Data.banner -}}
+  {{- if .enabled -}}
+    {{- $now := now -}}
+    {{- $today := int $now.Day -}}
+
+    {{- $enabledBanners := where .banners "enabled" true -}}
+    {{- $active := slice -}}
+    {{- range $enabledBanners -}}
+      {{- $show := false -}}
+      {{- $type := default "always" .type -}}
+
+      {{- if eq $type "always" -}}
+        {{- $show = true -}}
+      {{- else if eq $type "recurring" -}}
+        {{- with .days -}}
+          {{- range . -}}
+            {{- if eq (int .) $today -}}
+              {{- $show = true -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if $show -}}
+        {{- $active = $active | append . -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if $active -}}
+    <div class="article-banners" style="
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-separator-color, #e0e0e0);
+    ">
+      <h3 style="
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--card-text-color-main, #333);
+      ">📢 開催中のキャンペーン</h3>
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      ">
+        {{- range $active -}}
+        <div style="text-align: center;">
+          {{ .html | safeHTML }}
+        </div>
+        {{- end -}}
+      </div>
+      <p style="font-size: 0.75rem; color: #999; margin-top: 0.8rem; text-align: center;">
+        ※ リンク先は楽天市場です。時期により内容が変わります。
+      </p>
+    </div>
+    {{- end -}}
+
+  {{- end -}}
+{{- end -}}
