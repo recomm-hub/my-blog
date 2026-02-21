@@ -1,4 +1,4 @@
-baseURL = 'https://recomm-hub.github.io/my-blog/'
+baseURL = 'https://mononikki.com/'
 languageCode = 'ja'
 title = 'おすすめレビュー研究所'
 theme = 'hugo-theme-stack'
@@ -12,6 +12,7 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
+ignoreFiles = ['hay-fever-season-guide']
 
 # ページネーション
 [pagination]
@@ -174,7 +175,7 @@ buildExpired = false
 [[menu.social]]
   identifier = 'rss'
   name = 'RSS'
-  url = '/my-blog/index.xml'
+  url = '/index.xml'
   [menu.social.params]
     icon = 'rss'
 
