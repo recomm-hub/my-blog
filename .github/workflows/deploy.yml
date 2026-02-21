@@ -3,9 +3,9 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: ["main"]
-  # 毎日 AM6:00 (JST) に自動ビルド → イベントバナーの日付切替を反映
+  # 毎日 AM0:00 (JST) に自動ビルド → 未来日付の記事の自動公開＋イベントバナーの日付切替を反映
   schedule:
-    - cron: "0 21 * * *"   # UTC 21:00 = JST 06:00
+    - cron: "0 15 * * *"   # UTC 15:00 = JST 00:00
   workflow_dispatch:
 
 permissions:
