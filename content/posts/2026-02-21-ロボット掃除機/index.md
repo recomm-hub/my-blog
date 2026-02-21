@@ -51,7 +51,7 @@ TocOpen: true
 **向いてる人：** コスパ重視で一人暮らしや1LDKの方
 **向いてない人：** 水拭きも一台で済ませたい方
 
-{{< rakuten title="AIRROBO P20 ロボット掃除機" url="https://hb.afl.rakuten.co.jp/hgc/g00ucbf8.fluakc89.g00ucbf8.flual21e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fairrobo%2Fairrobo-p20%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fairrobo%2Fi%2F10000001%2F&rafcid=wsc_i_is_1013356076665194500&m=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/airrobo/cabinet/09562581/2023/p20.jpg?_ex=128x128" price="13,990" keyword="ロボット掃除機" >}}
+{{< rakuten title="AIRROBO P20 ロボット掃除機" url="https://hb.afl.rakuten.co.jp/hgc/g00ucbf8.fluakc89.g00ucbf8.flual21e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fairrobo%2Fairrobo-p20%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fairrobo%2Fi%2F10000001%2F&rafcid=wsc_i_is_1013356076665194500&scid=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/airrobo/cabinet/09562581/2023/p20.jpg?_ex=128x128" price="13,990" keyword="ロボット掃除機" >}}
 
 ---
 ### 🥈 第2位：ECOVACS DEEBOT N20 PRO PLUS
@@ -65,7 +65,7 @@ TocOpen: true
 **向いてる人：** 広めの部屋で本格的にお任せしたい方
 **向いてない人：** 予算2万円以内で探している方
 
-{{< rakuten title="ECOVACS DEEBOT N20 PRO PLUS" url="https://hb.afl.rakuten.co.jp/hgc/g00sun68.fluak7bc.g00sun68.flual651/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fstore-ecovacs-japan%2Fdkx55-12ee%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fstore-ecovacs-japan%2Fi%2F10000405%2F&rafcid=wsc_i_is_1013356076665194500&m=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/store-ecovacs-japan/cabinet/campaign/260214/dkx55-12ee.jpg?_ex=128x128" price="69,800" keyword="ロボット掃除機" >}}
+{{< rakuten title="ECOVACS DEEBOT N20 PRO PLUS" url="https://hb.afl.rakuten.co.jp/hgc/g00sun68.fluak7bc.g00sun68.flual651/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fstore-ecovacs-japan%2Fdkx55-12ee%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fstore-ecovacs-japan%2Fi%2F10000405%2F&rafcid=wsc_i_is_1013356076665194500&scid=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/store-ecovacs-japan/cabinet/campaign/260214/dkx55-12ee.jpg?_ex=128x128" price="69,800" keyword="ロボット掃除機" >}}
 
 ---
 ### 🥉 第3位：AiMY RC41
@@ -79,7 +79,7 @@ TocOpen: true
 **向いてる人：** 水拭き付きをお手頃に試したい方
 **向いてない人：** 複雑な間取りで精密な走行が欲しい方
 
-{{< rakuten title="AiMY RC41 ロボット掃除機" url="https://hb.afl.rakuten.co.jp/hgc/g00smca8.fluakc07.g00smca8.flual240/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsukamotoaim%2F7245-0139-005%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsukamotoaim%2Fi%2F10000409%2F&rafcid=wsc_i_is_1013356076665194500&m=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/tsukamotoaim/cabinet/item/lp/aim-rc41/imgrc0112592570.jpg?_ex=128x128" price="19,800" keyword="ロボット掃除機" >}}
+{{< rakuten title="AiMY RC41 ロボット掃除機" url="https://hb.afl.rakuten.co.jp/hgc/g00smca8.fluakc07.g00smca8.flual240/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsukamotoaim%2F7245-0139-005%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsukamotoaim%2Fi%2F10000409%2F&rafcid=wsc_i_is_1013356076665194500&scid=kaden" img="https://thumbnail.image.rakuten.co.jp/@0_mall/tsukamotoaim/cabinet/item/lp/aim-rc41/imgrc0112592570.jpg?_ex=128x128" price="19,800" keyword="ロボット掃除機" >}}
 
 ---
 

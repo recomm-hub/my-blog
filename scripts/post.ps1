@@ -423,10 +423,10 @@ foreach ($item in $items) {
     if (-not $affiliateUrl) {
         $affiliateUrl = $item.itemUrl
     }
-    # 計測IDをアフィリエイトURLに付与
+    # 計測IDをアフィリエイトURLに付与（scid パラメータ）
     if ($trackingId -and $affiliateUrl) {
         $separator = if ($affiliateUrl -match '\?') { '&' } else { '?' }
-        $affiliateUrl = "${affiliateUrl}${separator}m=${trackingId}"
+        $affiliateUrl = "${affiliateUrl}${separator}scid=${trackingId}"
     }
 
     # 価格をフォーマット（カンマ区切り）
