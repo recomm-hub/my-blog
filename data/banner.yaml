@@ -1,0 +1,65 @@
+# ============================================================
+# サイドバー バナー設定
+#
+# ★ 3つのタイプ ★
+#
+# ① always（常時表示 → 楽天が自動でイベント切替）
+#    type: "always"
+#
+# ② recurring（毎月の固定日 → 完全自動）
+#    type: "recurring"
+#    days: [5, 10, 15, 20, 25, 30]
+#
+# ③ range（不定期イベント → 手動で日付指定）
+#    type: "range"
+#    start / end を YYYY-MM-DD で設定
+#
+# ★ GitHub Actions で毎朝自動ビルド → 日付切替も自動 ★
+# ============================================================
+
+enabled: true
+
+banners:
+
+  # ═══════════════════════════════════════════════
+  #  イチオシ大型企画バナー（常時表示）
+  #  → 楽天側が自動でお買い物マラソン・スーパーSALE等に切替
+  #  → 一度設置すればメンテ不要！
+  # ═══════════════════════════════════════════════
+  - id: ichioshi
+    enabled: true
+    type: "always"
+    title: "イチオシ大型企画"
+    html: |
+      <a href="https://hb.afl.rakuten.co.jp/hsc/51337d7a.85acbeda.27d9e84c.aa1d6d29/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiI0NCIsImJhbiI6Mjc5NDg1OCwiYW1wIjpmYWxzZX0%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/51337d7a.85acbeda.27d9e84c.aa1d6d29/?me_id=1&me_adv_id=2794858&t=pict" border="0" style="width:100%;height:auto;" alt="楽天イチオシ企画" title=""></a>
+
+  # ═══════════════════════════════════════════════
+  #  スーパーDEAL（常時表示）
+  #  → 高ポイント還元。家電レビューブログと相性◎
+  # ═══════════════════════════════════════════════
+  - id: superdeal
+    enabled: true
+    type: "always"
+    title: "スーパーDEAL"
+    html: |
+      <a href="https://hb.afl.rakuten.co.jp/hsc/51337e39.6e879875.27d9e84c.aa1d6d29/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIxMTMiLCJiYW4iOjEyNTE4MjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/51337e39.6e879875.27d9e84c.aa1d6d29/?me_id=1&me_adv_id=1251820&t=pict" border="0" style="width:100%;height:auto;" alt="スーパーDEAL" title=""></a>
+
+  # ═══════════════════════════════════════════════
+  #  ふるさと納税（常時表示）
+  # ═══════════════════════════════════════════════
+  - id: furusato
+    enabled: true
+    type: "always"
+    title: "ふるさと納税"
+    html: |
+      <a href="https://hb.afl.rakuten.co.jp/hsc/51338317.f5fb91d0.27d9e84c.aa1d6d29/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIxMDMiLCJiYW4iOjE1NjQ2MDgsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/51338317.f5fb91d0.27d9e84c.aa1d6d29/?me_id=1&me_adv_id=1564608&t=pict" border="0" style="width:100%;height:auto;" alt="ふるさと納税" title=""></a>
+
+  # ═══════════════════════════════════════════════
+  #  ママ割（常時表示）
+  # ═══════════════════════════════════════════════
+  - id: mama
+    enabled: true
+    type: "always"
+    title: "ママ割"
+    html: |
+      <a href="https://hb.afl.rakuten.co.jp/hsc/51338491.8afd7292.27d9e84c.aa1d6d29/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjoxLCJjYXQiOiIxMTAiLCJiYW4iOjE2MzkzNjMsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hsb/51338491.8afd7292.27d9e84c.aa1d6d29/?me_id=1&me_adv_id=1639363&t=pict" border="0" style="width:100%;height:auto;" alt="ママ割" title=""></a>

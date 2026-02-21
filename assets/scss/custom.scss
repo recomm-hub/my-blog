@@ -41,9 +41,11 @@ body {
 
 /* ── サイドバーのアクセントカラー ── */
 .sidebar header .site-name {
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-family: 'Yomogi', cursive;
+  font-size: 1.6rem;
+  font-weight: 400;
   color: var(--jin-accent);
+  letter-spacing: 0.05em;
 }
 
 .sidebar header .site-description {

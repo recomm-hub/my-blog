@@ -1,0 +1,79 @@
+{{- /* サイドバーバナーウィジェット
+       ── 3つのタイプをサポート ──
+       ① always   → 常時表示（楽天イチオシ大型企画など）
+       ② recurring → 毎月の固定日に自動表示
+       ③ range    → 指定期間だけ表示 */ -}}
+
+{{- with site.Data.banner -}}
+  {{- if .enabled -}}
+
+    {{- $now := now -}}
+    {{- $today := int $now.Day -}}
+
+    {{- /* enabled: true のバナーだけ抽出 */ -}}
+    {{- $enabledBanners := where .banners "enabled" true -}}
+
+    {{- /* 表示判定 */ -}}
+    {{- $active := slice -}}
+    {{- range $enabledBanners -}}
+      {{- $show := false -}}
+      {{- $type := default "range" .type -}}
+
+      {{- if eq $type "always" -}}
+        {{- /* ── always: 常時表示 ── */ -}}
+        {{- $show = true -}}
+
+      {{- else if eq $type "recurring" -}}
+        {{- /* ── recurring: 今日の日が days 配列に含まれていれば表示 ── */ -}}
+        {{- with .days -}}
+          {{- range . -}}
+            {{- if eq (int .) $today -}}
+              {{- $show = true -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+
+      {{- else -}}
+        {{- /* ── range: start〜end の期間内なら表示 ── */ -}}
+        {{- $show = true -}}
+
+        {{- with .start -}}
+          {{- $startDate := time . -}}
+          {{- if lt $now $startDate -}}
+            {{- $show = false -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- with .end -}}
+          {{- /* end 日の 23:59:59 まで表示するため翌日と比較 */ -}}
+          {{- $endDate := (time .).AddDate 0 0 1 -}}
+          {{- if ge $now $endDate -}}
+            {{- $show = false -}}
+          {{- end -}}
+        {{- end -}}
+
+      {{- end -}}
+
+      {{- if $show -}}
+        {{- $active = $active | append . -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if $active -}}
+      <section class="widget event-banner">
+        <div class="widget-icon">
+          {{ partial "helper/icon" "link" }}
+        </div>
+        <h2 class="widget-title section-title">おすすめキャンペーン</h2>
+        <div class="event-banner--list">
+          {{- range $active -}}
+            <div class="event-banner--item" style="margin-bottom: 0.8rem; text-align: center;">
+              {{ .html | safeHTML }}
+            </div>
+          {{- end -}}
+        </div>
+      </section>
+    {{- end -}}
+
+  {{- end -}}
+{{- end -}}

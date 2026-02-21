@@ -1,6 +1,6 @@
 baseURL = 'https://mononikki.com/'
 languageCode = 'ja'
-title = 'おすすめレビュー研究所'
+title = 'ものにっき'
 theme = 'hugo-theme-stack'
 
 # 日本語環境の設定
@@ -33,11 +33,11 @@ ignoreFiles = ['hay-fever-season-guide']
   mainSections = ['posts']
   featuredImageField = 'image'
   rssFullContent = true
-  description = '暮らしに役立つ商品を徹底比較！おすすめアイテムをランキング形式でご紹介します。'
+  description = '買ってよかったモノをゆるく記録する個人ブログ'
 
   [params.footer]
     since = 2026
-    customText = '© おすすめレビュー研究所'
+    customText = '© ものにっき'
 
   [params.dateFormat]
     published = '2006年1月2日'
@@ -46,7 +46,7 @@ ignoreFiles = ['hay-fever-season-guide']
   # サイドバー設定
   [params.sidebar]
     emoji = '📝'
-    subtitle = '暮らしに役立つ商品を徹底比較！おすすめアイテムをランキング形式でご紹介します。'
+    subtitle = '買ってよかったモノをゆるく記録するブログ'
     avatar = ''
     compact = false
 
@@ -64,6 +64,9 @@ ignoreFiles = ['hay-fever-season-guide']
       enabled = false
 
   # サイドバーウィジェット（ホームページ）
+  [[params.widgets.homepage]]
+    type = 'event-banner'
+
   [[params.widgets.homepage]]
     type = 'search'
 
@@ -83,6 +86,9 @@ ignoreFiles = ['hay-fever-season-guide']
       limit = 5
 
   # サイドバーウィジェット（記事ページ）
+  [[params.widgets.page]]
+    type = 'event-banner'
+
   [[params.widgets.page]]
     type = 'toc'
 
