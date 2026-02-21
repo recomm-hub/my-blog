@@ -1,0 +1,38 @@
+{{/* 紹介コード / アフィリエイトリンク カード ショートコード */}}
+{{/* 使い方: referral "rakuten-mobile" をショートコード記法で呼び出す */}}
+{{/* data/referrals.yaml の id で指定 */}}
+
+{{ $id := .Get 0 }}
+{{ $found := false }}
+{{ range .Site.Data.referrals.referrals }}
+  {{ if and (eq .id $id) .enabled }}
+    {{ $found = true }}
+    <div class="referral-card" style="border:2px solid #4CAF50; border-radius:10px; padding:20px; margin:28px 0; background:linear-gradient(135deg, #f0fdf4 0%, #fff 100%); position:relative;">
+      <div style="position:absolute; top:-12px; left:16px; background:#4CAF50; color:#fff; font-size:0.75em; font-weight:bold; padding:2px 12px; border-radius:4px; letter-spacing:0.05em;">
+        📣 紹介キャンペーン
+      </div>
+      <p style="font-weight:bold; font-size:1.15em; margin:8px 0 6px; color:#333;">
+        {{ .name }}
+      </p>
+      {{ with .reward }}
+      <p style="color:#e65100; font-size:1.05em; font-weight:bold; margin:0 0 12px;">
+        🎁 {{ . }}
+      </p>
+      {{ end }}
+      <a href="{{ .url }}" rel="nofollow noopener sponsored" target="_blank"
+         style="display:inline-block; background:#4CAF50; color:#fff; padding:10px 28px;
+                border-radius:6px; text-decoration:none; font-weight:bold; font-size:1em;
+                transition: background 0.2s;">
+        {{ .cta | default "詳細を見る" }}
+      </a>
+      {{ with .note }}
+      <p style="margin:10px 0 0; font-size:0.8em; color:#888;">
+        ※ {{ . }}
+      </p>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+{{ if not $found }}
+  <!-- referral "{{ $id }}" not found or disabled -->
+{{ end }}
