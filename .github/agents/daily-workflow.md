@@ -428,6 +428,37 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 1. `draft: true` → `draft: false` に変更
 2. Hugo ビルドで問題ないか確認
 3. `git add` → `git commit` → `git push`
+4. **GitHub Actions のデプロイ完了を待機・確認**
+
+   push 後、以下のコマンドでデプロイ完了を確認する。結果が出るまで最大 5 分待機する。
+
+   ```powershell
+   # デプロイ完了待機（GitHub API経由、トークン不要・公開リポジトリのタメ）
+   $repo = 'recomm-hub/my-blog'
+   $timeout = [datetime]::Now.AddMinutes(5)
+   do {
+       Start-Sleep -Seconds 15
+       $run = Invoke-RestMethod "https://api.github.com/repos/$repo/actions/runs?per_page=1" `
+           -Headers @{ 'User-Agent' = 'mononikki-deploy-check' }
+       $run = $run.workflow_runs[0]
+       Write-Host "⏳ status: $($run.status) / conclusion: $($run.conclusion)"
+   } while ($run.status -ne 'completed' -and [datetime]::Now -lt $timeout)
+
+   if ($run.conclusion -eq 'success') {
+       Write-Host "✅ デプロイ完了！ https://mononikki.com/posts/$slug/"
+   } else {
+       Write-Host "❌ デプロイ失敗 (conclusion: $($run.conclusion))"
+       Write-Host "詳細: https://github.com/$repo/actions/runs/$($run.id)"
+   }
+   ```
+
+   完了後、実際の公開ページにアクセスして内容を目視確認する。
+
+   | 結果 | 報告内容 |
+   |------|----------|
+   | ✅ success | 「デプロイ完了。https://mononikki.com/posts/{slug}/ で確認できます」 |
+   | ❌ failure | 「デプロイ失敗。Actions のログ URL を提示して原因を展開」 |
+   | ⏱️ タイムアウト | 「5分以内に完了しませんでした。https://github.com/recomm-hub/my-blog/actions で確認してください」 |
 
 ---
 
