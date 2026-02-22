@@ -105,18 +105,18 @@ description: 記事のファクトチェックを行うエージェント
 
 ```markdown
 （...記事の本文...）
-ルンバ ミニの重さは約2.0kgです。<sup><a href="#fn1" id="ref1">1</a></sup>
-発売日は2026年2月27日（SAKURA/WAKABAは3月13日）です。<sup><a href="#fn2" id="ref2">2</a></sup>
+ルンバ ミニの重さは約2.0kgです。<sup><a href="#fn1" id="ref1">参照1</a></sup>
+発売日は2026年2月27日（SAKURA/WAKABAは3月13日）です。<sup><a href="#fn2" id="ref2">参照2</a></sup>
 （...記事の本文...）
 
 <h2>ファクトチェック根拠（人間確認用）</h2>
 
-<p id="fn1">1 ✅ <strong>正確</strong>: 公式スペック表にて「重量は約2.0kg」と明記。「ロボット本体部分のサイズは2製品共通で、重量は約2kg」 — <a href="https://example.com/...">家電Watch（2026年2月19日）</a> <a href="#ref1">↩</a></p>
+<p id="fn1">参照1 ✅ <strong>正確</strong>: 公式スペック表にて「重量は約2.0kg」と明記。「ロボット本体部分のサイズは2製品共通で、重量は約2kg」 — <a href="https://example.com/...">家電Watch（2026年2月19日）</a> <a href="#ref1">元の場所に戻る</a></p>
 
-<p id="fn2">2 ⚠️ <strong>修正済み</strong>: 元記事では「全色2月27日」でしたが、プレスリリースにて「SAKURA/WAKABAは3月13日発売」と明記されていたため修正しました。「発売日は白と黒が2月27日、桜と若葉が3月13日」 — <a href="https://example.com/...">PR TIMES（2026年2月19日）</a> <a href="#ref2">↩</a></p>
+<p id="fn2">参照2 ⚠️ <strong>修正済み</strong>: 元記事では「全色2月27日」でしたが、プレスリリースにて「SAKURA/WAKABAは3月13日発売」と明記されていたため修正しました。「発売日は白と黒が2月27日、桜と若葉が3月13日」 — <a href="https://example.com/...">PR TIMES（2026年2月19日）</a> <a href="#ref2">元の場所に戻る</a></p>
 ```
 
 > **重要：HTMLアンカー方式を使う理由**
 > VS Code組み込みのMarkdownプレビュー（markdown-it）は `[^N]` 脚注記法をデフォルトでサポートしていません。
-> HTMLの `<sup><a href="#fnN" id="refN">N</a></sup>` を本文に、`<p id="fnN">... <a href="#refN">↩</a></p>` を定義部に使うことで、
-> 拡張機能なしでも「番号クリック → 根拠へジャンプ → ↩ で元の位置に戻る」が動作します。
+> HTMLの `<sup><a href="#fnN" id="refN">参照N</a></sup>` を本文に、`<p id="fnN">... <a href="#refN">元の場所に戻る</a></p>` を定義部に使うことで、
+> 拡張機能なしでも「参照N クリック → 根拠へジャンプ → 元の場所に戻る → 元の位置に戻る」が動作します。
