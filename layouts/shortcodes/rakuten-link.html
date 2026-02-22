@@ -1,0 +1,10 @@
+{{/* 楽天アフィリエイト インラインリンク ショートコード */}}
+{{/* 使い方: rakuten-link "表示テキスト" "アフィリエイトURL" */}}
+{{/* 例: {{< rakuten-link "WF-L900" "https://hb.afl.rakuten.co.jp/..." >}} */}}
+{{/* URLを省略するとキーワード検索URLにフォールバックする */}}
+{{/* 例: {{< rakuten-link "WF-L900" >}} → 楽天で「WF-L900」を検索するリンク */}}
+
+{{ $text := .Get 0 }}
+{{ $url  := .Get 1 | default (printf "https://search.rakuten.co.jp/search/mall/%s/" ($text | urlquery)) }}
+
+<a href="{{ $url }}" rel="nofollow noopener" target="_blank">{{ $text }}</a>
