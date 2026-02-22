@@ -117,12 +117,14 @@ body {
 }
 
 /* ── 引用（blockquote）JIN風 ── */
+/* テーマが blockquote に負のマージン + width拡張を加えるため、ここで上書きして収める */
 .article-content blockquote {
   background: var(--jin-accent-light);
   border-left: 4px solid var(--jin-accent);
   border-radius: 0 8px 8px 0;
   padding: 16px 20px;
   margin: 1.5em 0;
+  width: auto;
   font-style: normal;
 }
 

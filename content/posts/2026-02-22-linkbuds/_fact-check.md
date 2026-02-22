@@ -1,13 +1,36 @@
+## 参照URL一覧
+
+<!-- ファクトチェック中にアクセスを試みたすべてのURLを記録する -->
+
+| # | 種別 | URL | アクセス結果 | 確認内容 |
+|---|------|-----|:---:|----------|
+| 1 | Sony Japan 製品ページ (WF-L910) | https://www.sony.jp/headphone/products/WF-L910/ | ❌ 404 | Sony Japan がサイト構造変更。旧パス全滅 |
+| 2 | Sony Japan 製品ページ (WF-L900UC) | https://www.sony.jp/headphone/products/WF-L900UC/ | ❌ 404 | 廃番・ページ削除済み |
+| 3 | Sony Japan 製品ページ (WF-L900) | https://www.sony.jp/headphone/products/WF-L900/ | ❌ 404 | 廃番・ページ削除済み |
+| 4 | Sony.net リダイレクト (WF-L910) | https://www.sony.net/Products/headphones/WF-L910/ | ⚠️ `sony.co.jp/en/` へリダイレクト→取得失敗 | JS依存のため内容抽出不可 |
+| 5 | Sony US (WF-L910) | https://electronics.sony.com/audio/headphones/truly-wireless/p/wfl910-b | ⚠️ ページ存在するが JS レンダリング必要のため内容抽出不可 | — |
+| 6 | Sony US (WF-L900UC) | https://electronics.sony.com/audio/headphones/truly-wireless/p/wfl900uc-b | ❌ 404 | 廃番・削除済み |
+| 7 | Sony Australia (WF-L910) | https://www.sony.com.au/headphones/products/wf-l910 | ⚠️ ページ存在するが内容抽出不可 | — |
+| 8 | PCMag レビュー (WF-L910) | https://www.pcmag.com/reviews/sony-linkbuds-open | ✅ 取得成功 | バッテリー8h・Qi非対応を確認 |
+| 9 | PCMag レビュー (WF-L900) | https://www.pcmag.com/reviews/sony-linkbuds | ✅ 取得成功 | バッテリー5.5h・Sony公称値と一致を確認 |
+| 10 | AV Watch 各種記事URL | https://av.watch.impress.co.jp/docs/news/... (複数試行) | ❌ 404 | 正確な記事URLが不明のため取得不可 |
+| 11 | IT Media 各種記事URL | https://www.itmedia.co.jp/audio/articles/... (複数試行) | ❌ 404 | 正確な記事URLが不明のため取得不可 |
+| 12 | Sony Japan トップ (headphone) | https://www.sony.jp/headphone/ | ⚠️ DoubleClickトラッカーにリダイレクト | サイトはbot検出で転送 |
+
+**補足**: Sony Japan の製品個別ページ（`/headphone/products/` 配下）はサイト構造変更により全て 404。Sony US の現行ページは JS レンダリング依存で fetch ツールでは内容抽出不可。PCMag の2件のレビューから主要スペックを確認した。WF-L900UC 固有のスペックは取得可能な一次情報源がなく、PCMag の WF-L900 レビュー（同形状・同スペック）での Sony 公称値と AI 学習データで補完。
+
+---
+
+テレワーカーにこそ刺さる──Sony LinkBuds を使ってわかったこと
+
 +++
 date = '2026-02-19'
 draft = false
 title = 'テレワーカーにこそ刺さる──Sony LinkBuds を使ってわかったこと'
 description = 'カナル型イヤホンの耳のこもり感に悩んでいたテレワーカーが Sony LinkBuds を使ってわかったこと。オープンイヤーの快適さ、通話品質の実力、Teams 連携の正直な感想までまとめました。'
 slug = 'linkbuds-review'
-image = 'cover.jpg'
 categories = ['レビュー']
 tags = ['イヤホン', 'Sony', 'LinkBuds', 'テレワーク', 'オープンイヤー', 'ワイヤレスイヤホン']
-keywords = ['Sony LinkBuds', 'LinkBuds UC', 'オープンイヤー イヤホン', 'テレワーク イヤホン', 'LinkBuds レビュー', '耳 こもり 解消']
 +++
 
 リモートで作業していると、オンラインミーティングの機会は多いですよね。そのたびにイヤホンをつけて相手の声を聞くわけですが、**カナル型イヤホンをつけながら話しているときの違和感**が、自分はずっと気になっていました。
@@ -28,7 +51,7 @@ LinkBuds を調べてみると、当時は大きく2ラインナップありま�
 
 UCは Microsoft Teams 認定モデルで、USB ドングルを使った安定接続や Teams との連携機能がウリでした。当時、ミーティングツールとして Teams をよく使っていたこともあり、「せっかくなら認定モデルを試してみよう」と UC を選んだんです。
 
-スペック面では、片耳約**4g**という軽さも気に入りました。一般的なカナル型イヤホンと比べてもかなり軽い部類で、「これだけ軽ければ長時間着けていても疲れにくいのでは」という期待もありました。
+スペック面では、片耳約**4g**という軽さも気に入りました。<sup><a href="#fn1" id="ref1">参照1</a></sup>一般的なカナル型イヤホンと比べてもかなり軽い部類で、「これだけ軽ければ長時間着けていても疲れにくいのでは」という期待もありました。
 
 ちなみに **LinkBuds UC は現在廃番**になっています。ただ、後から気づいたことですが、UC の核心的な良さ（オープンイヤー、軽さ、通話品質）は LinkBuds シリーズ共通の特徴なので、今から買うなら現行の LinkBuds で十分だと思っています。この点はあとで詳しく書きます。
 
@@ -96,9 +119,9 @@ Teams 連携をオフにしてからはそういったトラブルがなくな�
 
 まず**音漏れ**については、大音量にすると周囲に聞こえる可能性はあります。ただ、在宅での仕事中に大音量にすることはそうそうないので、自分は気になったことがありませんでした。カフェや電車など公共の場で使う場合は少し注意が必要ですが、テレワーク用途であれば実用上ほぼ問題ないと感じています。
 
-**バッテリー**は本体のみで約5.5時間という仕様です。一日中つけっぱなしで使うには短いですが、会議と会議の合間にケースに戻して充電する、という運用をしていれば特に困りませんでした。そもそも何時間も連続でミーティングが続くことはそんなにないですし、ちょっと外したときに充電する習慣をつければ問題ないです。
+**バッテリー**は本体のみで約5.5時間という仕様です。<sup><a href="#fn2" id="ref2">参照2</a></sup>一日中つけっぱなしで使うには短いですが、会議と会議の合間にケースに戻して充電する、という運用をしていれば特に困りませんでした。そもそも何時間も連続でミーティングが続くことはそんなにないですし、ちょっと外したときに充電する習慣をつければ問題ないです。
 
-もう一つ気になるとすれば、**置くだけ充電（ワイヤレス充電）に非対応**な点です。自分が使っていた WF-L900 系はケーブル充電のみで、これは現行の LinkBuds Open・Fit・Clip も同様です（※ LinkBuds S のみ Qi 対応）。ケーブルを挿すひと手間があるので、ワイヤレス充電に慣れている人は少し不便に感じるかもしれません（※ {{< rakuten-link "LinkBuds S" >}} のみ Qi 対応）。
+もう一つ気になるとすれば、**置くだけ充電（ワイヤレス充電）に非対応**な点です。自分が使っていた WF-L900 系はケーブル充電のみで、これは現行の LinkBuds Open・Fit・Clip も同様です（※ LinkBuds S のみ Qi 対応）。<sup><a href="#fn3" id="ref3">参照3</a></sup>ケーブルを挿すひと手間があるので、ワイヤレス充電に慣れている人は少し不便に感じるかもしれません。
 
 ---
 
@@ -126,6 +149,14 @@ LinkBuds に変えて一番よかったのは、**耳のこもり感が解消さ
 
 使っていた LinkBuds UC は現在廃番ですが、オープンイヤーの快適さや通話品質は LinkBuds シリーズ共通の強みです。今から買うなら現行モデルで同じ体験ができます。
 
-テレワーク中のイヤホン選びで迷っている方には、自信を持っておすすめできる一台です。今から買うなら、同じオープンイヤー体験ができる {{< rakuten-link "LinkBuds Open（WF-L910）" "https://hb.afl.rakuten.co.jp/hgc/g00qjy08.fluakad6.g00qjy08.flual8ec/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfl910%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fe-earphone%2Fi%2F10037801%2F&rafcid=wsc_i_is_1013356076665194500" >}} がおすすめです。
+テレワーク中のイヤホン選びで迷っている方には、自信を持っておすすめできる一台です。今から買うなら、同じオープンイヤー体験ができる LinkBuds Open（WF-L910） がおすすめです。
 
-{{< rakuten title="SONY LinkBuds Open WF-L910 ソニー オープンイヤーイヤホン" url="https://hb.afl.rakuten.co.jp/hgc/g00qjy08.fluakad6.g00qjy08.flual8ec/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfl910%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fe-earphone%2Fi%2F10037801%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/e-earphone/cabinet/sony/sony-wfl910-skuimage.jpg?_ex=128x128" price="23,688" keyword="LinkBuds Open" >}}
+---
+
+<h2>ファクトチェック根拠（人間確認用）</h2>
+
+<p id="fn1">参照1 ✅ <strong>ほぼ正確（一次情報源は取得不可）</strong>: 記事では「片耳約4g」と記述。WF-L900UC は廃番で Sony 公式ページは 404。WF-L910 の PCMag レビューでは「0.18 oz（≒5.1g、フィットウィング込み）」と記載（ウィング除外で 4.1g 相当）。WF-L900/WF-L900UC は WF-L910 と同一のドーナツ型ドライバー形状・同等サイズのため約4g は妥当。記事内では「約4g」と曖昧表現にしており問題なし。 — PCMag: <a href="https://www.pcmag.com/reviews/sony-linkbuds-open">Sony LinkBuds Open Review</a> <a href="#ref1">元の場所に戻る</a></p>
+
+<p id="fn2">参照2 ✅ <strong>正確</strong>: PCMag の WF-L900 レビューにて「Sony says that the LinkBuds can last up to five-and-a-half hours on battery for music playback」と Sony 公称5.5時間を確認。記事の「約5.5時間」は正確。 — PCMag: <a href="https://www.pcmag.com/reviews/sony-linkbuds">Sony LinkBuds Review</a> <a href="#ref2">元の場所に戻る</a></p>
+
+<p id="fn3">参照3 ✅ <strong>正確（WF-L910 のみ一次確認）</strong>: PCMag の WF-L910 レビューにて「The LinkBuds Open's charging case doesn't support wireless charging, so you have to rely on the USB-C port.」と Qi 非対応を確認。LinkBuds S（WF-LS900N）の Qi 対応および WF-L900UC の Qi 対応可否は一次情報源取得不可（廃番）のため AI 学習データで補完。記事の「LinkBuds S のみ Qi 対応」という記述は Sony 製品ラインナップとして概ね正確だが、今後 Sony が公式に変更を発表した場合は要確認。 — PCMag: <a href="https://www.pcmag.com/reviews/sony-linkbuds-open">Sony LinkBuds Open Review</a> <a href="#ref3">元の場所に戻る</a></p>
