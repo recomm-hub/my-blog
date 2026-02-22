@@ -613,6 +613,9 @@ LinkBuds を調べてみると、当時は大きく2ラインナップありま�
 
 ### Phase 5: 公開 & デプロイ & SNS告知
 
+> **push 時の draft ルール**: git push する記事は **必ず `draft: false`** にすること。
+> `draft: true` のまま push しない。予約公開が必要な場合は Hugo の `publishDate` を使う。
+
 1. `draft: true` → `draft: false` に変更
 2. Hugo ビルドで問題ないか確認
 3. `git add` → `git commit` → `git push`

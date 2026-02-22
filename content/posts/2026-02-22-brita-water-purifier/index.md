@@ -2,7 +2,7 @@
 title: "BRITA Flowレビュー｜水道水のカルキ臭が消えた話"
 slug: "brita-water-purifier"
 date: 2026-02-23T00:00:00+09:00
-draft: true
+draft: false
 categories: ["レビュー"]
 tags: ["BRITA", "浄水器", "タンク型", "レビュー", "カルキ"]
 description: "BRITA Flowタンク型浄水器のレビュー。水道水のカルキ臭に悩んで購入し、残留塩素の検査キットで効果を実証。月額約999円のランニングコストやサイズ感、使い勝手を正直にまとめました。"
@@ -161,7 +161,7 @@ TocOpen: true
 
 水道水の味が少しでも気になっている人は、一度試してみてほしいです。
 
-{{< shop-card title="BRITA マクストラプロ ピュアパフォーマンス カートリッジ 8個入り" url="https://hb.afl.rakuten.co.jp/hgc/g00tbsu8.fluak771.g00tbsu8.flual3cd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbrita%2Fmaxtraplus-8%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/brita/cabinet/thum/260218_mr/flow-2c-pro_p10.jpg?_ex=256x256" price="7,990" keyword="BRITA カートリッジ 8個" >}}
+{{< shop-card title="BRITA マクストラプロ ピュアパフォーマンス カートリッジ 8個入り" url="https://hb.afl.rakuten.co.jp/hgc/g00tbsu8.fluak771.g00tbsu8.flual3cd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbrita%2Fmaxtraplus-8%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/brita/cabinet/itempage/maxtraplus-8/maxtraplus-8_300_v2.jpg?_ex=256x256" price="7,990" keyword="BRITA カートリッジ 8個" >}}
 
 ---
 
