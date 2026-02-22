@@ -648,6 +648,19 @@ $titleMap = @{
 }
 $articleTitle = $titleMap[$Style]
 
+# スタイル別カテゴリマッピング
+# まとめ: 商品選定・比較・悩み解決ガイド (A, B, C, D)
+# レビュー: 実体験ベースの使用感 (E)
+# 解説: 知識・ハウツー (F ※ knowledge.ps1 で管理)
+$categoryMap = @{
+    "A" = "まとめ"
+    "B" = "まとめ"
+    "C" = "まとめ"
+    "D" = "まとめ"
+    "E" = "レビュー"
+}
+$category = $categoryMap[$Style]
+
 # スタイル別の本文テンプレート
 switch ($Style) {
     "A" {
@@ -657,7 +670,7 @@ title: "$articleTitle"
 slug: "$Slug"
 date: $dateISO
 draft: true
-categories: ["レビュー"]
+categories: ["$category"]
 tags: ["$Keyword", "おすすめ", "ランキング", "比較"]
 description: "${Keyword}のおすすめ商品を徹底比較！人気${Hits}選をランキング形式でご紹介します。"
 style: "A"
@@ -714,7 +727,7 @@ title: "$articleTitle"
 slug: "$Slug"
 date: $dateISO
 draft: true
-categories: ["レビュー"]
+categories: ["$category"]
 tags: ["$Keyword", "悩み解決", "対策", "おすすめ"]
 description: "${Keyword}で悩んでいる方へ。実際に試したおすすめアイテムと対策法を紹介します。"
 style: "B"
@@ -777,7 +790,7 @@ title: "$articleTitle"
 slug: "$Slug"
 date: $dateISO
 draft: true
-categories: ["レビュー"]
+categories: ["$category"]
 tags: ["$Keyword", "比較", "レビュー", "どっちがいい"]
 description: "${Keyword}の人気${Hits}モデルをガチ比較。結局どれがいいのか、使った感想とともに解説。"
 style: "C"
@@ -822,7 +835,7 @@ title: "$articleTitle"
 slug: "$Slug"
 date: $dateISO
 draft: true
-categories: ["レビュー"]
+categories: ["$category"]
 tags: ["$Keyword", "目的別", "初心者", "おすすめ"]
 description: "${Keyword}を目的・シーン別に選ぶガイド。初心者からヘビーユーザーまで。"
 style: "D"
@@ -880,7 +893,7 @@ title: "$articleTitle"
 slug: "$Slug"
 date: $dateISO
 draft: true
-categories: ["レビュー"]
+categories: ["$category"]
 tags: ["$Keyword", "買ってみた", "レビュー", "正直"]
 description: "${Keyword}を${Hits}つ買って使い比べてみた正直な感想。良かった点・微妙だった点を包み隠さず。"
 style: "E"

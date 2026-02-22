@@ -102,7 +102,7 @@ $markdown = @"
 title: "<!-- TODO: 32文字以内のタイトル。疑問形 or 「〜まとめ」「〜の基本」系 -->"
 date: $dateISO
 draft: true
-categories: ["お役立ち"]
+categories: ["解説"]
 tags: [$tagsYaml]
 description: "<!-- TODO: 120文字以内。テーマのメインKWを前半に -->"
 slug: "$Slug"
@@ -173,7 +173,7 @@ $relatedLinks
 Write-Host ""
 Write-Host "📝 知識記事ファイルを生成しました！" -ForegroundColor Green
 Write-Host "   $filePath" -ForegroundColor White
-Write-Host "   カテゴリ: お役立ち（アフィリエイトなし）" -ForegroundColor Cyan
+Write-Host "   カテゴリ: 解説（アフィリエイトなし）" -ForegroundColor Cyan
 Write-Host ""
 
 # カバー画像を自動生成
