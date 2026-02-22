@@ -8,6 +8,30 @@
 
 ---
 
+## 参照ファイル一覧
+
+このワークフローは以下のファイルと連携して動作します。
+
+| ファイル | 役割 |
+|---------|------|
+| `prompts/style-A-ranking.md` | 記事スタイルA: ランキング形式 |
+| `prompts/style-B-solution.md` | 記事スタイルB: 問題解決形式 |
+| `prompts/style-C-comparison.md` | 記事スタイルC: 比較形式 |
+| `prompts/style-D-scene.md` | 記事スタイルD: シーン訴求形式 |
+| `prompts/style-E-experience.md` | 記事スタイルE: 体験談形式 |
+| `prompts/style-F-knowledge.md` | 記事スタイルF: 知識・解説記事 |
+| `prompts/review-checklist.md` | 公開前の品質チェックリスト |
+| `prompts/review-template.md` | レビュー出力のテンプレート |
+| `prompts/fact-check.md` | ファクトチェックの手順・チェックリスト |
+| `prompts/seo-strategy.md` | SEO戦略・キーワード選定ガイド |
+| `data/referrals.yaml` | 紹介コード・アフィリエイトリンク一覧 |
+| `data/tracking_ids.yaml` | AdSense / アナリティクス等のトラッキングID |
+| `scripts/post.ps1` | レビュー記事の雛形生成スクリプト |
+| `scripts/knowledge.ps1` | 知識記事の雛形生成スクリプト |
+| `content/posts/` | 既存記事の格納フォルダ（重複チェック用） |
+
+---
+
 ## 運営者ペルソナ（テーマ選定の判断基準）
 
 | 項目 | 内容 |
@@ -358,7 +382,7 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 1. **テーマヒアリング** — 選択肢付き質問で記事の方向性を確認（ターゲット読者、伝えたいメッセージ、体験レベル）
 2. **構成提案 & 承認** — H2/H3の見出し構成を提案し、著者の承認を得る
 3. **セクション単位の執筆** — H2ごとにドラフトを提示→著者が確認→OKなら次へ
-   - スタイルプロンプト（`prompts/style-X-*.md`）は参考として活用するが、そのまま適用せずヒアリング結果に応じて柔軟にアレンジ
+   - スタイルプロンプト（`prompts/style-A-ranking.md` 〜 `prompts/style-F-knowledge.md`）は参考として活用するが、そのまま適用せずヒアリング結果に応じて柔軟にアレンジ
 4. **タイトル・description 確定** — 複数候補を提示し、著者が選択
 5. front matter の `slug` を英語で設定
 6. **紹介コード挿入**: `data/referrals.yaml` の `enabled: true` なリンクのうち、記事テーマに関連するものがあれば `{{</*/* referral "id" */*/>}}` を本文の適切な位置に挿入する
@@ -372,8 +396,9 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 
 1. index.md にすべて書き込む（`draft: true` のまま）
 2. **記事の全文をチャットに貼り付けて著者に提示する**（front matter 含む）
-3. `review-checklist.md` のチェック結果も添える
-4. 著者に最終確認を求める:
+3. `prompts/review-checklist.md` のチェック結果を添える
+4. `prompts/fact-check.md` に従いファクトチェックを実施し、問題があれば修正する
+5. 著者に最終確認を求める:
 
 ```
 ❓ 完成版レビュー:
