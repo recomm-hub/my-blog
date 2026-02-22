@@ -108,6 +108,28 @@ $content = @'
 `create_file` ツールは日本語を含むMarkdownファイルの新規作成に**使用禁止**。  
 文字化け（`ぁE`、`チE`、`めE` 等の埋め込みアーティファクト）が発生する既知の問題がある。
 
+### ❌ 禁止: PowerShell の `Set-Content` / `Out-File` での日本語ファイル書き込み
+
+PowerShell 5.1 の `Set-Content` はデフォルトで **Shift-JIS（Windows-1252）** を使用するため、
+UTF-8 の日本語コンテンツが完全に文字化けする。以下のコマンドは日本語を含むファイルに**使用禁止**:
+
+```powershell
+# ❌ 禁止（Shift-JISで書き込まれ文字化けする）
+... | Set-Content "file.md"
+... | Out-File "file.md"
+```
+
+**既存ファイルの文字列置換が必要な場合も `[IO.File]` を使うこと:**
+
+```powershell
+# ✅ 正しい方法
+$text = [IO.File]::ReadAllText($file, [Text.Encoding]::UTF8)
+$text = $text -replace 'old', 'new'
+[IO.File]::WriteAllText($file, $text, [Text.Encoding]::UTF8)
+```
+
+**または `replace_string_in_file` ツールを使う（こちらが最も安全）。**
+
 ---
 
 ## git push ルール
