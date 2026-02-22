@@ -53,7 +53,7 @@ keywords = ['ルンバ ミニ', 'Roomba Mini', 'ルンバ 小さい', 'ルンバ
 
 {{< rakuten title="Roomba Mini + AutoEmpty ルンバ ミニ（自動ゴミ収集モデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff15%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=128&height=128&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="49,800" keyword="ルンバ ミニ AutoEmpty" >}}
 
-{{< rakuten title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff11%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=128&height=128&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
+{{< rakuten title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://item.rakuten.co.jp/irobotstore/f11/?scid=af_pc_etc&sc2id=af_101_0_0&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=128&height=128&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
 
 ---
 
@@ -163,4 +163,4 @@ Slimモデル39,800円は、ロボット掃除機デビューにちょうどい�
 
 {{< rakuten title="Roomba Mini + AutoEmpty ルンバ ミニ（自動ゴミ収集モデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff15%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=128&height=128&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="49,800" keyword="ルンバ ミニ AutoEmpty" >}}
 
-{{< rakuten title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff11%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=128&height=128&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
+{{< rakuten title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://item.rakuten.co.jp/irobotstore/f11/?scid=af_pc_etc&sc2id=af_101_0_0&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=128&height=128&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
