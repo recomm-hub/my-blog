@@ -22,7 +22,7 @@
 | `prompts/style-F-knowledge.md` | 記事スタイルF: 知識・解説記事 |
 | `prompts/review-checklist.md` | 公開前の品質チェックリスト |
 | `prompts/review-template.md` | レビュー出力のテンプレート |
-| `prompts/fact-check.md` | ファクトチェックの手順・チェックリスト |
+| `.github/agents/fact-check.md` | ファクトチェックの手順・チェックリスト |
 | `prompts/seo-strategy.md` | SEO戦略・キーワード選定ガイド |
 | `data/referrals.yaml` | 紹介コード・アフィリエイトリンク一覧 |
 | `data/tracking_ids.yaml` | AdSense / アナリティクス等のトラッキングID |
@@ -397,7 +397,7 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 1. index.md にすべて書き込む（`draft: true` のまま）
 2. **記事の全文をチャットに貼り付けて著者に提示する**（front matter 含む）
 3. `prompts/review-checklist.md` のチェック結果を添える
-4. `prompts/fact-check.md` に従いファクトチェックを実施し、問題があれば修正する
+4. `.github/agents/fact-check.md` に従いファクトチェックを実施し、問題があれば修正する
 5. 著者に最終確認を求める:
 
 ```
