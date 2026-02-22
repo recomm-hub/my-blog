@@ -424,6 +424,8 @@ foreach ($item in $items) {
         if ($imageUrl -is [PSCustomObject]) {
             $imageUrl = $imageUrl.imageUrl
         }
+        # Rakuten thumbnail CDNの画像を拡大（128x128 → 256x256）
+        $imageUrl = $imageUrl -replace '_ex=128x128', '_ex=256x256'
     }
 
     # アフィリエイトURL（APIが生成してくれる）

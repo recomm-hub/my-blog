@@ -1,5 +1,9 @@
 {{/* 楽天アフィリエイト商品カード ショートコード */}}
 {{/* 使い方: rakuten title="商品名" url="アフィリエイトURL" img="画像URL" price="1,980" keyword="検索キーワード" */}}
+{{/* img URLの推奨サイズ: */}}
+{{/*   - Rakuten thumbnail CDN(脳内把楚): ?_ex=256x256 */}}
+{{/*   - PR TIMES CDN (prcdn.freetls.fastly.net): ?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff */}}
+{{/*   表示サイズ: 200×200px (object-fit:containでトリミングなし) */}}
 
 {{ $title   := .Get "title" }}
 {{ $url     := .Get "url" }}
