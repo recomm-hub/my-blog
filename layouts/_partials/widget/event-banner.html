@@ -2,6 +2,9 @@
        ① イベント通知バー（5/0日、18日、マラソン → 自動判定）
        ② 楽天バナー（banner.yaml → 細長く縦1列で表示） */ -}}
 
+{{- /* about / contact / privacy では非表示 */ -}}
+{{- if .Context.Params.noEventBanner }}{{- return }}{{- end -}}
+
 {{- /* ── イベント判定 ── */ -}}
 {{- $events := slice -}}
 {{- $now := now -}}

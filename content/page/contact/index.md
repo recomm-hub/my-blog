@@ -2,6 +2,7 @@
 title: "お問い合わせ"
 date: 2026-02-22
 slug: "contact"
+noEventBanner: true
 ---
 
 ご質問・ご意見・掲載内容に関するお問い合わせは、下記よりお気軽にどうぞ。

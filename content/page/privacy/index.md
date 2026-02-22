@@ -2,6 +2,7 @@
 title: "プライバシーポリシー"
 date: 2026-02-22
 slug: "privacy"
+noEventBanner: true
 ---
 
 ## 個人情報の取り扱いについて

@@ -926,6 +926,35 @@ $comparisonRows
     }
 }
 
+# ──────────────────────────────────────────────
+# エビデンス用スナップショットを保存（ファクトチェック用）
+# ──────────────────────────────────────────────
+$snapshotPath = Join-Path $bundleDir "_snapshot.json"
+$snapshotProducts = $products | ForEach-Object {
+    [ordered]@{
+        rank          = $_.Rank
+        cleanName     = $_.CleanName
+        rawName       = $_.Name
+        shopName      = $_.ShopName
+        price         = $_.Price
+        reviewCount   = $_.ReviewCount
+        reviewAverage = $_.ReviewAvg
+        itemUrl       = ($_.Url -replace '\?scid=.*$', '')  # 計測IDを除いた素のURL
+        imageUrl      = $_.ImageUrl
+    }
+}
+$snapshot = [ordered]@{
+    generatedAt = $dateISO
+    keyword     = $Keyword
+    slug        = $Slug
+    style       = $Style
+    sort        = $Sort
+    products    = @($snapshotProducts)
+}
+$snapshotJson = $snapshot | ConvertTo-Json -Depth 5
+[System.IO.File]::WriteAllText($snapshotPath, $snapshotJson, [System.Text.UTF8Encoding]::new($false))
+Write-Host "📸 エビデンス保存: _snapshot.json" -ForegroundColor DarkGray
+
 # UTF-8 BOM なしで書き出し
 [System.IO.File]::WriteAllText($filePath, $markdown, [System.Text.UTF8Encoding]::new($false))
 

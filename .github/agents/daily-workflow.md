@@ -32,13 +32,14 @@
 | `prompts/style-F-knowledge.md` | 記事スタイルF: 知識・解説記事 | Phase 3 | 自動参照 |
 | `prompts/review-checklist.md` | 公開前の品質チェックリスト | Phase 4 | 自動実施 |
 | `prompts/review-template.md` | レビュー出力のテンプレート | Phase 4 | 自動参照 |
-| `.github/agents/fact-check.md` | ファクトチェックの手順・チェックリスト | Phase 4 | **著者指示後に実施** |
+| `prompts/fact-check.md` | ファクトチェックの手順・チェックリスト | Phase 4 | **執筆完了後に自動実施** |
 | `prompts/seo-strategy.md` | SEO戦略・キーワード選定ガイド | Phase 1〜2 | 自動参照 |
 | `data/referrals.yaml` | 紹介コード・アフィリエイトリンク一覧 | Phase 1〜3 | 自動参照 |
 | `data/tracking_ids.yaml` | AdSense / アナリティクス等のトラッキングID | Phase 2 | 自動参照 |
 | `scripts/post.ps1` | レビュー記事の雛形生成スクリプト | Phase 2 | 自動実行 |
 | `scripts/knowledge.ps1` | 知識記事の雛形生成スクリプト | Phase 2 | 自動実行 |
 | `content/posts/` | 既存記事の格納フォルダ（重複チェック用） | Phase 1 | 自動参照 |
+| `content/posts/*/​_snapshot.json` | 記事生成時点の商品データ（ファクトチェック用エビデンス） | Phase 4 | 自動参照 |
 
 ---
 
@@ -408,9 +409,10 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 1. index.md にすべて書き込む（`draft: true` のまま）
 2. **記事の全文をチャットに貼り付けて著者に提示する**（front matter 含む）
 3. `prompts/review-checklist.md` のチェック結果を添える
-4. 著者に最終確認を求める（ファクトチェックは著者が明示的に指示した場合のみ `.github/agents/fact-check.md` エージェントで実施）:
-
-   > 💡 ファクトチェックが必要な場合は「ファクトチェックして」と指示してください。
+4. **`prompts/fact-check.md` に従いファクトチェックを実施する**（執筆完了後に必ず自動実施）
+   - `_snapshot.json` が存在する場合はそれを一次情報として数値を照合する
+   - 修正があれば index.md を更新し、`_fact-check.md` を生成する
+5. 著者に最終確認を求める:
 
 ```
 ❓ 完成版レビュー:
@@ -418,7 +420,6 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
   B. ここを直してほしい →（箇所を教えて）
   C. 全体的にトーンを変えたい
   D. タイトル/descriptionを変えたい
-  E. ファクトチェックして（fact-check エージェントを起動）
 ```
 
 → 「A」が出てから初めて公開フローに進む。
@@ -430,26 +431,16 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 3. `git add` → `git commit` → `git push`
 4. **GitHub Actions のデプロイ完了を待機・確認**
 
-   push 後、以下のコマンドでデプロイ完了を確認する。結果が出るまで最大 5 分待機する。
+   push 後、以下のコマンドでデプロイ完了を待機・確認する。
 
    ```powershell
-   # デプロイ完了待機（GitHub API経由、トークン不要・公開リポジトリのタメ）
-   $repo = 'recomm-hub/my-blog'
-   $timeout = [datetime]::Now.AddMinutes(5)
-   do {
-       Start-Sleep -Seconds 15
-       $run = Invoke-RestMethod "https://api.github.com/repos/$repo/actions/runs?per_page=1" `
-           -Headers @{ 'User-Agent' = 'mononikki-deploy-check' }
-       $run = $run.workflow_runs[0]
-       Write-Host "⏳ status: $($run.status) / conclusion: $($run.conclusion)"
-   } while ($run.status -ne 'completed' -and [datetime]::Now -lt $timeout)
+   gh run watch --repo recomm-hub/my-blog
+   ```
 
-   if ($run.conclusion -eq 'success') {
-       Write-Host "✅ デプロイ完了！ https://mononikki.com/posts/$slug/"
-   } else {
-       Write-Host "❌ デプロイ失敗 (conclusion: $($run.conclusion))"
-       Write-Host "詳細: https://github.com/$repo/actions/runs/$($run.id)"
-   }
+   失敗した場合はログを確認する。
+
+   ```powershell
+   gh run view --repo recomm-hub/my-blog --log-failed
    ```
 
    完了後、実際の公開ページにアクセスして内容を目視確認する。
