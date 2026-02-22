@@ -1,0 +1,11 @@
+{{/* Amazon アソシエイト インラインリンク ショートコード */}}
+{{/* 使い方: amazon-link "表示テキスト" "アフィリエイトURL" */}}
+{{/* URLを省略するとキーワード検索URLにフォールバックする（タグ付き） */}}
+{{/* 例: {{< amazon-link "AirPods Pro" "https://amzn.to/xxxxxxx" >}} */}}
+{{/* 例: {{< amazon-link "AirPods Pro" >}} → Amazonで「AirPods Pro」を検索するリンク */}}
+
+{{ $tag  := "mononikki22-22" }}
+{{ $text := .Get 0 }}
+{{ $url  := .Get 1 | default (printf "https://www.amazon.co.jp/s?k=%s&tag=%s" ($text | urlquery) $tag) }}
+
+<a href="{{ $url }}" rel="nofollow noopener" target="_blank">{{ $text }}</a>

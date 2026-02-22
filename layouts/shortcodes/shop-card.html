@@ -1,15 +1,19 @@
 {{/* 楽天アフィリエイト商品カード ショートコード */}}
 {{/* 使い方: rakuten title="商品名" url="アフィリエイトURL" img="画像URL" price="1,980" keyword="検索キーワード" */}}
+{{/* Amazon ボタンも追加したい場合: amazon_asin="B0XXXXXXXX" を追加するだけ */}}
 {{/* img URLの推奨サイズ: */}}
 {{/*   - Rakuten thumbnail CDN(脳内把楚): ?_ex=256x256 */}}
 {{/*   - PR TIMES CDN (prcdn.freetls.fastly.net): ?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff */}}
 {{/*   表示サイズ: 200×200px (object-fit:containでトリミングなし) */}}
 
-{{ $title   := .Get "title" }}
-{{ $url     := .Get "url" }}
-{{ $img     := .Get "img" }}
-{{ $price   := .Get "price" }}
-{{ $keyword := .Get "keyword" | default $title }}
+{{ $amazonTag := "mononikki22-22" }}
+{{ $title     := .Get "title" }}
+{{ $url       := .Get "url" }}
+{{ $img       := .Get "img" }}
+{{ $price     := .Get "price" }}
+{{ $keyword   := .Get "keyword" | default $title }}
+{{ $amazonAsin := .Get "amazon_asin" }}
+{{ $amazonUrl  := .Get "amazon_url" | default (printf "https://www.amazon.co.jp/dp/%s/?tag=%s" $amazonAsin $amazonTag) }}
 
 <div class="rakuten-card" style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:24px 0; display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; background:#fafafa;">
   <div class="rakuten-card__img" style="flex-shrink:0;">
@@ -39,6 +43,13 @@
               border-radius:4px; text-decoration:none; font-weight:bold; font-size:0.95em;">
       楽天市場で見る
     </a>
+    {{ if $amazonAsin }}
+    <a href="{{ $amazonUrl }}" rel="nofollow noopener" target="_blank"
+       style="display:inline-block; background:#ff9900; color:#000; padding:8px 24px;
+              border-radius:4px; text-decoration:none; font-weight:bold; font-size:0.95em; margin-left:8px;">
+      Amazonで見る
+    </a>
+    {{ end }}
     <p style="margin:8px 0 0; font-size:0.8em; color:#888;">
       <a href="https://search.rakuten.co.jp/search/mall/{{ $keyword }}/"
          rel="nofollow noopener" target="_blank"

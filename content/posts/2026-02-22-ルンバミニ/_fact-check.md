@@ -1,94 +1,94 @@
-﻿> ⚠️ このファイルはファクトチェック用の人間確認ファイルです。
-> ファイル名が `_` で始まるためHugoのビルド対象外となり、公開されません。
-> VS Codeのプレビューで上付き数字をクリック → 末尾の根拠へジャンプ → ↩ で元の位置に戻れます。
+> ?? ���̃t�@�C���̓t�@�N�g�`�F�b�N�p�̐l�Ԋm�F�t�@�C���ł��B
+> �t�@�C������ `_` �Ŏn�܂邽��Hugo�̃r���h�ΏۊO�ƂȂ�A���J����܂���B
+> VS Code�̃v���r���[�ŏ�t���������N���b�N �� �����̍����փW�����v �� ? �Ō��̈ʒu�ɖ߂�܂��B
 
 ---
 
-ルンバって、なんだかんだデカいんですよね。
+�����o���āA�Ȃ񂾂��񂾃f�J����ł���ˁB
 
-リビングの隅にいるだけで「あ、いるな」って存在感があります。うちもロボット掃除機を使ってるんですけど、「もうちょっと小さければなぁ」と思ったことは正直あります。椅子の脚まわりとか、棚の下とか、入れそうで入れないあの微妙な感じ、ありますよね。
+���r���O�̋��ɂ��邾���Łu���A����ȁv���đ��݊�������܂��B���������{�b�g�|���@���g���Ă��ł����ǁA�u����������Ə�������΂Ȃ��v�Ǝv�������Ƃ͐�������܂��B�֎q�̋r�܂��Ƃ��A�I�̉��Ƃ��A���ꂻ���œ���Ȃ����̔����Ȋ����A����܂���ˁB
 
-そんな中、2026年2月にアイロボットが出してきたのが **「ルンバ ミニ」** です。名前のとおり、めちゃくちゃ小さい。従来のルンバから **体積が約半分** になりました。<sup><a href="#fn1" id="ref1">参照1</a></sup>
+����Ȓ��A2026�N2���ɃA�C���{�b�g���o���Ă����̂� **�u�����o �~�j�v** �ł��B���O�̂Ƃ���A�߂��Ⴍ���Ꮼ�����B�]���̃����o���� **�̐ς��񔼕�** �ɂȂ�܂����B<sup><a href="#fn1" id="ref1">�Q��1</a></sup>
 
-しかもただ小さくなっただけじゃなくて、吸引力はルンバ600シリーズの約70倍。<sup><a href="#fn2" id="ref2">参照2</a></sup> LiDARナビもちゃんと載ってます。価格は **3万9,800円から** です。<sup><a href="#fn3" id="ref3">参照3</a></sup>
+�����������������Ȃ�����������Ȃ��āA�z���͂̓����o600�V���[�Y�̖�70�{�B<sup><a href="#fn2" id="ref2">�Q��2</a></sup> LiDAR�i�r�������ƍڂ��Ă܂��B���i�� **3��9,800�~����** �ł��B<sup><a href="#fn3" id="ref3">�Q��3</a></sup>
 
-驚いたのが、開発のきっかけが「日本の家にはデカすぎる」っていう日本法人の声だったこと。<sup><a href="#fn4" id="ref4">参照4</a></sup> ガチで日本の住宅に合わせて作られたルンバなんです。
+�������̂��A�J���̂����������u���{�̉Ƃɂ̓f�J������v���Ă������{�@�l�̐����������ƁB<sup><a href="#fn4" id="ref4">�Q��4</a></sup> �K�`�œ��{�̏Z��ɍ��킹�č��ꂽ�����o�Ȃ�ł��B
 
 ---
 
-## スペック早見表
+## �X�y�b�N�����\
 
-| 項目 | AutoEmpty | Slim |
+| ���� | AutoEmpty | Slim |
 |:---|:---|:---|
-| **価格** | 49,800円<sup><a href="#fn3">参照3</a></sup> | 39,800円<sup><a href="#fn3">参照3</a></sup> |
-| **発売日** | 2月27日（SAKURA/WAKABAは3月13日）<sup><a href="#fn5" id="ref5">参照5</a></sup> | 4月6日（3月10日予約開始）<sup><a href="#fn6" id="ref6">参照6</a></sup> |
-| **ゴミ処理** | 自動収集（約3ヶ月分）<sup><a href="#fn7" id="ref7">参照7</a></sup> | 手動（本体ダストボックス） |
-| **充電台** | ステーション型 | 縦置きスタンド（省スペース） |
-| **カラー** | SHIRO / KURO / SAKURA / WAKABA<sup><a href="#fn5">参照5</a></sup> | SHIRO / KURO<sup><a href="#fn5">参照5</a></sup> |
-| **サブスク** | 月額2,380円（KUROのみ）<sup><a href="#fn8" id="ref8">参照8</a></sup> | 月額1,880円（KUROのみ）<sup><a href="#fn8">参照8</a></sup> |
+| **���i** | 49,800�~<sup><a href="#fn3">�Q��3</a></sup> | 39,800�~<sup><a href="#fn3">�Q��3</a></sup> |
+| **������** | 2��27���iSAKURA/WAKABA��3��13���j<sup><a href="#fn5" id="ref5">�Q��5</a></sup> | 4��6���i3��10���\��J�n�j<sup><a href="#fn6" id="ref6">�Q��6</a></sup> |
+| **�S�~����** | �������W�i��3�������j<sup><a href="#fn7" id="ref7">�Q��7</a></sup> | �蓮�i�{�̃_�X�g�{�b�N�X�j |
+| **�[�d��** | �X�e�[�V�����^ | �c�u���X�^���h�i�ȃX�y�[�X�j |
+| **�J���[** | SHIRO / KURO / SAKURA / WAKABA<sup><a href="#fn5">�Q��5</a></sup> | SHIRO / KURO<sup><a href="#fn5">�Q��5</a></sup> |
+| **�T�u�X�N** | ���z2,380�~�iKURO�̂݁j<sup><a href="#fn8" id="ref8">�Q��8</a></sup> | ���z1,880�~�iKURO�̂݁j<sup><a href="#fn8">�Q��8</a></sup> |
 
 ---
 
-## ここがスゴい（5つのメリット）
+## �������X�S���i5�̃����b�g�j
 
-### 2. 吸引力はルンバ600シリーズの約70倍
+### 2. �z���͂̓����o600�V���[�Y�̖�70�{
 
-小さいからパワーないんじゃ？って思うかもしれないんですけど、吸引力は **ルンバ600シリーズの約70倍** です。<sup><a href="#fn2">参照2</a></sup> 上位機に匹敵するパワーをこのサイズに詰め込んでいるのがすごい。
+����������p���[�Ȃ��񂶂�H���Ďv����������Ȃ���ł����ǁA�z���͂� **�����o600�V���[�Y�̖�70�{** �ł��B<sup><a href="#fn2">�Q��2</a></sup> ��ʋ@�ɕC�G����p���[�����̃T�C�Y�ɋl�ߍ���ł���̂��������B
 
-### 3. LiDARナビ搭載で賢く動く
+### 3. LiDAR�i�r���ڂŌ�������
 
-ルンバ ミニは **LiDAR（レーザー）ナビ搭載** です。<sup><a href="#fn9" id="ref9">参照9</a></sup> 93m²以下の部屋なら10分以内にマップが完成するらしいです。<sup><a href="#fn10" id="ref10">参照10</a></sup>
+�����o �~�j�� **LiDAR�i���[�U�[�j�i�r����** �ł��B<sup><a href="#fn9" id="ref9">�Q��9</a></sup> 93m2�ȉ��̕����Ȃ�10���ȓ��Ƀ}�b�v����������炵���ł��B<sup><a href="#fn10" id="ref10">�Q��10</a></sup>
 
-### 4. 床拭きシート対応 — クイックルワイパーもOK
+### 4. ���@���V�[�g�Ή� ? �N�C�b�N�����C�p�[��OK
 
-**花王のクイックルワイパー 立体吸着ウェットシート**<sup><a href="#fn11" id="ref11">参照11</a></sup> にも対応してるのがうれしいですね。
+**�ԉ��̃N�C�b�N�����C�p�[ ���̋z���E�F�b�g�V�[�g**<sup><a href="#fn11" id="ref11">�Q��11</a></sup> �ɂ��Ή����Ă�̂����ꂵ���ł��ˁB
 
-### 5. ルンバなのに4万円切り
+### 5. �����o�Ȃ̂�4���~�؂�
 
-Slimモデルなら **39,800円** です。<sup><a href="#fn3">参照3</a></sup> サブスクなら月額1,880円から。<sup><a href="#fn8">参照8</a></sup>
-
----
-
-## ここが気になる（3つのデメリット）
-
-### 1. ダストボックスが小さいかも
-
-AutoEmptyモデルならステーションが自動で吸い上げてくれる（約3ヶ月分）<sup><a href="#fn7">参照7</a></sup> ので問題ないんですけど、Slimモデルは手動で捨てる必要があります。
-
-### 2. バッテリー持ちが未公表
-
-**公式にバッテリー稼働時間が発表されていません**。<sup><a href="#fn12" id="ref12">参照12</a></sup>
+Slim���f���Ȃ� **39,800�~** �ł��B<sup><a href="#fn3">�Q��3</a></sup> �T�u�X�N�Ȃ猎�z1,880�~����B<sup><a href="#fn8">�Q��8</a></sup>
 
 ---
 
-## まとめ：買い？待ち？
+## �������C�ɂȂ�i3�̃f�����b�g�j
 
-Slimモデル39,800円<sup><a href="#fn3">参照3</a></sup> は、LiDARナビ搭載でこの値段は他メーカーと比べても強いです。発売は2月27日（SHIRO/KURO）<sup><a href="#fn5">参照5</a></sup> なので、もう少しだけ待ってみてもいいかもしれません。
+### 1. �_�X�g�{�b�N�X������������
+
+AutoEmpty���f���Ȃ�X�e�[�V�����������ŋz���グ�Ă����i��3�������j<sup><a href="#fn7">�Q��7</a></sup> �̂Ŗ��Ȃ���ł����ǁASlim���f���͎蓮�Ŏ̂Ă�K�v������܂��B
+
+### 2. �o�b�e���[�����������\
+
+**�����Ƀo�b�e���[�ғ����Ԃ����\����Ă��܂���**�B<sup><a href="#fn12" id="ref12">�Q��12</a></sup>
 
 ---
 
-<h2>ファクトチェック根拠（人間確認用）</h2>
+## �܂Ƃ߁F�����H�҂��H
 
-<p id="fn1">1 ✅ <strong>正確</strong>: 「従来モデルRoomba Combo105 ロボットに比べて約半分の体積を実現」と明記。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref1">元の場所に戻る</a></p>
+Slim���f��39,800�~<sup><a href="#fn3">�Q��3</a></sup> �́ALiDAR�i�r���ڂł��̒l�i�͑����[�J�[�Ɣ�ׂĂ������ł��B������2��27���iSHIRO/KURO�j<sup><a href="#fn5">�Q��5</a></sup> �Ȃ̂ŁA�������������҂��Ă݂Ă�������������܂���B
 
-<p id="fn2">2 ✅ <strong>正確</strong>: 「かつてのRoomba 600シリーズの約70倍強力なパワーリフト吸引と、特別設計のシングルアクションブラシを搭載」と明記。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref2">元の場所に戻る</a></p>
+---
 
-<p id="fn3">3 ✅ <strong>正確</strong>: 「AutoEmpty充電ステーション…が49,800円」「Roomba Mini Slim…が39,800円」と明記（税込直販価格）。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref3">元の場所に戻る</a></p>
+<h2>�t�@�N�g�`�F�b�N�����i�l�Ԋm�F�p�j</h2>
 
-<p id="fn4">4 ✅ <strong>正確</strong>: 「日本法人であるアイロボットジャパンの発案により開発が始まったモデル」とプレスリリースに明記。 — <a href="https://prtimes.jp/main/html/rd/p/000000153.000025142.html">PR TIMES（2026年2月19日）</a> <a href="#ref4">元の場所に戻る</a></p>
+<p id="fn1">1 ? <strong>���m</strong>: �u�]�����f��Roomba Combo105 ���{�b�g�ɔ�ׂĖ񔼕��̑̐ς������v�Ɩ��L�B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref1">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn5">5 ✅ <strong>正確（カラーごとに発売日が異なる点に注意）</strong>: 「発売日は白と黒が2月27日、桜と若葉が3月13日。SlimCharge充電スタンド付きモデルは白と黒の2種類のみ」と明記。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref5">元の場所に戻る</a></p>
+<p id="fn2">2 ? <strong>���m</strong>: �u���Ă�Roomba 600�V���[�Y�̖�70�{���͂ȃp���[���t�g�z���ƁA���ʐ݌v�̃V���O���A�N�V�����u���V�𓋍ځv�Ɩ��L�B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref2">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn6">6 ✅ <strong>正確</strong>: 楽天市場アイロボット公式ストアにて「3月10日予約開始」と明記（発売日4月6日）。 — <a href="https://item.rakuten.co.jp/irobotstore/f11/">楽天市場 アイロボット公式ストア</a> <a href="#ref6">元の場所に戻る</a></p>
+<p id="fn3">3 ? <strong>���m</strong>: �uAutoEmpty�[�d�X�e�[�V�����c��49,800�~�v�uRoomba Mini Slim�c��39,800�~�v�Ɩ��L�i�ō����̉��i�j�B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref3">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn7">7 ✅ <strong>正確</strong>: 「約3カ月間ゴミ捨ての手間が不要」と明記。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref7">元の場所に戻る</a></p>
+<p id="fn4">4 ? <strong>���m</strong>: �u���{�@�l�ł���A�C���{�b�g�W���p���̔��Ăɂ��J�����n�܂������f���v�ƃv���X�����[�X�ɖ��L�B ? <a href="https://prtimes.jp/main/html/rd/p/000000153.000025142.html">PR TIMES�i2026�N2��19���j</a> <a href="#ref4">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn8">8 ✅ <strong>正確（対象カラーに注意）</strong>: 「AutoEmpty充電ステーション付きが月額レンタル2,380円、SlimCharge充電スタンド付きが同1,880円。なお、サブスクの対象は黒のみとなる」と明記。AutoEmpty・Slimともにサブスク対象はKUROのみ。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref8">元の場所に戻る</a></p>
+<p id="fn5">5 ? <strong>���m�i�J���[���Ƃɔ��������قȂ�_�ɒ��Ӂj</strong>: �u�������͔��ƍ���2��27���A���Ǝ�t��3��13���BSlimCharge�[�d�X�^���h�t�����f���͔��ƍ���2��ނ̂݁v�Ɩ��L�B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref5">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn9">9 ✅ <strong>正確</strong>: 「ナビゲーションにはClearView LiDARを搭載」と明記。正式名称は「ClearView LiDAR」。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref9">元の場所に戻る</a></p>
+<p id="fn6">6 ? <strong>���m</strong>: �y�V�s��A�C���{�b�g�����X�g�A�ɂāu3��10���\��J�n�v�Ɩ��L�i������4��6���j�B ? <a href="https://item.rakuten.co.jp/irobotstore/f11/">�y�V�s�� �A�C���{�b�g�����X�g�A</a> <a href="#ref6">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn10">10 ✅ <strong>正確</strong>: 「10分未満で部屋をマッピング（93m2以下の場合）」と明記。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref10">元の場所に戻る</a></p>
+<p id="fn7">7 ? <strong>���m</strong>: �u��3�J���ԃS�~�̂Ă̎�Ԃ��s�v�v�Ɩ��L�B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref7">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn11">11 ✅ <strong>正確（表記修正）</strong>: 正式名称は「クイックルワイパー 立体吸着ウェットシート」（「クイックルワイパー」と「立体吸着」の間に半角スペースあり）。元記事のスペースなし表記を修正済み。 — <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">家電Watch（2026年2月19日）</a> <a href="#ref11">元の場所に戻る</a></p>
+<p id="fn8">8 ? <strong>���m�i�ΏۃJ���[�ɒ��Ӂj</strong>: �uAutoEmpty�[�d�X�e�[�V�����t�������z�����^��2,380�~�ASlimCharge�[�d�X�^���h�t������1,880�~�B�Ȃ��A�T�u�X�N�̑Ώۂ͍��݂̂ƂȂ�v�Ɩ��L�BAutoEmpty�ESlim�Ƃ��ɃT�u�X�N�Ώۂ�KURO�̂݁B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref8">���̏ꏊ�ɖ߂�</a></p>
 
-<p id="fn12">12 ✅ <strong>正確（未公表）</strong>: 家電Watch・PR TIMES・CNET Japan・マイナビニュース各記事すべてにバッテリー稼働時間の記載なし。公式プレスリリースにも記載なし。未公表が事実と確認。 — <a href="https://prtimes.jp/main/html/rd/p/000000153.000025142.html">PR TIMES（2026年2月19日）</a> <a href="#ref12">元の場所に戻る</a></p>
+<p id="fn9">9 ? <strong>���m</strong>: �u�i�r�Q�[�V�����ɂ�ClearView LiDAR�𓋍ځv�Ɩ��L�B�������̂́uClearView LiDAR�v�B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref9">���̏ꏊ�ɖ߂�</a></p>
+
+<p id="fn10">10 ? <strong>���m</strong>: �u10�������ŕ������}�b�s���O�i93m2�ȉ��̏ꍇ�j�v�Ɩ��L�B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref10">���̏ꏊ�ɖ߂�</a></p>
+
+<p id="fn11">11 ? <strong>���m�i�\�L�C���j</strong>: �������̂́u�N�C�b�N�����C�p�[ ���̋z���E�F�b�g�V�[�g�v�i�u�N�C�b�N�����C�p�[�v�Ɓu���̋z���v�̊Ԃɔ��p�X�y�[�X����j�B���L���̃X�y�[�X�Ȃ��\�L���C���ς݁B ? <a href="https://kaden.watch.impress.co.jp/docs/news/2086998.html">�ƓdWatch�i2026�N2��19���j</a> <a href="#ref11">���̏ꏊ�ɖ߂�</a></p>
+
+<p id="fn12">12 ? <strong>���m�i�����\�j</strong>: �ƓdWatch�EPR TIMES�ECNET Japan�E�}�C�i�r�j���[�X�e�L�����ׂĂɃo�b�e���[�ғ����Ԃ̋L�ڂȂ��B�����v���X�����[�X�ɂ��L�ڂȂ��B�����\�������Ɗm�F�B ? <a href="https://prtimes.jp/main/html/rd/p/000000153.000025142.html">PR TIMES�i2026�N2��19���j</a> <a href="#ref12">���̏ꏊ�ɖ߂�</a></p>

@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     指定したキーワードで楽天市場を検索し、上位3商品の情報を取得。
-    Hugo の front matter + rakuten ショートコード入りの Markdown ファイルを生成し、
+    Hugo の front matter + shop-card ショートコード入りの Markdown ファイルを生成し、
     VS Code で自動的に開きます。
     -Style パラメータで記事の構成パターンを切り替えられます。
 
@@ -536,7 +536,7 @@ foreach ($p in $products) {
 **向いてる人：** （1行で記入）
 **向いてない人：** （1行で記入）
 
-{{< rakuten title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
+{{< shop-card title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
 
 ---
 "@
@@ -550,7 +550,7 @@ foreach ($p in $products) {
 （この商品を使っているシーンや体験を文章で書く。箇条書きだけにしない。
  「〜な場面で使ってる」「〜が地味に助かってる」的なトーンで）
 
-{{< rakuten title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
+{{< shop-card title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
 
 ※あくまで個人の感想です。合う合わないは人によります。
 
@@ -572,7 +572,7 @@ foreach ($p in $products) {
 
 **使用シーン：** （「朝の通勤で〜」「デスクに置くと〜」的な具体描写）
 
-{{< rakuten title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
+{{< shop-card title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
 
 ---
 "@
@@ -593,7 +593,7 @@ foreach ($p in $products) {
  良い点を文章で語った後、活用Tipsを1つ入れる。
  「こんな人には合わないかも」も正直に）
 
-{{< rakuten title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
+{{< shop-card title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
 
 ---
 "@
@@ -613,7 +613,7 @@ foreach ($p in $products) {
 （時系列で書く: 開封→第一印象→使ってみて→今どう思ってるか。
  感覚的な表現を多めに。全商品同じ密度にしないこと）
 
-{{< rakuten title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
+{{< shop-card title="$safeName" url="$($p.Url)" img="$($p.ImageUrl)" price="$($p.Price)" keyword="$Keyword" >}}
 
 ---
 "@

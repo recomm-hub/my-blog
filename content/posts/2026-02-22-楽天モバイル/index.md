@@ -1,4 +1,4 @@
-+++
+﻿+++
 date = '2026-02-20'
 draft = false
 title = '大手キャリアから楽天モバイルに乗り換えて感じたメリット・デメリット'
@@ -116,7 +116,7 @@ keywords = ['楽天モバイル', '乗り換え', 'MNP', 'テザリング', 'Rak
 
 楽天モバイル公式 楽天市場店で購入できます。
 
-{{< rakuten title="Nothing Phone (3a) Lite" url="https://hb.afl.rakuten.co.jp/hgc/g00tof98.fluakfa7.g00tof98.fluale4e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenmobile-store%2Fphone-3a-lite%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakutenmobile-store%2Fi%2F10001867%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenmobile-store/cabinet/product/phone-3a-lite/pc/device_main.jpg?_ex=128x128" price="32,890" keyword="Nothing Phone 3a Lite" >}}
+{{< shop-card title="Nothing Phone (3a) Lite" url="https://hb.afl.rakuten.co.jp/hgc/g00tof98.fluakfa7.g00tof98.fluale4e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenmobile-store%2Fphone-3a-lite%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakutenmobile-store%2Fi%2F10001867%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenmobile-store/cabinet/product/phone-3a-lite/pc/device_main.jpg?_ex=128x128" price="32,890" keyword="Nothing Phone 3a Lite" amazon_asin="B0DZ65GLNV" >}}
 
 ---
 
@@ -170,7 +170,7 @@ LINE通話と同じくらいのイメージです。普通の会話には十分�
 
 ## まとめ：楽天モバイルは「なんとなく高い通信費」を見直す最短ルート
 
-楽天モバイルに乗り換えてから、毎月のスマホ代が**8,000円台→3,000円以下**になりました。年間で約6万円の節約です。
+楽天モバイルに乗り換えてから、毎月のスマホ代が8,000円台→3,000円以下になりました。年間で約6万円の節約です。
 
 この記事のポイントをまとめると：
 

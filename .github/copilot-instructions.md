@@ -76,6 +76,37 @@ AIはこのファイルを参照し、ファイル配置・フォルダ構成を
 - **`daily-workflow.md` は `.github/agents/` にのみ存在する。** `prompts/` には置かない。
 - **`fact-check.md` は `prompts/` にのみ存在する。** `.github/agents/` には置かない。
 - ファイルを作成・移動する前に、上記の表でどのフォルダが正しいか確認する。
+- **`ask_questions` ツール（確認ダイアログ）は一切使用禁止。** auto-approve が有効な環境のため、著者の意図なく承認されてしまう。著者への確認・選択肢は必ずチャット本文のテキストとして提示し、著者が手動でテキストを返信する形式にすること。
+
+---
+
+## ファイル作成・編集のルール（文字化け防止）
+
+> **背景**: `create_file` ツールはUTF-8の3バイト日本語文字（ひらがな・カタカナ・漢字）を破壊することがある。
+> この問題を防ぐため、日本語コンテンツの扱いは以下のルールに従うこと。
+
+### ✅ 推奨: 既存ファイルの編集
+
+**`replace_string_in_file` ツールを使う。**  
+このツールは文字化けを起こさないため、既存ファイルへの追記・修正は常にこちらを使う。
+
+### ✅ 推奨: 新規ファイルの作成（日本語コンテンツを含む場合）
+
+**PowerShell の `[IO.File]::WriteAllText` を使う。**  
+`create_file` ツールは使わない。以下のパターンで実行する:
+
+```powershell
+$file = "c:\Users\nh1r0\my-blog-local\content\posts\<slug>\index.md"
+$content = @'
+（ここにMarkdown本文をそのまま記述）
+'@
+[IO.File]::WriteAllText($file, $content, [Text.Encoding]::UTF8)
+```
+
+### ❌ 禁止: 日本語コンテンツへの `create_file` ツール使用
+
+`create_file` ツールは日本語を含むMarkdownファイルの新規作成に**使用禁止**。  
+文字化け（`ぁE`、`チE`、`めE` 等の埋め込みアーティファクト）が発生する既知の問題がある。
 
 ---
 

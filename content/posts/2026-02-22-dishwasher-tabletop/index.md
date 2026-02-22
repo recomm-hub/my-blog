@@ -6,7 +6,6 @@ draft: false
 categories: ["レビュー"]
 tags: ["食洗機", "タンク式", "NP-TSP1", "パナソニック", "賃貸", "工事不要"]
 description: "パナソニックの卓上タンク式食洗機 NP-TSP1-W を賃貸で使った体験談レビュー。給水の裏ワザ、5年保証付き商品のリアル、デメリットも正直に紹介します。"
-style: "E"
 image: cover.jpg
 ShowToc: true
 TocOpen: true
@@ -34,7 +33,7 @@ TocOpen: true
 
 買ってから楽天のレビューを見たら★4.64（69件）で、「あ、ちゃんと選べてた」と安心しました。
 
-ちなみにうちは3人家族（購入当時）。容量は**食器点数24点（4人用）**なので、3人家族なら余裕で一度に収まります。フライパンや鍋も入れたかったので、{{< rakuten-link "ティファール 取っ手のとれるシリーズ" "https://search.rakuten.co.jp/search/mall/%E3%83%86%E3%82%A3%E3%83%95%E3%82%A1%E3%83%BC%E3%83%AB+%E5%8F%96%E3%81%A3%E6%89%8B+%E3%81%AE%E3%81%A8%E3%82%8C%E3%82%8B/" >}}に切り替えたのも正解でした。ハンドルなしなら庫内にぴったり入ります。
+ちなみにうちは3人家族（購入当時）。容量は**食器点数24点（4人用）**なので、3人家族なら余裕で一度に収まります。フライパンや鍋も入れたかったので、{{< shop-link "ティファール 取っ手のとれるシリーズ" "https://search.rakuten.co.jp/search/mall/%E3%83%86%E3%82%A3%E3%83%95%E3%82%A1%E3%83%BC%E3%83%AB+%E5%8F%96%E3%81%A3%E6%89%8B+%E3%81%AE%E3%81%A8%E3%82%8C%E3%82%8B/" >}}に切り替えたのも正解でした。ハンドルなしなら庫内にぴったり入ります。
 
 ---
 
@@ -42,7 +41,7 @@ TocOpen: true
 
 ### 洗浄力は？
 
-油汚れや米のこびりつきは、**食後すぐに回せばほぼ問題なし**です。カレーや固まったご飯など、油ったり汚れがひどいものは軽く予備洗い（ゆすぎ程度）してから入れると仕上がりがきれいです。
+油汚れや米のこびりつきは、食後すぐに回せばほぼ問題なしです。カレーや固まったご飯など、油ったり汚れがひどいものは軽く予備洗い（ゆすぎ程度）してから入れると仕上がりがきれいです。
 
 「予備洗いが手間では？」と思うかもしれませんが、ゴシゴシ洗うのとは全然違います。サッと流すだけなので、食洗機に入れた後は何もしなくていい。それだけで十分楽です。
 
@@ -117,6 +116,6 @@ NP-TSP1-Wはタンク式なので、毎回タンクに水を補充する必要�
 
 購入するなら、**masaniosショップの5年保証付き商品**がおすすめです。
 
-{{< rakuten title="パナソニック NP-TSP1-W 卓上タイプタンク式食器洗い乾燥機【5年延長保証付き】" url="https://hb.afl.rakuten.co.jp/hgc/g00pjgh8.fluak6ca.g00pjgh8.fluale75/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmasanios%2Fnp-tsp1-w%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmasanios%2Fi%2F10176325%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/masanios/cabinet/2501/imgrc0114733825.jpg?_ex=256x256" price="69,935" keyword="パナソニック 食洗機 卓上 NP-TSP1" >}}
+{{< shop-card title="パナソニック NP-TSP1-W 卓上タイプタンク式食器洗い乾燥機（5年延長保証付き）" url="https://hb.afl.rakuten.co.jp/hgc/g00pjgh8.fluak6ca.g00pjgh8.fluale75/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmasanios%2Fnp-tsp1-w%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmasanios%2Fi%2F10176325%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/masanios/cabinet/2501/imgrc0114733825.jpg?_ex=256x256" price="69,935" keyword="パナソニック 食洗機 卓上 NP-TSP1" amazon_asin="B09G2L8C4Z" >}}
 
-> 📝 価格・レビュー件数は記事作成時点（2026年2月）のものです。最新情報はリンク先でご確認ください。
+> 📝 価格・レビュー件数は記事作成時点（2026年2月）のものです。最新情報はリンク先でご確認ください

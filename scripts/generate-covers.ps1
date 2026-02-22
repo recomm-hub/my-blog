@@ -3,7 +3,7 @@
     既存の記事から楽天商品画像を抽出し、合成カバー画像を生成するスクリプト。
 .DESCRIPTION
     content/posts/ 配下の .md ファイルを読み込み、
-    rakuten ショートコードの img パラメータから商品画像URLを抽出。
+    shop-card / amazon ショートコードの img パラメータから商品画像URLを抽出。
     画像をダウンロードして横並びの合成カバー画像を生成し、
     記事をページバンドル形式に変換して cover.jpg を配置します。
 .EXAMPLE
@@ -30,10 +30,10 @@ $contentRoot = [System.IO.Path]::GetFullPath($contentRoot)
 # ── 画像URL抽出 ──
 function Get-RakutenImageUrls([string]$text) {
     $out = @()
-    $re  = [regex]::new('(?i)\{\{<\s*rakuten\s[^>]*img="([^"]+)"')
+    $re  = [regex]::new('(?i)\{\{<\s*(shop-card|amazon)\s[^>]*img="([^"]+)"')
     $mc  = $re.Matches($text)
     foreach ($m in $mc) {
-        $u = $m.Groups[1].Value
+        $u = $m.Groups[2].Value
         $u = $u -replace '\?_ex=\d+x\d+', '?_ex=300x300'
         $out += $u
     }

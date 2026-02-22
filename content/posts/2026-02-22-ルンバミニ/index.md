@@ -1,4 +1,4 @@
-+++
+﻿+++
 date = '2026-02-21'
 draft = false
 title = 'ルンバがついに小さくなった！Roomba Miniのメリット・デメリットまとめ'
@@ -51,9 +51,9 @@ keywords = ['ルンバ ミニ', 'Roomba Mini', 'ルンバ 小さい', 'ルンバ
 
 **正直、この価格でLiDARナビ付きはかなり攻めてますね。**
 
-{{< rakuten title="Roomba Mini + AutoEmpty ルンバ ミニ（自動ゴミ収集モデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff15%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="49,800" keyword="ルンバ ミニ AutoEmpty" >}}
+{{< shop-card title="Roomba Mini + AutoEmpty ルンバ ミニ（自動ゴミ収集モデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff15%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="49,800" keyword="ルンバ ミニ AutoEmpty" >}}
 
-{{< rakuten title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://item.rakuten.co.jp/irobotstore/f11/?scid=af_pc_etc&sc2id=af_101_0_0&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
+{{< shop-card title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://item.rakuten.co.jp/irobotstore/f11/?scid=af_pc_etc&sc2id=af_101_0_0&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
 
 ---
 
@@ -133,9 +133,9 @@ Slimモデルなら **39,800円** です。ルンバでこの価格は今まで�
 
 ルンバ ミニの発売は2月27日（AutoEmptyのSHIRO/KURO）/ 3月13日（AutoEmptyのSAKURA/WAKABA）/ 4月6日（Slim ※3月10日予約開始）です。「今すぐロボット掃除機がほしい」「広い家だからフルサイズのほうがいい」って人は、現行モデルも十分いい選択肢だと思います。
 
-{{< rakuten title="Roomba 105 Combo + AutoEmpty（エントリーモデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Fy35%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Firobotstore%2Fi%2F10000565%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/irobotstore/cabinet/03016688/20260219_review_2nen/105c_ae_tm_2nen_v2.jpg?_ex=128x128" price="59,743" keyword="ルンバ 105" >}}
+{{< shop-card title="Roomba 105 Combo + AutoEmpty（エントリーモデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Fy35%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Firobotstore%2Fi%2F10000565%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/irobotstore/cabinet/03016688/20260219_review_2nen/105c_ae_tm_2nen_v2.jpg?_ex=128x128" price="59,743" keyword="ルンバ 105" amazon_asin="B0F1FCYBLT" >}}
 
-{{< rakuten title="Roomba Plus 505 Combo + AutoWash（ハイエンドモデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Fn185060%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Firobotstore%2Fi%2F10000558%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/irobotstore/cabinet/03016688/20260217_marathon/2602_505c_tm_2nen_mr.jpg?_ex=128x128" price="129,577" keyword="ルンバ Plus 505" >}}
+{{< shop-card title="Roomba Plus 505 Combo + AutoWash（ハイエンドモデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Fn185060%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Firobotstore%2Fi%2F10000558%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/irobotstore/cabinet/03016688/20260217_marathon/2602_505c_tm_2nen_mr.jpg?_ex=128x128" price="129,577" keyword="ルンバ Plus 505" amazon_asin="B0F1FCR538" >}}
 
 ---
 
@@ -161,6 +161,6 @@ Slimモデル39,800円は、ロボット掃除機デビューにちょうどい�
 
 個人的には「サブ機として寝室に置く」っていう使い方がかなりアリだなと思ってます。メインのロボット掃除機とは別に、寝室だけサッと回す小さいやつ。このサイズと価格ならそれができますね。
 
-{{< rakuten title="Roomba Mini + AutoEmpty ルンバ ミニ（自動ゴミ収集モデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff15%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="49,800" keyword="ルンバ ミニ AutoEmpty" >}}
+{{< shop-card title="Roomba Mini + AutoEmpty ルンバ ミニ（自動ゴミ収集モデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff15%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="49,800" keyword="ルンバ ミニ AutoEmpty" >}}
 
-{{< rakuten title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://item.rakuten.co.jp/irobotstore/f11/?scid=af_pc_etc&sc2id=af_101_0_0&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
+{{< shop-card title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://item.rakuten.co.jp/irobotstore/f11/?scid=af_pc_etc&sc2id=af_101_0_0&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}

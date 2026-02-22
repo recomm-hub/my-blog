@@ -1,8 +1,8 @@
-+++
+﻿+++
 date = '2026-02-19'
 draft = false
 title = 'テレワーカーにこそ刺さる──Sony LinkBuds を使ってわかったこと'
-description = 'カナル型イヤホンの耳のこもり感に悩んでいたテレワーカーが Sony LinkBuds を使ってわかったこと。オープンイヤーの快適さ、通話品質の実力、Teams 連携の正直な感想までまとめました。'
+description = 'カナル型イヤホンの耳のこもり感に悩んでいるテレワーカーへ、Sony LinkBuds を使ってわかったこと。オープンイヤーの快適さ、通話品質の実力、Teams 連携の正直な感想までまとめました。'
 slug = 'linkbuds-review'
 image = 'cover.jpg'
 categories = ['レビュー']
@@ -98,7 +98,7 @@ Teams 連携をオフにしてからはそういったトラブルがなくな�
 
 **バッテリー**は本体のみで約5.5時間という仕様です。一日中つけっぱなしで使うには短いですが、会議と会議の合間にケースに戻して充電する、という運用をしていれば特に困りませんでした。そもそも何時間も連続でミーティングが続くことはそんなにないですし、ちょっと外したときに充電する習慣をつければ問題ないです。
 
-もう一つ気になるとすれば、**置くだけ充電（ワイヤレス充電）に非対応**な点です。自分が使っていた WF-L900 系はケーブル充電のみで、これは現行の LinkBuds Open・Fit・Clip も同様です（※ LinkBuds S のみ Qi 対応）。ケーブルを挿すひと手間があるので、ワイヤレス充電に慣れている人は少し不便に感じるかもしれません（※ {{< rakuten-link "LinkBuds S" >}} のみ Qi 対応）。
+もう一つ気になるとすれば、**置くだけ充電（ワイヤレス充電）に非対応**な点です。自分が使っていた WF-L900 系はケーブル充電のみで、これは現行の LinkBuds Open・Fit・Clip も同様です（※ LinkBuds S のみ Qi 対応）。ケーブルを挿すひと手間があるので、ワイヤレス充電に慣れている人は少し不便に感じるかもしれません（※ {{< shop-link "LinkBuds S" >}} のみ Qi 対応）。
 
 ---
 
@@ -126,6 +126,5 @@ LinkBuds に変えて一番よかったのは、**耳のこもり感が解消さ
 
 使っていた LinkBuds UC は現在廃番ですが、オープンイヤーの快適さや通話品質は LinkBuds シリーズ共通の強みです。今から買うなら現行モデルで同じ体験ができます。
 
-テレワーク中のイヤホン選びで迷っている方には、自信を持っておすすめできる一台です。今から買うなら、同じオープンイヤー体験ができる {{< rakuten-link "LinkBuds Open（WF-L910）" "https://hb.afl.rakuten.co.jp/hgc/g00qjy08.fluakad6.g00qjy08.flual8ec/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfl910%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fe-earphone%2Fi%2F10037801%2F&rafcid=wsc_i_is_1013356076665194500" >}} がおすすめです。
-
-{{< rakuten title="SONY LinkBuds Open WF-L910 ソニー オープンイヤーイヤホン" url="https://hb.afl.rakuten.co.jp/hgc/g00qjy08.fluakad6.g00qjy08.flual8ec/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfl910%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fe-earphone%2Fi%2F10037801%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/e-earphone/cabinet/sony/sony-wfl910-skuimage.jpg?_ex=128x128" price="23,688" keyword="LinkBuds Open" >}}
+テレワーク中のイヤホン選びで迷っている方には、自信を持っておすすめできる一台です。今から買うなら、同じオープンイヤー体験ができる {{< shop-link "LinkBuds Open（WF-L910）" "https://hb.afl.rakuten.co.jp/hgc/g00qjy08.fluakad6.g00qjy08.flual8ec/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfl910%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fe-earphone%2Fi%2F10037801%2F&rafcid=wsc_i_is_1013356076665194500" >}} がおすすめです。
+{{< shop-card title="SONY LinkBuds Open WF-L910 ソニー オープンイヤーイヤホン" url="https://hb.afl.rakuten.co.jp/hgc/g00qjy08.fluakad6.g00qjy08.flual8ec/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfl910%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fe-earphone%2Fi%2F10037801%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/e-earphone/cabinet/sony/sony-wfl910-skuimage.jpg?_ex=128x128" price="23,688" keyword="LinkBuds Open" amazon_asin="B0DHZXV835" >}}
