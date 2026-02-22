@@ -31,7 +31,7 @@ keywords = ['ルンバ ミニ', 'Roomba Mini', 'ルンバ 小さい', 'ルンバ
 | 項目 | AutoEmpty | Slim |
 |:---|:---|:---|
 | **価格** | 49,800円 | 39,800円 |
-| **発売日** | 2月27日（SAKURA/WAKABAは3月13日） | 4月6日（3月10日予約開始） |
+| **発売日** | 2026年2月27日（SAKURA/WAKABAは3月13日） | 2026年4月6日（3月10日予約開始） |
 | **ゴミ処理** | 自動収集（約3ヶ月分） | 手動（本体ダストボックス） |
 | **充電台** | ステーション型 | 縦置きスタンド（省スペース） |
 | **カラー** | SHIRO / KURO / SAKURA / WAKABA | SHIRO / KURO |
@@ -131,7 +131,7 @@ Slimモデルなら **39,800円** です。ルンバでこの価格は今まで�
 
 ### 発売まで待てない人・今すぐ大きいルンバがほしい人へ
 
-ルンバ ミニの発売は2月27日（AutoEmptyのSHIRO/KURO）/ 3月13日（AutoEmptyのSAKURA/WAKABA）/ 4月6日（Slim ※3月10日予約開始）です。「今すぐロボット掃除機がほしい」「広い家だからフルサイズのほうがいい」って人は、現行モデルも十分いい選択肢だと思います。
+ルンバ ミニの発売は2026年2月27日（AutoEmptyのSHIRO/KURO）/ 3月13日（AutoEmptyのSAKURA/WAKABA）/ 4月6日（Slim ※3月10日予約開始）です。「今すぐロボット掃除機がほしい」「広い家だからフルサイズのほうがいい」って人は、現行モデルも十分いい選択肢だと思います。
 
 {{< shop-card title="Roomba 105 Combo + AutoEmpty（エントリーモデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Fy35%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Firobotstore%2Fi%2F10000565%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/irobotstore/cabinet/03016688/20260219_review_2nen/105c_ae_tm_2nen_v2.jpg?_ex=128x128" price="59,743" keyword="ルンバ 105" amazon_asin="B0F1FCYBLT" >}}
 
