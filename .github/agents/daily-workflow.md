@@ -12,23 +12,23 @@
 
 このワークフローは以下のファイルと連携して動作します。
 
-| ファイル | 役割 |
-|---------|------|
-| `prompts/style-A-ranking.md` | 記事スタイルA: ランキング形式 |
-| `prompts/style-B-solution.md` | 記事スタイルB: 問題解決形式 |
-| `prompts/style-C-comparison.md` | 記事スタイルC: 比較形式 |
-| `prompts/style-D-scene.md` | 記事スタイルD: シーン訴求形式 |
-| `prompts/style-E-experience.md` | 記事スタイルE: 体験談形式 |
-| `prompts/style-F-knowledge.md` | 記事スタイルF: 知識・解説記事 |
-| `prompts/review-checklist.md` | 公開前の品質チェックリスト |
-| `prompts/review-template.md` | レビュー出力のテンプレート |
-| `.github/agents/fact-check.md` | ファクトチェックの手順・チェックリスト |
-| `prompts/seo-strategy.md` | SEO戦略・キーワード選定ガイド |
-| `data/referrals.yaml` | 紹介コード・アフィリエイトリンク一覧 |
-| `data/tracking_ids.yaml` | AdSense / アナリティクス等のトラッキングID |
-| `scripts/post.ps1` | レビュー記事の雛形生成スクリプト |
-| `scripts/knowledge.ps1` | 知識記事の雛形生成スクリプト |
-| `content/posts/` | 既存記事の格納フォルダ（重複チェック用） |
+| ファイル | 役割 | 使用フェーズ | 実行方法 |
+|---------|------|:-----------:|:-------:|
+| `prompts/style-A-ranking.md` | 記事スタイルA: ランキング形式 | Phase 3 | 自動参照 |
+| `prompts/style-B-solution.md` | 記事スタイルB: 問題解決形式 | Phase 3 | 自動参照 |
+| `prompts/style-C-comparison.md` | 記事スタイルC: 比較形式 | Phase 3 | 自動参照 |
+| `prompts/style-D-scene.md` | 記事スタイルD: シーン訴求形式 | Phase 3 | 自動参照 |
+| `prompts/style-E-experience.md` | 記事スタイルE: 体験談形式 | Phase 3 | 自動参照 |
+| `prompts/style-F-knowledge.md` | 記事スタイルF: 知識・解説記事 | Phase 3 | 自動参照 |
+| `prompts/review-checklist.md` | 公開前の品質チェックリスト | Phase 4 | 自動実施 |
+| `prompts/review-template.md` | レビュー出力のテンプレート | Phase 4 | 自動参照 |
+| `.github/agents/fact-check.md` | ファクトチェックの手順・チェックリスト | Phase 4 | **著者指示後に実施** |
+| `prompts/seo-strategy.md` | SEO戦略・キーワード選定ガイド | Phase 1〜2 | 自動参照 |
+| `data/referrals.yaml` | 紹介コード・アフィリエイトリンク一覧 | Phase 1〜3 | 自動参照 |
+| `data/tracking_ids.yaml` | AdSense / アナリティクス等のトラッキングID | Phase 2 | 自動参照 |
+| `scripts/post.ps1` | レビュー記事の雛形生成スクリプト | Phase 2 | 自動実行 |
+| `scripts/knowledge.ps1` | 知識記事の雛形生成スクリプト | Phase 2 | 自動実行 |
+| `content/posts/` | 既存記事の格納フォルダ（重複チェック用） | Phase 1 | 自動参照 |
 
 ---
 
@@ -397,8 +397,9 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 1. index.md にすべて書き込む（`draft: true` のまま）
 2. **記事の全文をチャットに貼り付けて著者に提示する**（front matter 含む）
 3. `prompts/review-checklist.md` のチェック結果を添える
-4. `.github/agents/fact-check.md` に従いファクトチェックを実施し、問題があれば修正する
-5. 著者に最終確認を求める:
+4. 著者に最終確認を求める（ファクトチェックは著者が明示的に指示した場合のみ `.github/agents/fact-check.md` エージェントで実施）:
+
+   > 💡 ファクトチェックが必要な場合は「ファクトチェックして」と指示してください。
 
 ```
 ❓ 完成版レビュー:
@@ -406,6 +407,7 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
   B. ここを直してほしい →（箇所を教えて）
   C. 全体的にトーンを変えたい
   D. タイトル/descriptionを変えたい
+  E. ファクトチェックして（fact-check エージェントを起動）
 ```
 
 → 「A」が出てから初めて公開フローに進む。
