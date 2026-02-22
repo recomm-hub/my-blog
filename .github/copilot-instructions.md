@@ -95,23 +95,48 @@ AIはこのファイルを参照し、ファイル配置・フォルダ構成を
    ```
    エラーが出た場合は push せず、先にエラーを修正する。
 
-2. **変更内容の提示**
+2. **ローカルサーバーで目視確認**
+   push 指示を待つ状態になったら、必ずローカルサーバーを起動してユーザーに確認を促す。
+   ```powershell
+   hugo server --disableFastRender
+   ```
+   起動後、変更のあったページのローカル URL をユーザーに明示する。
+
+   **出力例:**
+   ```
+   ✅ ローカルサーバー起動完了。以下の URL で確認してください：
+   - http://localhost:1313/about/
+   - http://localhost:1313/contact/
+   - http://localhost:1313/privacy/
+   OKであれば「 push して」とお知らせください。
+   ```
+
+3. **変更内容の提示**
    push 前に、コミット対象のファイル一覧とコミットメッセージをユーザーに明示する。
 
-3. **git add / commit / push の実行**
+4. **git add / commit / push の実行**
    ```powershell
    git add <対象ファイル>
    git commit -m "<コミットメッセージ>"
    git push
    ```
 
-4. **GitHub Actions のビルド結果を確認**
+5. **GitHub Actions のビルド結果を確認**
    push 後、以下のコマンドでデプロイ完了を待機・確認する。
    ```powershell
    gh run watch --repo recomm-hub/my-blog
    ```
-   - 完了後に `✓ Run completed` と表示されればデプロイ成功。ユーザーに報告する。
+   - 完了後に `✓ Run completed` と表示されればデプロイ成功。
    - `✗` が表示された場合はログを確認してエラー内容を調査・報告する。
    ```powershell
    gh run view --repo recomm-hub/my-blog --log-failed
+   ```
+   デプロイ成功後は、変更のあったページの本番 URL をユーザーに明示する。
+
+   **出力例:**
+   ```
+   ✅ デプロイ完了！以下の URL で確認できます：
+   - https://mononikki.com/about/
+   - https://mononikki.com/contact/
+   - https://mononikki.com/privacy/
    ```

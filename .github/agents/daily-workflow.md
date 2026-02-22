@@ -412,7 +412,14 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 4. **`prompts/fact-check.md` に従いファクトチェックを実施する**（執筆完了後に必ず自動実施）
    - `_snapshot.json` が存在する場合はそれを一次情報として数値を照合する
    - 修正があれば index.md を更新し、`_fact-check.md` を生成する
-5. 著者に最終確認を求める:
+5. **`hugo server --disableFastRender` でローカルサーバーを起動し、確認用 URL を著者に明示する**
+
+   ```
+   ✅ ローカルサーバー起動完了。以下の URL で確認してください：
+   - http://localhost:1313/posts/{slug}/
+   ```
+
+6. 著者に最終確認を求める:
 
 ```
 ❓ 完成版レビュー:
@@ -443,11 +450,11 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
    gh run view --repo recomm-hub/my-blog --log-failed
    ```
 
-   完了後、実際の公開ページにアクセスして内容を目視確認する。
+5. **デプロイ完了後、変更のあったページの本番 URL を著者に明示する**
 
    | 結果 | 報告内容 |
    |------|----------|
-   | ✅ success | 「デプロイ完了。https://mononikki.com/posts/{slug}/ で確認できます」 |
+   | ✅ success | 「デプロイ完了。以下の URL で確認できます：\n- https://mononikki.com/posts/{slug}/」 |
    | ❌ failure | 「デプロイ失敗。Actions のログ URL を提示して原因を展開」 |
    | ⏱️ タイムアウト | 「5分以内に完了しませんでした。https://github.com/recomm-hub/my-blog/actions で確認してください」 |
 
