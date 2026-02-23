@@ -1,0 +1,39 @@
+{{/* callout shortcode — styled info/tip/warning/danger boxes */}}
+{{/* Usage: {{< callout type="tip" title="Optional Title" >}} content {{< /callout >}} */}}
+{{/* Types: tip (green), info (blue), warning (orange), danger (red), experience (purple) */}}
+
+{{ $type  := .Get "type"  | default "info" }}
+{{ $title := .Get "title" | default "" }}
+
+{{ $icon := "💡" }}
+{{ $label := "" }}
+{{ if eq $type "tip" }}
+  {{ $icon = "💡" }}
+  {{ $label = "ポイント" }}
+{{ else if eq $type "info" }}
+  {{ $icon = "ℹ️" }}
+  {{ $label = "メモ" }}
+{{ else if eq $type "warning" }}
+  {{ $icon = "⚠️" }}
+  {{ $label = "注意" }}
+{{ else if eq $type "danger" }}
+  {{ $icon = "🚨" }}
+  {{ $label = "重要" }}
+{{ else if eq $type "experience" }}
+  {{ $icon = "🗣️" }}
+  {{ $label = "体験談" }}
+{{ end }}
+
+{{ if $title }}
+  {{ $label = $title }}
+{{ end }}
+
+<div class="callout callout--{{ $type }}">
+  <div class="callout__header">
+    <span class="callout__icon">{{ $icon }}</span>
+    <span class="callout__label">{{ $label }}</span>
+  </div>
+  <div class="callout__body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

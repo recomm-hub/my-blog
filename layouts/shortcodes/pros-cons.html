@@ -1,0 +1,38 @@
+{{/* pros-cons shortcode — visual merit/demerit comparison */}}
+{{/* Usage: {{< pros-cons pros="item1|item2|item3" cons="item1|item2" >}} */}}
+{{/* Optional: title-pros="Good Points" title-cons="Bad Points" */}}
+
+{{ $prosStr := .Get "pros" | default "" }}
+{{ $consStr := .Get "cons" | default "" }}
+{{ $titlePros := .Get "title-pros" | default "メリット" }}
+{{ $titleCons := .Get "title-cons" | default "デメリット" }}
+
+{{ $pros := split $prosStr "|" }}
+{{ $cons := split $consStr "|" }}
+
+<div class="pros-cons">
+  <div class="pros-cons__col pros-cons__col--pros">
+    <div class="pros-cons__header pros-cons__header--pros">
+      <span class="pros-cons__icon">👍</span> {{ $titlePros }}
+    </div>
+    <ul class="pros-cons__list">
+      {{ range $pros }}
+        {{ if ne . "" }}
+        <li class="pros-cons__item pros-cons__item--pro">{{ . }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <div class="pros-cons__col pros-cons__col--cons">
+    <div class="pros-cons__header pros-cons__header--cons">
+      <span class="pros-cons__icon">👎</span> {{ $titleCons }}
+    </div>
+    <ul class="pros-cons__list">
+      {{ range $cons }}
+        {{ if ne . "" }}
+        <li class="pros-cons__item pros-cons__item--con">{{ . }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>

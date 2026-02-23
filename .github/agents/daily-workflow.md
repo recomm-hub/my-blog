@@ -675,6 +675,62 @@ LinkBuds を調べてみると、当時は大きく2ラインナップありま�
 - `_fact-check.md` に記録した参照URLを本文のリンクにも流用する
 - リンク切れリスクがある場合は、組織名＋調査年を本文に明記しておく（リンクが切れても情報源を特定できるように）
 
+#### ビジュアル要素ルール（ショートコード・図解の挿入）
+
+テキストだけの記事は離脱率が高く、視覚的な要素を適切に挿入することで
+読者の理解度・滞在時間・エンゲージメントを向上させる。
+各セクション執筆時（ステップ①の箇条書き段階）で、どのビジュアル要素を入れるかを計画する。
+
+**利用可能なショートコード:**
+
+| ショートコード | 用途 | 構文例 |
+|--------------|------|--------|
+| `callout` | 注意・ヒント・体験談の強調 | `{{</* callout type="tip" title="タイトル" */>}}本文{{</* /callout */>}}` |
+| `pros-cons` | メリット・デメリットの対比 | `{{</* pros-cons pros="A\|B\|C" cons="X\|Y" */>}}` |
+| `product-comparison` | 商品スペック比較表（最大4商品） | `{{</* product-comparison ... */>}}` |
+| `timeline` / `timeline-item` | 手順・時系列の可視化 | `{{</* timeline */>}}{{</* timeline-item step="1" title="名前" */>}}...{{</* /timeline */>}}` |
+| Mermaid 図 | フローチャート・選び方ガイド | ` ```mermaid ... ``` `（コードブロック） |
+
+**callout の type 一覧:**
+
+| type | 用途 | 色 |
+|------|------|-----|
+| `tip` | おすすめ・コツ | 緑 |
+| `info` | 補足情報・豆知識 | 青 |
+| `warning` | 注意点・落とし穴 | 黄 |
+| `danger` | 絶対NG・重大な注意 | 赤 |
+| `experience` | 著者の体験談（E-E-A-T強化） | オレンジ |
+
+**スタイル別の最低ビジュアル要素数:**
+
+| スタイル | 最低数 | 推奨する要素 |
+|---------|:------:|------------|
+| Style A（ランキング） | 3個 | `product-comparison` で上位比較 + 各商品に `callout(info)` + `pros-cons` |
+| Style B（悩み解決） | 3個 | 冒頭に `callout(warning)` で悩み共感 + `timeline` で解決手順 + `pros-cons` |
+| Style C（比較レビュー） | 3個 | `product-comparison` 必須 + 各商品に `pros-cons` + `callout(tip)` |
+| Style D（シーン別） | 2個 | シーン別に `callout(tip/info)` + Mermaid で選び方フロー |
+| Style E（体験レポート） | 3個 | `callout(experience)` 必須 + `pros-cons` + `timeline` で使用経過 |
+| Style F（知識解説） | 3個 | Mermaid フローチャート + `callout(warning/info)` + `timeline` で手順 |
+
+**配置ルール:**
+- H2セクションごとに最低1つのビジュアル要素を検討する（ただし全セクションに強制はしない）
+- 連続する3つ以上のH2セクションがテキストのみにならないようにする
+- `callout(experience)` は著者の体験談にのみ使用し、AIが創作した体験には使わない
+- Mermaid のフローチャートは「選び方」「判断基準」「手順」に限定する（シーケンス図は使わない）
+- `pros-cons` は1記事に最大3個まで（多すぎると冗長になる）
+
+**product-comparison の構文:**
+```
+{{</* product-comparison
+  product1-name="商品名1"
+  product1-price="¥XX,XXX"
+  product1-spec1-label="項目名" product1-spec1-value="値"
+  product1-badge="おすすめ" product1-highlight="true"
+  product2-name="商品名2"
+  ...
+*/>}}
+```
+
 ### Phase 4: 完成版レビュー & ファクトチェック（push前の最終確認）
 
 > **重要**: ファイル書き込み後、push する前に必ず完成版の全文を著者に見せる。
@@ -916,6 +972,9 @@ LinkBuds を調べてみると、当時は大きく2ラインナップありま�
 | B-20 | タグが3〜6個で、命名規則に沿っているか | seo §8-3 |
 | B-21 | cover.jpg が存在し、front matter の image に設定されているか | seo §13 |
 | B-22 | 研究・調査・公的機関の引用に出典リンクが貼られているか | workflow |
+| B-23 | ビジュアル要素（callout/pros-cons/product-comparison/timeline/Mermaid）がスタイル別の最低数以上あるか | workflow |
+| B-24 | 連続する3つ以上のH2セクションがテキストのみになっていないか | workflow |
+| B-25 | `callout(experience)` が著者の実体験にのみ使われているか（AI創作の体験に使っていないか） | workflow |
 
 ### C. レビューチェック（`review-checklist.md` の全項目）
 

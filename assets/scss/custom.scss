@@ -267,3 +267,379 @@ body {
 .article-list article .article-header-tags {
   display: none;
 }
+
+/* ============================================================
+   Callout Shortcode
+   ============================================================ */
+.callout {
+  border-radius: 10px;
+  margin: 1.5em 0;
+  overflow: hidden;
+  box-shadow: var(--jin-card-shadow);
+}
+
+.callout__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.callout__icon {
+  font-size: 1.1em;
+}
+
+.callout__body {
+  padding: 14px 18px;
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+.callout__body p {
+  margin: 0;
+}
+
+/* Callout variants */
+.callout--tip {
+  border: 1px solid #34a853;
+}
+.callout--tip .callout__header {
+  background: #34a853;
+}
+.callout--tip .callout__body {
+  background: #f0fdf4;
+}
+
+.callout--info {
+  border: 1px solid #4285f4;
+}
+.callout--info .callout__header {
+  background: #4285f4;
+}
+.callout--info .callout__body {
+  background: #eff6ff;
+}
+
+.callout--warning {
+  border: 1px solid #f59e0b;
+}
+.callout--warning .callout__header {
+  background: #f59e0b;
+}
+.callout--warning .callout__body {
+  background: #fffbeb;
+}
+
+.callout--danger {
+  border: 1px solid #ef4444;
+}
+.callout--danger .callout__header {
+  background: #ef4444;
+}
+.callout--danger .callout__body {
+  background: #fef2f2;
+}
+
+.callout--experience {
+  border: 1px solid #8b5cf6;
+}
+.callout--experience .callout__header {
+  background: #8b5cf6;
+}
+.callout--experience .callout__body {
+  background: #f5f3ff;
+}
+
+/* Dark mode */
+[data-scheme="dark"] {
+  .callout--tip .callout__body { background: #1a2e1a; }
+  .callout--info .callout__body { background: #1a2233; }
+  .callout--warning .callout__body { background: #2e2a1a; }
+  .callout--danger .callout__body { background: #2e1a1a; }
+  .callout--experience .callout__body { background: #251a33; }
+}
+
+/* ============================================================
+   Pros-Cons Shortcode
+   ============================================================ */
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 1.5em 0;
+}
+
+@media (max-width: 600px) {
+  .pros-cons {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pros-cons__col {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--jin-card-shadow);
+}
+
+.pros-cons__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 0.95em;
+  color: #fff;
+}
+
+.pros-cons__header--pros {
+  background: #34a853;
+}
+
+.pros-cons__header--cons {
+  background: #ef4444;
+}
+
+.pros-cons__list {
+  list-style: none;
+  margin: 0;
+  padding: 12px 16px;
+  background: var(--card-background, #fff);
+}
+
+.pros-cons__item {
+  padding: 6px 0 6px 24px;
+  position: relative;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.pros-cons__item::before {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.pros-cons__item--pro::before {
+  content: '✅';
+}
+
+.pros-cons__item--con::before {
+  content: '❌';
+}
+
+/* ============================================================
+   Product Comparison Shortcode
+   ============================================================ */
+.product-comparison {
+  margin: 1.5em 0;
+}
+
+.product-comparison__title {
+  font-weight: 700;
+  font-size: 1.1em;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--jin-accent);
+}
+
+.product-comparison__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--col-count, 3), 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .product-comparison__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-comparison__card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  background: var(--card-background, #fff);
+  box-shadow: var(--jin-card-shadow);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.product-comparison__card:hover {
+  box-shadow: var(--jin-card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.product-comparison__card--highlight {
+  border: 2px solid var(--jin-accent);
+}
+
+.product-comparison__badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--jin-accent);
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 700;
+  padding: 2px 14px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.product-comparison__img {
+  width: 120px;
+  height: 120px;
+  margin: 8px auto 12px;
+}
+
+.product-comparison__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.product-comparison__img--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border-radius: 6px;
+  color: #999;
+  font-size: 0.8em;
+}
+
+.product-comparison__name {
+  font-weight: 700;
+  font-size: 0.95em;
+  margin-bottom: 6px;
+}
+
+.product-comparison__price {
+  color: #e00;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 10px;
+}
+
+.product-comparison__specs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 0.85em;
+}
+
+.product-comparison__specs li {
+  padding: 4px 0;
+  border-bottom: 1px dotted #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-comparison__specs li:last-child {
+  border-bottom: none;
+}
+
+.product-comparison__spec-label {
+  color: #888;
+  flex-shrink: 0;
+}
+
+.product-comparison__spec-value {
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ============================================================
+   Timeline Shortcode (inline styles, CSS class hooks)
+   ============================================================ */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  margin: 1.5em 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--jin-accent);
+  border-radius: 2px;
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  background: var(--card-background, #fff);
+  border-radius: 8px;
+  box-shadow: var(--jin-card-shadow);
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--jin-accent);
+  border: 2px solid #fff;
+}
+
+.timeline__step {
+  font-size: 0.75em;
+  font-weight: 700;
+  color: var(--jin-accent);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.timeline__content {
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   Spec Table Enhanced
+   ============================================================ */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.9em;
+  box-shadow: var(--jin-card-shadow);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.spec-table th {
+  background: var(--jin-accent);
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.spec-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-table tr:nth-child(even) td {
+  background: var(--jin-accent-light);
+}

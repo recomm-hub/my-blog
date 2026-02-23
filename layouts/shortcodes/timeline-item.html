@@ -1,0 +1,14 @@
+{{/* timeline-item shortcode — single item in a timeline */}}
+{{/* Must be used inside {{< timeline >}} */}}
+{{/* Usage: {{< timeline-item step="STEP 1" >}}Content{{< /timeline-item >}} */}}
+
+{{ $step := .Get "step" | default "" }}
+
+<div class="timeline__item">
+  {{ with $step }}
+  <div class="timeline__step">{{ . }}</div>
+  {{ end }}
+  <div class="timeline__content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

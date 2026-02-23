@@ -50,6 +50,23 @@
 - [ ] 記事全体で2,000字以上ある
 - [ ] 内部リンク（他の記事へのリンク）が将来追加できる余地がある
 
+## 🎨 ビジュアル要素チェック
+
+### 全スタイル共通
+- [ ] ビジュアル要素（callout / pros-cons / product-comparison / timeline / Mermaid）がスタイル別の最低数以上ある
+- [ ] 連続する3つ以上のH2セクションがテキストのみになっていない
+- [ ] `callout(experience)` は著者の実体験にのみ使われている（AI創作の体験に使っていない）
+- [ ] `pros-cons` が1記事に3個以下である
+- [ ] Mermaid 図がある場合、シーケンス図ではなくフローチャートになっている
+
+### スタイル別の最低ビジュアル要素数
+- [ ] Style A: 3個以上（`product-comparison` + `callout` + `pros-cons`）
+- [ ] Style B: 3個以上（`callout(warning)` + `timeline` + `pros-cons`）
+- [ ] Style C: 3個以上（`product-comparison` 必須 + `pros-cons` + `callout`）
+- [ ] Style D: 2個以上（`callout(tip/info)` + Mermaid フロー）
+- [ ] Style E: 3個以上（`callout(experience)` 必須 + `pros-cons` + `timeline`）
+- [ ] Style F: 3個以上（Mermaid フロー + `callout(warning/info)` + `timeline`）
+
 ## ⚖️ 法的コンプライアンスチェック
 
 ### ステマ規制（景品表示法 2023年10月施行）
@@ -79,17 +96,26 @@
 
 ### Style A（ランキング型）
 - [ ] ランキング順位に根拠がある（レビュー数・売上 等）
+- [ ] `product-comparison` で上位商品の比較表がある
 
 ### Style B（悩み解決型）
 - [ ] 冒頭の悩み描写に読者が共感できるか
+- [ ] `callout(warning)` で悩み・注意点を視覚的に強調しているか
 
 ### Style C（比較レビュー型）
 - [ ] 結論ファーストで書かれているか
 - [ ] 3商品の違いが明確に伝わるか
+- [ ] `product-comparison` で比較表があるか
 
 ### Style D（シーン別提案型）
 - [ ] シーン分けが読者にとって自然か
+- [ ] Mermaid フローチャートまたは `callout` でシーン別のおすすめが視覚化されているか
 
 ### Style E（体験レポート型）
 - [ ] 買ったきっかけのエピソードが具体的か
 - [ ] 時系列に自然な流れがあるか
+- [ ] `callout(experience)` で体験談が強調されているか
+
+### Style F（知識解説型）
+- [ ] Mermaid フローチャートで判断基準や概念を可視化しているか
+- [ ] `callout(info/warning)` で重要ポイントを視覚的に整理しているか

@@ -1,0 +1,72 @@
+{{/* product-comparison shortcode — side-by-side visual product comparison */}}
+{{/* Usage: {{< product-comparison >}} */}}
+{{/* Each product is a JSON-ish named param set */}}
+{{/* {{< product-comparison
+       title="スペック比較"
+       p1-name="製品A" p1-img="url" p1-price="1,980" p1-specs="重量:300g|サイズ:W200xH150|バッテリー:8時間"
+       p2-name="製品B" p2-img="url" p2-price="2,980" p2-specs="重量:250g|サイズ:W180xH140|バッテリー:12時間"
+       p3-name="製品C" p3-img="url" p3-price="3,980" p3-specs="重量:280g|サイズ:W190xH145|バッテリー:10時間"
+       highlight="2"
+>}} */}}
+
+{{ $title := .Get "title" | default "製品比較" }}
+{{ $highlight := .Get "highlight" | default "" }}
+
+{{/* Collect products */}}
+{{ $products := slice }}
+{{ range $i := seq 1 4 }}
+  {{ $prefix := printf "p%d" $i }}
+  {{ $name := $.Get (printf "%s-name" $prefix) }}
+  {{ if $name }}
+    {{ $img   := $.Get (printf "%s-img" $prefix) | default "" }}
+    {{ $price := $.Get (printf "%s-price" $prefix) | default "" }}
+    {{ $specs := $.Get (printf "%s-specs" $prefix) | default "" }}
+    {{ $badge := $.Get (printf "%s-badge" $prefix) | default "" }}
+    {{ $specList := split $specs "|" }}
+    {{ $product := dict "name" $name "img" $img "price" $price "specs" $specList "badge" $badge "index" $i }}
+    {{ $products = $products | append $product }}
+  {{ end }}
+{{ end }}
+
+<div class="product-comparison">
+  <div class="product-comparison__title">{{ $title }}</div>
+  <div class="product-comparison__grid" style="--col-count: {{ len $products }}">
+    {{ range $products }}
+    <div class="product-comparison__card{{ if eq (printf "%d" .index) $highlight }} product-comparison__card--highlight{{ end }}">
+      {{ with .badge }}
+      <div class="product-comparison__badge">{{ . }}</div>
+      {{ end }}
+      {{ if .img }}
+      <div class="product-comparison__img">
+        <img src="{{ .img }}" alt="{{ .name }}" loading="lazy">
+      </div>
+      {{ else }}
+      <div class="product-comparison__img product-comparison__img--empty">
+        <span>No Image</span>
+      </div>
+      {{ end }}
+      <div class="product-comparison__name">{{ .name }}</div>
+      {{ with .price }}
+      <div class="product-comparison__price">&yen;{{ . }}</div>
+      {{ end }}
+      {{ if .specs }}
+      <ul class="product-comparison__specs">
+        {{ range .specs }}
+          {{ if ne . "" }}
+          {{ $parts := split . ":" }}
+          <li>
+            {{ if gt (len $parts) 1 }}
+              <span class="product-comparison__spec-label">{{ index $parts 0 }}</span>
+              <span class="product-comparison__spec-value">{{ index $parts 1 }}</span>
+            {{ else }}
+              {{ . }}
+            {{ end }}
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
