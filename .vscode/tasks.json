@@ -4,7 +4,7 @@
 		{
 			"label": "Hugo Server",
 			"type": "shell",
-			"command": "hugo server --disableFastRender",
+			"command": "hugo server --disableFastRender --buildDrafts --buildFuture",
 			"isBackground": true,
 			"problemMatcher": []
 		}

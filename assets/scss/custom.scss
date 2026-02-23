@@ -254,3 +254,16 @@ body {
     padding: 12px 14px 12px 16px;
   }
 }
+
+/* ── 記事一覧: カバー画像コンパクト + description表示 + 日付/タグ非表示 ── */
+.article-list article .article-image img {
+  max-height: 160px;
+  object-fit: cover;
+}
+.article-list article .article-title {
+  font-size: 0.95em;
+}
+.article-list article .article-time,
+.article-list article .article-header-tags {
+  display: none;
+}
