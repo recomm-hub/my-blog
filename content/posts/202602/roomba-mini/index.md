@@ -125,13 +125,7 @@ Slimモデルなら **39,800円** です。ルンバでこの価格は今まで�
 
 {{< pros-cons pros="一人暮らし〜2LDKくらいで使いたい人|今までルンバが大きすぎて諬めてた人|初めてのロボット掃除機で手頃に試したい人|子育て中で「おもちゃ片付けたらサッと掃除してほしい」人|サブ機として寝室や子供部屋専用に1台ほしい人" cons="広い家をメイン1台でまかないたい人（バッテリー・容量が心配）|ガッツリ水拭きしたい人（シート式では物足りない）|すでにハイエンドルンバを使っていて不満がない人" title-pros="「買い」な人" title-cons="「待ち」な人" >}}
 
-## モデル比較：AutoEmpty vs Slim
-
-{{< product-comparison p1-name="AutoEmpty" p1-img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" p1-price="49,800円" p1-specs="ゴミ処理:自動収集（約3ヶ月分）|充電台:ステーション型|カラー:4色|サブスク:月額2,380円" p1-badge="おすすめ" p2-name="Slim" p2-img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" p2-price="39,800円" p2-specs="ゴミ処理:手動（本体ダストボックス）|充電台:縦置きスタンド|カラー:2色|サブスク:月額1,880円" p2-badge="コスパ" highlight="1" >}}
-
-どちらも本体は同じ。吸引力もナビも変わりません。違いは「ゴミ捨てを自動でやるか、手動でやるか」と「カラバリ」くらいですね。
-
-### 発売まで待てない人・今すぐ大きいルンバがほしい人へ
+## 発売まで待てない人・今すぐ大きいルンバがほしい人へ
 
 ルンバ ミニの発売は2026年2月27日（AutoEmptyのSHIRO/KURO）/ 3月13日（AutoEmptyのSAKURA/WAKABA）/ 4月6日（Slim ※3月10日予約開始）です。「今すぐロボット掃除機がほしい」「広い家だからフルサイズのほうがいい」って人は、現行モデルも十分いい選択肢だと思います。
 
