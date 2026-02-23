@@ -127,7 +127,7 @@ Slimモデルなら **39,800円** です。ルンバでこの価格は今まで�
 
 ## モデル比較：AutoEmpty vs Slim
 
-{{< product-comparison p1-name="AutoEmpty" p1-price="49,800円" p1-specs="ゴミ処理:自動収集（約3ヶ月分）|充電台:ステーション型|カラー:4色|サブスク:月額2,380円" p1-badge="おすすめ" p2-name="Slim" p2-price="39,800円" p2-specs="ゴミ処理:手動（本体ダストボックス）|充電台:縦置きスタンド|カラー:2色|サブスク:月額1,880円" p2-badge="コスパ" highlight="1" >}}
+{{< product-comparison p1-name="AutoEmpty" p1-img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" p1-price="49,800円" p1-specs="ゴミ処理:自動収集（約3ヶ月分）|充電台:ステーション型|カラー:4色|サブスク:月額2,380円" p1-badge="おすすめ" p2-name="Slim" p2-img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" p2-price="39,800円" p2-specs="ゴミ処理:手動（本体ダストボックス）|充電台:縦置きスタンド|カラー:2色|サブスク:月額1,880円" p2-badge="コスパ" highlight="1" >}}
 
 どちらも本体は同じ。吸引力もナビも変わりません。違いは「ゴミ捨てを自動でやるか、手動でやるか」と「カラバリ」くらいですね。
 
