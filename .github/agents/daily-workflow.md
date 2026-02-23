@@ -396,7 +396,8 @@ AIが1セクション（H2単位）ごとに、**書く内容を箇条書き**�
 - 候補は2〜3つ提示する
 
 → 著者が番号を選んだら、`New-TextCover` 関数でカバー画像を生成し、`scripts/generate-text-covers.ps1` に定義を追記する。
-→ その後、ファイルに書き込み（`draft: true`）→ **完成版の全文をチャットに貼って最終レビュー**（Phase 4）へ。
+→ その後、ファイルに書き込み（`draft: true` のまま）→ **完成版の全文をチャットに貼って最終レビュー**（Phase 4）へ。
+→ **Phase 4 完了時に `draft: false` に変更する**（Phase 5 で push する前ではなく、品質チェック通過時点で切り替える）。
 
 **カバー画像生成の技術仕様:**
 - キャンバス: 960×400px, JPEG quality 90
@@ -762,7 +763,7 @@ URLを省略すると楽天検索URLが自動セットされる。
 
 > **重要**: ファイル書き込み後、push する前に必ず完成版の全文を著者に見せる。
 
-1. index.md にすべて書き込む（`draft: true` のまま）
+1. index.md にすべて書き込む（執筆中は `draft: true` のまま）
 2. **記事の全文をチャットに貼り付けて著者に提示する**（front matter 含む）
 3. `prompts/review-checklist.md` のチェック結果を添える
 4. **`prompts/fact-check.md` に従いファクトチェックを実施し、`_fact-check.md` を必ず生成する**（執筆完了後に必ず自動実施）
@@ -789,9 +790,14 @@ URLを省略すると楽天検索URLが自動セットされる。
    └── _quality-check.md   ← 統合品質チェック結果 ← NEW
    ```
 
-6. **ローカルサーバーの起動 + 最終確認の選択肢提示を必ず同一メッセージで行う**
+6. **`draft: true` → `draft: false` に変更する**
 
-   - `hugo server --disableFastRender --buildDrafts` を起動する（draft 記事もプレビューできるように `--buildDrafts` を付ける）
+   品質チェック・ファクトチェックをすべて通過した時点で `draft: false` に変更する。
+   これにより、未来日付の記事は push 後すぐには公開されず、`date` 当日の JST 0:00 cron ビルドで自動公開される（`hugo.toml` の `buildFuture = false` + GitHub Actions の毎日スケジュールビルドによる予約公開）。
+
+7. **ローカルサーバーの起動 + 最終確認の選択肢提示を必ず同一メッセージで行う**
+
+   - `hugo server --disableFastRender --buildDrafts --buildFuture` を起動する（draft / 未来日付の記事もプレビューできるようにフラグを付ける）
    - サーバー URL と選択肢を **同じチャットメッセージに含めて** 著者に提示する（先にURLだけ出してから選択肢を出す2回送信は禁止）
 
    **出力テンプレート（このフォーマットで1回で提示すること）:**
@@ -818,10 +824,11 @@ URLを省略すると楽天検索URLが自動セットされる。
 
 ### Phase 5: 公開 & デプロイ & SNS告知
 
-> **push 時の draft ルール**: git push する記事は **必ず `draft: false`** にすること。
-> `draft: true` のまま push しない。予約公開が必要な場合は Hugo の `publishDate` を使う。
+> **push 時の draft ルール**: git push する記事は **必ず `draft: false`** であること（Phase 4 で変更済み）。
+> `draft: true` のまま push しない。未来日付の記事は `draft: false` + 未来の `date` で push すれば、
+> `date` 当日の JST 0:00 cron ビルドで自動公開される（予約公開）。
 
-1. `draft: true` → `draft: false` に変更
+1. `draft: false` であることを確認（Phase 4 で変更済み）
 2. Hugo ビルドで問題ないか確認
 3. `git add` → `git commit` → `git push`
 4. **GitHub Actions のデプロイ完了を待機・確認**
