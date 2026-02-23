@@ -45,7 +45,7 @@ Web 検索より先にこのファイルを確認すること。
 記事公開後に楽天ページが変動しても「執筆時点として正確だったか」を遡及照合できる。
 
 ```
-content/posts/YYYY-MM-DD-slug/
+content/posts/YYYYMM/slug/
 ├── index.md          ← ファクトチェック対象
 ├── _snapshot.json    ← API 取得時点のエビデンス（楽天数値の一次情報）
 └── _fact-check.md    ← ファクトチェック結果（生成物）

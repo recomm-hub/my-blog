@@ -218,9 +218,14 @@ if ($PostPath) {
 }
 else {
     $mdFiles += Get-ChildItem -Path $contentRoot -Filter "*.md" -File
-    foreach ($d in (Get-ChildItem -Path $contentRoot -Directory)) {
-        $ix = Join-Path $d.FullName "index.md"
-        if (Test-Path $ix) { $mdFiles += Get-Item $ix }
+    foreach ($ym in (Get-ChildItem -Path $contentRoot -Directory)) {
+        # 年月フォルダ内の記事ディレクトリを走査
+        foreach ($d in (Get-ChildItem -Path $ym.FullName -Directory)) {
+            $ix = Join-Path $d.FullName "index.md"
+            if (Test-Path $ix) { $mdFiles += Get-Item $ix }
+        }
+        # 年月フォルダ直下の .md も拾う（互換性）
+        $mdFiles += Get-ChildItem -Path $ym.FullName -Filter "*.md" -File
     }
 }
 

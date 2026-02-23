@@ -477,8 +477,9 @@ $dateISO = Get-Date -Format "yyyy-MM-ddTHH:mm:ss+09:00"
 
 # キーワードをファイル名用にスラッグ化（日本語はそのまま使用）
 $slug = $Keyword -replace '\s+', '-' -replace '[\\/:*?"<>|]', ''
-$bundleName = "$date-$slug"
-$bundleDir = Join-Path $PSScriptRoot "..\content\posts\$bundleName"
+$yearMonth = Get-Date -Format "yyyyMM"
+$bundleName = $slug
+$bundleDir = Join-Path $PSScriptRoot "..\content\posts\$yearMonth\$bundleName"
 $bundleDir = [System.IO.Path]::GetFullPath($bundleDir)
 $filePath = Join-Path $bundleDir "index.md"
 
@@ -981,7 +982,7 @@ Write-Host ""
 Write-Host "🖼️ カバー画像を生成中..." -ForegroundColor Cyan
 $coverScript = Join-Path $PSScriptRoot "generate-covers.ps1"
 if (Test-Path $coverScript) {
-    $bundleRelPath = "content\posts\$bundleName"
+    $bundleRelPath = "content\posts\$yearMonth\$bundleName"
     & $coverScript -PostPath $bundleRelPath -Force
 }
 else {

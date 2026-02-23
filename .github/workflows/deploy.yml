@@ -85,8 +85,8 @@ jobs:
           LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
         run: |
           # draft: false の新規記事を検出
-          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/*/index.md' || true)
-          CHANGED_FILES=$(git diff --name-only --diff-filter=M HEAD~1 HEAD -- 'content/posts/*/index.md' || true)
+          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/**/index.md' || true)
+          CHANGED_FILES=$(git diff --name-only --diff-filter=M HEAD~1 HEAD -- 'content/posts/**/index.md' || true)
           ALL_FILES="$NEW_FILES $CHANGED_FILES"
 
           for FILE in $ALL_FILES; do
