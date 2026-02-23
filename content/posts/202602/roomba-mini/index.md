@@ -1,7 +1,9 @@
 ﻿+++
 date = '2026-02-21'
+lastmod = '2026-02-23'
 draft = false
 title = 'ルンバがついに小さくなった！Roomba Miniのメリット・デメリットまとめ'
+style = 'B'
 description = 'iRobotの新製品「Roomba Mini（ルンバ ミニ）」を徹底解説。体積半分・吸引力70倍・4万円切りの実力は？メリット・デメリット・向いている人を整理します。'
 slug = 'roomba-mini'
 image = 'cover.jpg'
@@ -164,3 +166,5 @@ Slimモデル39,800円は、ロボット掃除機デビューにちょうどい�
 {{< shop-card title="Roomba Mini + AutoEmpty ルンバ ミニ（自動ゴミ収集モデル）" url="https://hb.afl.rakuten.co.jp/hgc/g00recu8.fluakf28.g00recu8.flualf8c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Firobotstore%2Ff15%2F&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-0c81f19bbe7816a93c4f6909f625e7c0-3900x2600.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="49,800" keyword="ルンバ ミニ AutoEmpty" >}}
 
 {{< shop-card title="Roomba Mini Slim + SlimCharge ルンバ ミニ スリム（省スペースモデル）" url="https://item.rakuten.co.jp/irobotstore/f11/?scid=af_pc_etc&sc2id=af_101_0_0&rafcid=wsc_i_is_1013356076665194500" img="https://prcdn.freetls.fastly.net/release_image/25142/153/25142-153-22f2cd86861f11047df2c80d1f1cea8c-3900x1015.png?width=400&height=400&quality=85&format=jpeg&auto=webp&fit=bounds&bg-color=fff" price="39,800" keyword="ルンバ ミニ スリム" >}}
+
+※2026年2月時点の情報です。発売後に価格やスペックが変更される場合があります。

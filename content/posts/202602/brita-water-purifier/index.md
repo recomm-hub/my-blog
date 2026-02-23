@@ -2,6 +2,7 @@
 title: "BRITA Flowレビュー｜水道水のカルキ臭が消えた話"
 slug: "brita-water-purifier"
 date: 2026-02-23T00:00:00+09:00
+lastmod: 2026-02-23T00:00:00+09:00
 draft: false
 categories: ["レビュー"]
 tags: ["BRITA", "浄水器", "タンク型", "レビュー", "カルキ"]
