@@ -93,21 +93,21 @@ jobs:
             [ -z "$FILE" ] && continue
             [ ! -f "$FILE" ] && continue
 
-            # draft: true の記事はスキップ
-            if grep -q 'draft: true' "$FILE"; then
+            # draft = true の記事はスキップ（TOML front matter）
+            if grep -qE 'draft\s*=\s*true' "$FILE"; then
               echo "⏭️ Skip (draft): $FILE"
               continue
             fi
 
-            # slug を取得
-            SLUG=$(grep -oP 'slug:\s*"\K[^"]+' "$FILE" || echo "")
+            # slug を取得（TOML: slug = 'value' or slug = "value"）
+            SLUG=$(grep -oP "slug\s*=\s*['\"]\\K[^'\"]+" "$FILE" || echo "")
             if [ -z "$SLUG" ]; then
               # slug がない場合はディレクトリ名から生成
               SLUG=$(basename $(dirname "$FILE"))
             fi
 
-            # タイトルを取得
-            TITLE=$(grep -oP 'title:\s*"\K[^"]+' "$FILE" || echo "新しい記事")
+            # タイトルを取得（TOML: title = 'value' or title = "value"）
+            TITLE=$(grep -oP "title\s*=\s*['\"]\\K[^'\"]+" "$FILE" || echo "新しい記事")
 
             URL="https://mononikki.com/posts/${SLUG}/"
 
