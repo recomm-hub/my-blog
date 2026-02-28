@@ -2,6 +2,7 @@ baseURL = 'https://mononikki.com/'
 languageCode = 'ja'
 title = 'ものにっき'
 theme = 'hugo-theme-stack'
+googleAnalytics = 'G-JCHW65ZDXF'
 
 # 日本語環境の設定
 hasCJKLanguage = true
