@@ -30,6 +30,7 @@ AIはこのファイルを参照し、ファイル配置・フォルダ構成を
 | `style-D-scene.md` | 記事スタイルD: シーン訴求形式 |
 | `style-E-experience.md` | 記事スタイルE: 体験談形式 |
 | `style-F-knowledge.md` | 記事スタイルF: 知識・解説記事 |
+| `analytics-guide.md` | GA4 / GSC 分析プロセス・アクション基準 |
 
 ### `scripts/` — 自動化スクリプト
 
@@ -38,6 +39,8 @@ AIはこのファイルを参照し、ファイル配置・フォルダ構成を
 | `post.ps1` | 楽天 API を呼び出して記事雛形を生成。実行時に `_snapshot.json` も生成する |
 | `knowledge.ps1` | 知識・解説記事の雛形生成 |
 | `generate-covers.ps1` | カバー画像の自動生成 |
+| `gsc-report.py` | Google Search Console データ取得（API） |
+| `ga4-report.py` | Google Analytics 4 データ取得（API） |
 
 ### `data/` — 設定ファイル
 
