@@ -2,11 +2,11 @@
 title: "【2026年版】ワイヤレスイヤホン おすすめランキング5選｜予算別に選ぶならコレ"
 slug: "wireless-earphones-ranking"
 date: 2026-02-16T10:00:00+09:00
-lastmod: 2026-02-23T00:00:00+09:00
+lastmod: 2026-02-28T00:00:00+09:00
 draft: false
 categories: ["まとめ"]
 tags: ["ワイヤレスイヤホン", "イヤホン", "ノイズキャンセリング", "ランキング", "Sony", "Apple", "Anker"]
-description: "ワイヤレスイヤホン選びで迷っているあなたへ、2026年版おすすめ5選を予算別にランキング形式で紹介します。Sony WF-1000XM5、AirPods Pro 3、Anker Liberty 4 NCなど、各価格帯の最適解を徹底比較。"
+description: "ワイヤレスイヤホンのおすすめ5選を予算別に紹介。1万円以下〜4万円台まで、ANC・音質・バッテリーで比較しました。在宅ワーカーが実際に使って選んだランキングです。"
 style: "A"
 image: cover.jpg
 ShowToc: true

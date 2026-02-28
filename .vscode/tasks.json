@@ -7,6 +7,12 @@
 			"command": "hugo server --disableFastRender --buildDrafts --buildFuture",
 			"isBackground": true,
 			"problemMatcher": []
+		},
+		{
+			"label": "Hugo Server",
+			"type": "shell",
+			"command": "hugo server --disableFastRender --buildDrafts --buildFuture",
+			"isBackground": true
 		}
 	]
 }

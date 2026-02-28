@@ -117,6 +117,13 @@ NP-TSP1-Wはタンク式なので、毎回タンクに水を補充する必要�
 
 {{< shop-card title="パナソニック NP-TSP1-W 卓上タイプタンク式食器洗い乾燥機（5年延長保証付き）" url="https://hb.afl.rakuten.co.jp/hgc/g00pjgh8.fluak6ca.g00pjgh8.fluale75/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmasanios%2Fnp-tsp1-w%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmasanios%2Fi%2F10176325%2F&rafcid=wsc_i_is_1013356076665194500" img="https://thumbnail.image.rakuten.co.jp/@0_mall/masanios/cabinet/2501/imgrc0114733825.jpg?_ex=256x256" price="69,935" keyword="パナソニック 食洗機 卓上 NP-TSP1" amazon_asin="B09G2L8C4Z" >}}
 
+---
+
+## 関連記事
+
+- [BRITA 浄水ポットのレビュー](/posts/brita-water-purifier/) — 賃貸キッチンの時短つながりで。ミルク作りにも使えます
+- [ルンバミニのメリット・デメリットまとめ](/posts/roomba-mini/) — 家事自動化をもう一歩進めたい方に
+
 ※2026年2月時点の情報です。価格は変動する場合があります。
 
 > 📝 価格・レビュー件数は記事作成時点（2026年2月）のものです。最新情報はリンク先でご確認ください

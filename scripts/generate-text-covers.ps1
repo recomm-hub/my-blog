@@ -342,5 +342,59 @@ New-TextCover -OutPath "$base\ottocast-milel-comparison\cover.jpg" `
     -ProductImg $pImg
 if ($pImg) { $pImg.Dispose() }
 
+# 11. SwitchBot smart home (mint blue -> sky blue) - smart home/tech
+Write-Host "11 switchbot-smart-home" -ForegroundColor White
+$pImg = Get-FirstProductImage "$base\switchbot-smart-home\index.md"
+# SwitchBot の選び方
+# シーン別でわかる ── 初心者おすすめガイド
+New-TextCover -OutPath "$base\switchbot-smart-home\cover.jpg" `
+    -TitleChars @(0x53,0x77,0x69,0x74,0x63,0x68,0x42,0x6F,0x74,0x20,0x306E,0x9078,0x3073,0x65B9) `
+    -SubChars @(0x30B7,0x30FC,0x30F3,0x5225,0x3067,0x308F,0x304B,0x308B,0x20,0x2500,0x2500,0x20,0x521D,0x5FC3,0x8005,0x304A,0x3059,0x3059,0x3081,0x30AC,0x30A4,0x30C9) `
+    -G1R 200 -G1G 235 -G1B 235 `
+    -G2R 215 -G2G 235 -G2B 250 `
+    -CircleVariant 2 `
+    -ProductImg $pImg
+if ($pImg) { $pImg.Dispose() }
+
+# ============================================================
+# 202603 articles
+# ============================================================
+$base03 = "c:\Users\nh1r0\my-blog-local\content\posts\202603"
+
+# nursery-preparation-guide (pastel pink -> lavender) - spring/kids
+Write-Host "nursery-preparation-guide" -ForegroundColor White
+New-TextCover -OutPath "$base03\nursery-preparation-guide\cover.jpg" `
+    -TitleChars @(0x5165,0x5712,0x6E96,0x5099,0x306E,0x6301,0x3061,0x7269,0x30EA,0x30B9,0x30C8) `
+    -SubChars @(0x8CBB,0x7528,0x30FB,0x540D,0x524D,0x3064,0x3051,0x30FB,0x5931,0x6557,0x8AC7,0x307E,0x3068,0x3081) `
+    -G1R 248 -G1G 225 -G1B 232 `
+    -G2R 235 -G2G 228 -G2B 248 `
+    -CircleVariant 2
+
+# name-sticker-comparison (soft pink -> peach) - nursery/kids
+Write-Host "name-sticker-comparison" -ForegroundColor White
+$pImg = Get-FirstProductImage "$base03\name-sticker-comparison\index.md"
+New-TextCover -OutPath "$base03\name-sticker-comparison\cover.jpg" `
+    -TitleChars @(0x304A,0x540D,0x524D,0x30B7,0x30FC,0x30EB,0x20,0x304A,0x3059,0x3059,0x3081,0x33,0x9078) `
+    -SubChars @(0x9632,0x6C34,0x30FB,0x30C7,0x30B6,0x30A4,0x30F3,0x30FB,0x30B3,0x30B9,0x30D1,0x3067,0x6BD4,0x8F03) `
+    -G1R 252 -G1G 228 -G1B 225 `
+    -G2R 255 -G2G 242 -G2B 230 `
+    -CircleVariant 1 `
+    -ProductImg $pImg
+if ($pImg) { $pImg.Dispose() }
+
+# clothes-dryer-dehumidifier (light cyan -> light blue) - appliance/laundry
+Write-Host "clothes-dryer-dehumidifier" -ForegroundColor White
+$pImg = Get-FirstProductImage "$base03\clothes-dryer-dehumidifier\index.md"
+# 衣類乾燥除湿機 おすすめ3選 = 0x8863,0x985E,0x4E7E,0x71E5,0x9664,0x6E7F,0x6A5F,0x20,0x304A,0x3059,0x3059,0x3081,0x33,0x9078
+# 2万円以下で部屋干し臭ゼロへ = 0xFF12,0x4E07,0x5186,0x4EE5,0x4E0B,0x3067,0x90E8,0x5C4B,0x5E72,0x3057,0x81ED,0x30BC,0x30ED,0x3078
+New-TextCover -OutPath "$base03\clothes-dryer-dehumidifier\cover.jpg" `
+    -TitleChars @(0x8863,0x985E,0x4E7E,0x71E5,0x9664,0x6E7F,0x6A5F,0x20,0x304A,0x3059,0x3059,0x3081,0x33,0x9078) `
+    -SubChars @(0xFF12,0x4E07,0x5186,0x4EE5,0x4E0B,0x3067,0x90E8,0x5C4B,0x5E72,0x3057,0x81ED,0x30BC,0x30ED,0x3078) `
+    -G1R 210 -G1G 235 -G1B 248 `
+    -G2R 230 -G2G 245 -G2B 252 `
+    -CircleVariant 1 `
+    -ProductImg $pImg
+if ($pImg) { $pImg.Dispose() }
+
 Write-Host "`n" ("=" * 50) -ForegroundColor DarkGray
 Write-Host "Done!" -ForegroundColor Cyan

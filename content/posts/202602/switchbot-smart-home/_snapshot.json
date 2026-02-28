@@ -1,0 +1,44 @@
+﻿{
+  "generated": "2026-02-28",
+  "source": "rakuten-api-manual",
+  "products": [
+    {
+      "name": "SwitchBot ハブミニ Matter対応 スマートリモコン",
+      "price": 4780,
+      "shop": "SwitchBot公式店",
+      "itemUrl": "https://item.rakuten.co.jp/switchbot/1000010904/",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uc4w8.fluak685.g00uc4w8.flual487/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fswitchbot%2F1000010904%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fswitchbot%2Fi%2F10000158%2F&rafcid=wsc_i_is_1013356076665194500",
+      "imgUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/switchbot/cabinet/09377790/11880636/11880637/imgrc0089787174.jpg?_ex=256x256"
+    },
+    {
+      "name": "SwitchBot ボットCharge 充電式スイッチロボット",
+      "price": 5480,
+      "shop": "SwitchBot公式店",
+      "itemUrl": "https://item.rakuten.co.jp/switchbot/bot-rechargeable/",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uc4w8.fluak685.g00uc4w8.flual487/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fswitchbot%2Fbot-rechargeable%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fswitchbot%2Fi%2F10000318%2F&rafcid=wsc_i_is_1013356076665194500",
+      "imgUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/switchbot/cabinet/09377790/09377814/09377891/imgrc0096857356.jpg?_ex=256x256"
+    },
+    {
+      "name": "SwitchBot ハブ2 温湿度計付き スマートリモコン",
+      "price": 7880,
+      "shop": "SwitchBot公式店",
+      "itemUrl": "https://item.rakuten.co.jp/switchbot/10000076/",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uc4w8.fluak685.g00uc4w8.flual487/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fswitchbot%2F10000076%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fswitchbot%2Fi%2F10000076%2F&rafcid=wsc_i_is_1013356076665194500",
+      "imgUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/switchbot/cabinet/09377790/09563522/imgrc0078660079.jpg?_ex=256x256"
+    },
+    {
+      "name": "SwitchBot テープライト RGB 5m",
+      "price": 2533,
+      "shop": "SwitchBot公式店",
+      "itemUrl": "https://item.rakuten.co.jp/switchbot/10000049/",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uc4w8.fluak685.g00uc4w8.flual487/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fswitchbot%2F10000049%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fswitchbot%2Fi%2F10000049%2F&rafcid=wsc_i_is_1013356076665194500",
+      "imgUrl": "https://thumbnail.image.rakuten.co.jp/@0_mall/switchbot/cabinet/09377790/09563522/striplight.jpg?_ex=256x256"
+    }
+  ],
+  "specs_sources": {
+    "hub_mini": "https://www.switchbot.jp/products/switchbot-hub-mini-matter",
+    "bot_charge": "https://www.switchbot.jp/products/switchbot-bot-charge",
+    "hub2": "https://www.switchbot.jp/products/switchbot-hub-2",
+    "hub3": "https://www.switchbot.jp/products/switchbot-hub-3"
+  }
+}

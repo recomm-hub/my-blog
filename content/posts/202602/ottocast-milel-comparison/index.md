@@ -127,6 +127,8 @@ OttoCast は基本的に **Google Play から自分でアプリをインスト�
 - **MILEL**: [y.u mobile](https://www.yumobile.jp/) SIM やモバイル Wi-Fi ルーターとのセット販売あり。通信手段を別途用意する手間が省ける
 - **OttoCast**: CloudSIM 3.0 を内蔵。海外渡航時にも SIM を差し替えずに通信可能
 
+どちらの方法でも、スマホ側の回線が重要です。テザリング無制限の[楽天モバイル](/posts/rakuten-mobile-review/)は AI BOX との相性が特に良いので、通信コストを抑えたい方はチェックしてみてください。
+
 国内メインで使うなら MILEL の SIM セット販売が手軽です。海外で車を使う機会がある方は OttoCast の CloudSIM が便利ですが、日本国内だけなら出番は少ないかもしれません。
 
 {{< pros-cons

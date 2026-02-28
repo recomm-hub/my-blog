@@ -82,7 +82,7 @@ keywords = ['楽天モバイル', '乗り換え', 'MNP', 'テザリング', 'Rak
 
 楽天モバイルに乗り換えて一番「これはすごい」と思ったのが、**車でのテザリング活用**です。
 
-我が家では、車のCarPlay対応ナビに**AI BOX**（OttoCastやMilelなどのアダプター）を接続しています。これを使うと、カーナビの画面でYouTubeやAmazon Prime Video、Netflixなどのアプリがそのまま使えるようになります。
+我が家では、車の CarPlay 対応ナビに**AI BOX**（OttoCast や Milel などのアダプター）を接続しています。これを使うと、カーナビの画面で YouTube や Amazon Prime Video、Netflix などのアプリがそのまま使えるようになります。どの AI BOX を選べばいいか迷っている方は、[OttoCast と MILEL の比較記事](/posts/ottocast-milel-comparison/)も参考にしてみてください。
 
 ただし、AI BOXを使うには**常時インターネット接続**が必要。ここで楽天モバイルのテザリングが活きてきます。
 
